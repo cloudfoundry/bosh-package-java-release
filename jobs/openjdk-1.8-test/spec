@@ -1,0 +1,11 @@
+---
+name: openjdk-1.8-test
+
+templates:
+  run: bin/run
+
+packages:
+- openjdk-1.8
+- openjdk-1.8-test
+
+properties: {}
