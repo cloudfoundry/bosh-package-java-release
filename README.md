@@ -28,7 +28,7 @@ source /var/vcap/packages/openjdk-1.8/bosh/runtime.env
 java ...
 ```
 
-See [packages/openjdk-1.8-test] and [jobs/openjdk-1.8-test] for example.
+See [packages/openjdk-1.8-test](packages/openjdk-1.8-test) and [jobs/openjdk-1.8-test](jobs/openjdk-1.8-test) for example.
 
 ## Development
 
