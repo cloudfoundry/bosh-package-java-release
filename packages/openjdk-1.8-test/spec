@@ -1,7 +1,0 @@
----
-name: openjdk-1.8-test
-
-dependencies:
-- openjdk-1.8
-
-files: []

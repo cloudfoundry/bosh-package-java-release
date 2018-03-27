@@ -18,11 +18,23 @@ update:
   update_watch_time: 5000-60000
 
 instance_groups:
-- name: openjdk-1.8-test
+- name: openjdk-8-test
   azs: [z1]
   instances: 1
   jobs:
-  - name: openjdk-1.8-test
+  - name: openjdk-8-test
+    release: java
+    properties: {}
+  vm_type: default
+  stemcell: default
+  networks:
+  - name: default
+
+- name: openjdk-9-test
+  azs: [z1]
+  instances: 1
+  jobs:
+  - name: openjdk-9-test
     release: java
     properties: {}
   vm_type: default

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -ex
+
+source /var/vcap/packages/openjdk-9/bosh/runtime.env
+
+java -version

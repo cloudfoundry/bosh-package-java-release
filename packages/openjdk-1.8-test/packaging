@@ -1,5 +1,0 @@
-set -ex
-
-source /var/vcap/packages/openjdk-1.8/bosh/compile.env
-
-java -version

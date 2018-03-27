@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: bosh/main-bosh-docker
+
+inputs:
+- name: java-release
+
+outputs:
+- name: java-release-out
+
+run:
+  path: java-release/ci/build.sh

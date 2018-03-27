@@ -1,0 +1,27 @@
+---
+groups:
+- name: all
+  jobs:
+  - build
+
+jobs:
+- name: build
+  plan:
+  - get: java-release
+  - task: build
+    privileged: true
+    file: java-release/ci/build.yml
+    params:
+      BLOBSTORE_ACCESS_KEY_ID: {{release_blobs_access_key_id}}
+      BLOBSTORE_SECRET_ACCESS_KEY: {{release_blobs_secret_access_key}}
+  - put: java-release
+    params:
+      repository: java-release-out
+
+resources:
+- name: java-release
+  type: git
+  source:
+    uri: git@github.com:bosh-packages/java-release
+    branch: master
+    private_key: {{github_deployment_key}}

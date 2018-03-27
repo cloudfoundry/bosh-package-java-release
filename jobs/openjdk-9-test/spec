@@ -1,11 +1,11 @@
 ---
-name: openjdk-1.8-test
+name: openjdk-9-test
 
 templates:
   run: bin/run
 
 packages:
-- openjdk-1.8
-- openjdk-1.8-test
+- openjdk-9
+- openjdk-9-test
 
 properties: {}
