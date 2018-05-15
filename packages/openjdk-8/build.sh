@@ -4,7 +4,7 @@ set -e -x -u -o pipefail
 
 major_ver=8
 update_ver=172
-build_number=03
+build_number=11
 
 # http://hg.openjdk.java.net/jdk8u/jdk8u/tags
 # (note that tags on this page are not sorted)
