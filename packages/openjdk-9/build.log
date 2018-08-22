@@ -1,18 +1,18 @@
 Sending build context to Docker daemon  8.192kB
 Step 1/5 : FROM ubuntu:xenial
- ---> 0b1edfbffd27
+ ---> 52b10959e8aa
 Step 2/5 : WORKDIR /tmp
- ---> 137624eaaa02
-Removing intermediate container 41b33b3e4c4c
+ ---> 11b6287dcdaf
+Removing intermediate container 1718e335223c
 Step 3/5 : COPY build.sh /tmp/build.sh
- ---> 64afbd4dc5be
-Removing intermediate container 90798288184f
+ ---> f64f82cadc12
+Removing intermediate container 7149d34b661b
 Step 4/5 : RUN chmod +x /tmp/build.sh
- ---> Running in 8995cc93666d
- ---> 459c5f36194b
-Removing intermediate container 8995cc93666d
+ ---> Running in 505a4794925e
+ ---> bb23e74be414
+Removing intermediate container 505a4794925e
 Step 5/5 : RUN /tmp/build.sh
- ---> Running in d06e530587bb
+ ---> Running in ade83fec4a77
 [91m+ major_ver=9
 + minor_ver=0
 + update_ver=4
@@ -21,28 +21,28 @@ Step 5/5 : RUN /tmp/build.sh
 + echo '----> Setting up dev env'
 + apt-get -y update
 [0m----> Setting up dev env
-Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
-Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
-Get:3 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [80.4 kB]
-Get:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
-Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [625 kB]
-Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial/universe Sources [9802 kB]
-Get:8 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
-Get:9 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [439 kB]
-Get:10 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3759 B]
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:3 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [87.8 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [691 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [463 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3748 B]
+Get:8 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial/universe Sources [9802 kB]
 Get:11 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]
 Get:12 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
 Get:13 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]
 Get:14 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
-Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [255 kB]
-Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1002 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [274 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1076 kB]
 Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
-Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [808 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [873 kB]
 Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [18.8 kB]
-Get:20 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [5157 B]
-Get:21 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8075 B]
-Fetched 25.2 MB in 4s (6253 kB/s)
+Get:20 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7343 B]
+Get:21 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8086 B]
+Fetched 25.5 MB in 4s (6228 kB/s)
 Reading package lists...
 [91m+ apt-get -y install openjdk-8-jdk mercurial build-essential zip libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev libcups2-dev libfreetype6-dev libasound2-dev libelf-dev
 [0mReading package lists...
@@ -67,7 +67,7 @@ The following additional packages will be installed:
   libharfbuzz0b libhogweed4 libice-dev libice6 libicu55 libidn11
   libisc-export160 libisl15 libitm1 libjbig0 libjpeg-turbo8 libjpeg8
   libjs-excanvas libjson-c2 libk5crypto3 libkeyutils1 libkrb5-3
-  libkrb5support0 liblcms2-2 libllvm5.0 liblsan0 libmagic1 libmnl0 libmpc3
+  libkrb5support0 liblcms2-2 libllvm6.0 liblsan0 libmagic1 libmnl0 libmpc3
   libmpfr4 libmpx0 libnettle6 libnspr4 libnss3 libnss3-nssdb libogg0
   libp11-kit0 libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0
   libpciaccess0 libpcsclite1 libperl5.22 libpixman-1-0 libpng12-0 libpng12-dev
@@ -128,7 +128,7 @@ The following NEW packages will be installed:
   libgtk2.0-bin libgtk2.0-common libharfbuzz0b libhogweed4 libice-dev libice6
   libicu55 libidn11 libisc-export160 libisl15 libitm1 libjbig0 libjpeg-turbo8
   libjpeg8 libjs-excanvas libjson-c2 libk5crypto3 libkeyutils1 libkrb5-3
-  libkrb5support0 liblcms2-2 libllvm5.0 liblsan0 libmagic1 libmnl0 libmpc3
+  libkrb5support0 liblcms2-2 libllvm6.0 liblsan0 libmagic1 libmnl0 libmpc3
   libmpfr4 libmpx0 libnettle6 libnspr4 libnss3 libnss3-nssdb libogg0
   libp11-kit0 libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0
   libpciaccess0 libpcsclite1 libperl5.22 libpixman-1-0 libpng12-0 libpng12-dev
@@ -152,128 +152,128 @@ The following NEW packages will be installed:
   xauth xdg-user-dirs xml-core xorg-sgml-doctools xtrans-dev xz-utils zip
   zlib1g-dev
 0 upgraded, 237 newly installed, 0 to remove and 0 not upgraded.
-Need to get 142 MB of archives.
-After this operation, 686 MB of additional disk space will be used.
+Need to get 143 MB of archives.
+After this operation, 698 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu xenial/main amd64 libatm1 amd64 1:2.5.1-1.5 [24.2 kB]
 Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libjson-c2 amd64 0.11-4ubuntu2 [22.3 kB]
 Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmnl0 amd64 1.0.3-5 [12.0 kB]
 Get:4 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgdbm3 amd64 1.8.3-13.1 [16.9 kB]
-Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
-Get:6 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxdmcp6 amd64 1:1.1.2-1.1 [11.0 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb1 amd64 1.11.1-1ubuntu1 [40.0 kB]
-Get:8 http://archive.ubuntu.com/ubuntu xenial/main amd64 libx11-data all 2:1.6.3-1ubuntu2 [113 kB]
-Get:9 http://archive.ubuntu.com/ubuntu xenial/main amd64 libx11-6 amd64 2:1.6.3-1ubuntu2 [571 kB]
-Get:10 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxext6 amd64 2:1.3.3-1 [29.4 kB]
-Get:11 http://archive.ubuntu.com/ubuntu xenial/main amd64 sgml-base all 1.26+nmu4ubuntu1 [12.5 kB]
-Get:12 http://archive.ubuntu.com/ubuntu xenial/main amd64 fonts-dejavu-core all 2.35-1 [1039 kB]
-Get:13 http://archive.ubuntu.com/ubuntu xenial/main amd64 ucf all 3.0036 [52.9 kB]
-Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 fontconfig-config all 2.11.94-0ubuntu1.1 [49.9 kB]
-Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libexpat1 amd64 2.1.0-7ubuntu0.16.04.3 [71.2 kB]
-Get:16 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpng12-0 amd64 1.2.54-1ubuntu1 [116 kB]
-Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libfreetype6 amd64 2.6.1-0.1ubuntu2.3 [316 kB]
-Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libfontconfig1 amd64 2.11.94-0ubuntu1.1 [131 kB]
-Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 fontconfig amd64 2.11.94-0ubuntu1.1 [178 kB]
-Get:20 http://archive.ubuntu.com/ubuntu xenial/main amd64 libasyncns0 amd64 0.8-5build1 [12.3 kB]
-Get:21 http://archive.ubuntu.com/ubuntu xenial/main amd64 x11-common all 1:7.7+13ubuntu3 [22.4 kB]
-Get:22 http://archive.ubuntu.com/ubuntu xenial/main amd64 libice6 amd64 2:1.0.9-1 [39.2 kB]
-Get:23 http://archive.ubuntu.com/ubuntu xenial/main amd64 libjpeg-turbo8 amd64 1.4.2-0ubuntu3 [111 kB]
-Get:24 http://archive.ubuntu.com/ubuntu xenial/main amd64 liblcms2-2 amd64 2.6-3ubuntu2 [137 kB]
-Get:25 http://archive.ubuntu.com/ubuntu xenial/main amd64 libogg0 amd64 1.3.2-1 [17.2 kB]
-Get:26 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsm6 amd64 2:1.2.2-1 [15.8 kB]
-Get:27 http://archive.ubuntu.com/ubuntu xenial/main amd64 libwrap0 amd64 7.6.q-25 [46.2 kB]
-Get:28 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcomposite1 amd64 1:0.4.4-1 [7714 B]
-Get:29 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxdamage1 amd64 1:1.1.4-2 [6946 B]
-Get:30 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxfixes3 amd64 1:5.0.1-2 [11.1 kB]
-Get:31 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxinerama1 amd64 2:1.1.3-1 [7908 B]
-Get:32 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxshmfence1 amd64 1.2-1 [5042 B]
-Get:33 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtst6 amd64 2:1.2.2-1 [14.1 kB]
-Get:34 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxxf86vm1 amd64 1:1.1.4-1 [10.6 kB]
-Get:35 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-modules-5.22 all 5.22.1-9ubuntu0.3 [2646 kB]
-Get:36 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libperl5.22 amd64 5.22.1-9ubuntu0.3 [3402 kB]
-Get:37 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl amd64 5.22.1-9ubuntu0.3 [237 kB]
-Get:38 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-minimal amd64 2.7.12-1ubuntu0~16.04.3 [340 kB]
-Get:39 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-minimal amd64 2.7.12-1ubuntu0~16.04.3 [1261 kB]
-Get:40 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-minimal amd64 2.7.12-1~16.04 [28.1 kB]
-Get:41 http://archive.ubuntu.com/ubuntu xenial/main amd64 mime-support all 3.59ubuntu1 [31.0 kB]
-Get:42 http://archive.ubuntu.com/ubuntu xenial/main amd64 libffi6 amd64 3.2.1-4 [17.8 kB]
-Get:43 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsqlite3-0 amd64 3.11.0-1ubuntu1 [396 kB]
-Get:44 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.12 [1085 kB]
-Get:45 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-stdlib amd64 2.7.12-1ubuntu0~16.04.3 [1880 kB]
-Get:46 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7 amd64 2.7.12-1ubuntu0~16.04.3 [224 kB]
-Get:47 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-stdlib amd64 2.7.12-1~16.04 [7768 B]
-Get:48 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python amd64 2.7.12-1~16.04 [137 kB]
-Get:49 http://archive.ubuntu.com/ubuntu xenial/main amd64 libjbig0 amd64 2.1-3.1 [26.6 kB]
-Get:50 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
-Get:51 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmpfr4 amd64 3.1.4-1 [191 kB]
-Get:52 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmpc3 amd64 1.0.3-1 [39.7 kB]
-Get:53 http://archive.ubuntu.com/ubuntu xenial/main amd64 libtxc-dxtn-s2tc0 amd64 0~git20131104-1.1 [51.8 kB]
-Get:54 http://archive.ubuntu.com/ubuntu xenial/main amd64 bzip2 amd64 1.0.6-8 [32.7 kB]
-Get:55 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmagic1 amd64 1:5.25-2ubuntu1 [216 kB]
-Get:56 http://archive.ubuntu.com/ubuntu xenial/main amd64 file amd64 1:5.25-2ubuntu1 [21.2 kB]
-Get:57 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 iproute2 amd64 4.3.0-1ubuntu3.16.04.3 [522 kB]
-Get:58 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ifupdown amd64 0.8.10ubuntu1.3 [55.0 kB]
-Get:59 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libisc-export160 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [153 kB]
-Get:60 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdns-export162 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [666 kB]
-Get:61 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-client amd64 4.3.3-5ubuntu12.10 [224 kB]
-Get:62 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-common amd64 4.3.3-5ubuntu12.10 [105 kB]
-Get:63 http://archive.ubuntu.com/ubuntu xenial/main amd64 libbsd0 amd64 0.8.2-1 [41.7 kB]
-Get:64 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnettle6 amd64 3.2-1ubuntu0.16.04.1 [93.5 kB]
-Get:65 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhogweed4 amd64 3.2-1ubuntu0.16.04.1 [136 kB]
-Get:66 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libidn11 amd64 1.32-3ubuntu1.2 [46.5 kB]
-Get:67 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libp11-kit0 amd64 0.23.2-5~ubuntu16.04.1 [105 kB]
-Get:68 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtasn1-6 amd64 4.7-3ubuntu0.16.04.3 [43.5 kB]
-Get:69 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls30 amd64 3.4.10-4ubuntu1.4 [548 kB]
-Get:70 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtables11 amd64 1.6.0-2ubuntu3 [27.2 kB]
-Get:71 http://archive.ubuntu.com/ubuntu xenial/main amd64 netbase all 5.3 [12.9 kB]
-Get:72 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openssl amd64 1.0.2g-1ubuntu4.12 [492 kB]
-Get:73 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20170717~16.04.1 [168 kB]
-Get:74 http://archive.ubuntu.com/ubuntu xenial/main amd64 libcap-ng0 amd64 0.7.7-1 [10.9 kB]
-Get:75 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdbus-1-3 amd64 1.10.6-1ubuntu3.3 [161 kB]
-Get:76 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 dbus amd64 1.10.6-1ubuntu3.3 [142 kB]
-Get:77 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 krb5-locales all 1.13.2+dfsg-5ubuntu2 [13.2 kB]
-Get:78 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-common all 2.4.83-1~16.04.1 [4870 B]
-Get:79 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm2 amd64 2.4.83-1~16.04.1 [30.4 kB]
-Get:80 http://archive.ubuntu.com/ubuntu xenial/main amd64 libedit2 amd64 3.1-20150325-1ubuntu2 [76.5 kB]
-Get:81 http://archive.ubuntu.com/ubuntu xenial/main amd64 libelf1 amd64 0.165-3ubuntu1 [42.5 kB]
-Get:82 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libglib2.0-0 amd64 2.48.2-0ubuntu1 [1119 kB]
-Get:83 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libglib2.0-data all 2.48.2-0ubuntu1 [132 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 libffi6 amd64 3.2.1-4 [17.8 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libglib2.0-0 amd64 2.48.2-0ubuntu4 [1119 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+Get:8 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxdmcp6 amd64 1:1.1.2-1.1 [11.0 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb1 amd64 1.11.1-1ubuntu1 [40.0 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial/main amd64 libx11-data all 2:1.6.3-1ubuntu2 [113 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial/main amd64 libx11-6 amd64 2:1.6.3-1ubuntu2 [571 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxext6 amd64 2:1.3.3-1 [29.4 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial/main amd64 sgml-base all 1.26+nmu4ubuntu1 [12.5 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial/main amd64 fonts-dejavu-core all 2.35-1 [1039 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial/main amd64 ucf all 3.0036 [52.9 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 fontconfig-config all 2.11.94-0ubuntu1.1 [49.9 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libexpat1 amd64 2.1.0-7ubuntu0.16.04.3 [71.2 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpng12-0 amd64 1.2.54-1ubuntu1.1 [116 kB]
+Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libfreetype6 amd64 2.6.1-0.1ubuntu2.3 [316 kB]
+Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libfontconfig1 amd64 2.11.94-0ubuntu1.1 [131 kB]
+Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 fontconfig amd64 2.11.94-0ubuntu1.1 [178 kB]
+Get:22 http://archive.ubuntu.com/ubuntu xenial/main amd64 libasyncns0 amd64 0.8-5build1 [12.3 kB]
+Get:23 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 x11-common all 1:7.7+13ubuntu3.1 [22.9 kB]
+Get:24 http://archive.ubuntu.com/ubuntu xenial/main amd64 libice6 amd64 2:1.0.9-1 [39.2 kB]
+Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libjpeg-turbo8 amd64 1.4.2-0ubuntu3.1 [111 kB]
+Get:26 http://archive.ubuntu.com/ubuntu xenial/main amd64 liblcms2-2 amd64 2.6-3ubuntu2 [137 kB]
+Get:27 http://archive.ubuntu.com/ubuntu xenial/main amd64 libogg0 amd64 1.3.2-1 [17.2 kB]
+Get:28 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsm6 amd64 2:1.2.2-1 [15.8 kB]
+Get:29 http://archive.ubuntu.com/ubuntu xenial/main amd64 libwrap0 amd64 7.6.q-25 [46.2 kB]
+Get:30 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcomposite1 amd64 1:0.4.4-1 [7714 B]
+Get:31 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxdamage1 amd64 1:1.1.4-2 [6946 B]
+Get:32 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxfixes3 amd64 1:5.0.1-2 [11.1 kB]
+Get:33 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxinerama1 amd64 2:1.1.3-1 [7908 B]
+Get:34 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxshmfence1 amd64 1.2-1 [5042 B]
+Get:35 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtst6 amd64 2:1.2.2-1 [14.1 kB]
+Get:36 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxxf86vm1 amd64 1:1.1.4-1 [10.6 kB]
+Get:37 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl-modules-5.22 all 5.22.1-9ubuntu0.5 [2645 kB]
+Get:38 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libperl5.22 amd64 5.22.1-9ubuntu0.5 [3396 kB]
+Get:39 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 perl amd64 5.22.1-9ubuntu0.5 [238 kB]
+Get:40 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-minimal amd64 2.7.12-1ubuntu0~16.04.3 [340 kB]
+Get:41 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-minimal amd64 2.7.12-1ubuntu0~16.04.3 [1261 kB]
+Get:42 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-minimal amd64 2.7.12-1~16.04 [28.1 kB]
+Get:43 http://archive.ubuntu.com/ubuntu xenial/main amd64 mime-support all 3.59ubuntu1 [31.0 kB]
+Get:44 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsqlite3-0 amd64 3.11.0-1ubuntu1 [396 kB]
+Get:45 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.13 [1083 kB]
+Get:46 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-stdlib amd64 2.7.12-1ubuntu0~16.04.3 [1880 kB]
+Get:47 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7 amd64 2.7.12-1ubuntu0~16.04.3 [224 kB]
+Get:48 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython-stdlib amd64 2.7.12-1~16.04 [7768 B]
+Get:49 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python amd64 2.7.12-1~16.04 [137 kB]
+Get:50 http://archive.ubuntu.com/ubuntu xenial/main amd64 libjbig0 amd64 2.1-3.1 [26.6 kB]
+Get:51 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgmp10 amd64 2:6.1.0+dfsg-2 [240 kB]
+Get:52 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmpfr4 amd64 3.1.4-1 [191 kB]
+Get:53 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmpc3 amd64 1.0.3-1 [39.7 kB]
+Get:54 http://archive.ubuntu.com/ubuntu xenial/main amd64 libtxc-dxtn-s2tc0 amd64 0~git20131104-1.1 [51.8 kB]
+Get:55 http://archive.ubuntu.com/ubuntu xenial/main amd64 bzip2 amd64 1.0.6-8 [32.7 kB]
+Get:56 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmagic1 amd64 1:5.25-2ubuntu1.1 [216 kB]
+Get:57 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 file amd64 1:5.25-2ubuntu1.1 [21.2 kB]
+Get:58 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 iproute2 amd64 4.3.0-1ubuntu3.16.04.3 [522 kB]
+Get:59 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ifupdown amd64 0.8.10ubuntu1.4 [54.9 kB]
+Get:60 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libisc-export160 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [153 kB]
+Get:61 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdns-export162 amd64 1:9.10.3.dfsg.P4-8ubuntu1.10 [666 kB]
+Get:62 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-client amd64 4.3.3-5ubuntu12.10 [224 kB]
+Get:63 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 isc-dhcp-common amd64 4.3.3-5ubuntu12.10 [105 kB]
+Get:64 http://archive.ubuntu.com/ubuntu xenial/main amd64 libbsd0 amd64 0.8.2-1 [41.7 kB]
+Get:65 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnettle6 amd64 3.2-1ubuntu0.16.04.1 [93.5 kB]
+Get:66 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libhogweed4 amd64 3.2-1ubuntu0.16.04.1 [136 kB]
+Get:67 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libidn11 amd64 1.32-3ubuntu1.2 [46.5 kB]
+Get:68 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libp11-kit0 amd64 0.23.2-5~ubuntu16.04.1 [105 kB]
+Get:69 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtasn1-6 amd64 4.7-3ubuntu0.16.04.3 [43.5 kB]
+Get:70 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgnutls30 amd64 3.4.10-4ubuntu1.4 [548 kB]
+Get:71 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtables11 amd64 1.6.0-2ubuntu3 [27.2 kB]
+Get:72 http://archive.ubuntu.com/ubuntu xenial/main amd64 netbase all 5.3 [12.9 kB]
+Get:73 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openssl amd64 1.0.2g-1ubuntu4.13 [492 kB]
+Get:74 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20170717~16.04.1 [168 kB]
+Get:75 http://archive.ubuntu.com/ubuntu xenial/main amd64 libcap-ng0 amd64 0.7.7-1 [10.9 kB]
+Get:76 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdbus-1-3 amd64 1.10.6-1ubuntu3.3 [161 kB]
+Get:77 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 dbus amd64 1.10.6-1ubuntu3.3 [142 kB]
+Get:78 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 krb5-locales all 1.13.2+dfsg-5ubuntu2 [13.2 kB]
+Get:79 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-common all 2.4.91-2~16.04.1 [4764 B]
+Get:80 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm2 amd64 2.4.91-2~16.04.1 [30.8 kB]
+Get:81 http://archive.ubuntu.com/ubuntu xenial/main amd64 libedit2 amd64 3.1-20150325-1ubuntu2 [76.5 kB]
+Get:82 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libelf1 amd64 0.165-3ubuntu1.1 [43.0 kB]
+Get:83 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libglib2.0-data all 2.48.2-0ubuntu4 [132 kB]
 Get:84 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5support0 amd64 1.13.2+dfsg-5ubuntu2 [30.8 kB]
 Get:85 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libk5crypto3 amd64 1.13.2+dfsg-5ubuntu2 [81.2 kB]
 Get:86 http://archive.ubuntu.com/ubuntu xenial/main amd64 libkeyutils1 amd64 1.5.9-8ubuntu1 [9904 B]
 Get:87 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libkrb5-3 amd64 1.13.2+dfsg-5ubuntu2 [273 kB]
 Get:88 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgssapi-krb5-2 amd64 1.13.2+dfsg-5ubuntu2 [120 kB]
 Get:89 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libicu55 amd64 55.1-7ubuntu0.4 [7646 kB]
-Get:90 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libxml2 amd64 2.9.3+dfsg1-1ubuntu0.5 [697 kB]
+Get:90 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libxml2 amd64 2.9.3+dfsg1-1ubuntu0.6 [697 kB]
 Get:91 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxmuu1 amd64 2:1.1.2-2 [9674 B]
 Get:92 http://archive.ubuntu.com/ubuntu xenial/main amd64 manpages all 4.04-2 [1087 kB]
 Get:93 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openssh-client amd64 1:7.2p2-4ubuntu2.4 [589 kB]
-Get:94 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 shared-mime-info amd64 1.5-2ubuntu0.1 [405 kB]
+Get:94 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 shared-mime-info amd64 1.5-2ubuntu0.2 [405 kB]
 Get:95 http://archive.ubuntu.com/ubuntu xenial/main amd64 xauth amd64 1:1.0.9-1ubuntu2 [22.7 kB]
 Get:96 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 xdg-user-dirs amd64 0.15-2ubuntu6.16.04.1 [61.8 kB]
 Get:97 http://archive.ubuntu.com/ubuntu xenial/main amd64 xml-core all 0.13+nmu2 [23.3 kB]
 Get:98 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 binutils amd64 2.26.1-1ubuntu1~16.04.6 [2311 kB]
 Get:99 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libc-dev-bin amd64 2.23-0ubuntu10 [68.7 kB]
-Get:100 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-libc-dev amd64 4.4.0-124.148 [849 kB]
+Get:100 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-libc-dev amd64 4.4.0-133.159 [861 kB]
 Get:101 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libc6-dev amd64 2.23-0ubuntu10 [2079 kB]
 Get:102 http://archive.ubuntu.com/ubuntu xenial/main amd64 libisl15 amd64 0.16.1-1 [524 kB]
-Get:103 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 cpp-5 amd64 5.4.0-6ubuntu1~16.04.9 [7685 kB]
+Get:103 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 cpp-5 amd64 5.4.0-6ubuntu1~16.04.10 [7671 kB]
 Get:104 http://archive.ubuntu.com/ubuntu xenial/main amd64 cpp amd64 4:5.3.1-1ubuntu1 [27.7 kB]
-Get:105 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcc1-0 amd64 5.4.0-6ubuntu1~16.04.9 [38.8 kB]
-Get:106 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgomp1 amd64 5.4.0-6ubuntu1~16.04.9 [55.0 kB]
-Get:107 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libitm1 amd64 5.4.0-6ubuntu1~16.04.9 [27.4 kB]
-Get:108 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libatomic1 amd64 5.4.0-6ubuntu1~16.04.9 [8882 B]
-Get:109 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasan2 amd64 5.4.0-6ubuntu1~16.04.9 [264 kB]
-Get:110 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 liblsan0 amd64 5.4.0-6ubuntu1~16.04.9 [105 kB]
-Get:111 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtsan0 amd64 5.4.0-6ubuntu1~16.04.9 [244 kB]
-Get:112 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libubsan0 amd64 5.4.0-6ubuntu1~16.04.9 [95.2 kB]
-Get:113 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcilkrts5 amd64 5.4.0-6ubuntu1~16.04.9 [40.1 kB]
-Get:114 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmpx0 amd64 5.4.0-6ubuntu1~16.04.9 [9774 B]
-Get:115 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libquadmath0 amd64 5.4.0-6ubuntu1~16.04.9 [131 kB]
-Get:116 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgcc-5-dev amd64 5.4.0-6ubuntu1~16.04.9 [2242 kB]
-Get:117 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 gcc-5 amd64 5.4.0-6ubuntu1~16.04.9 [8650 kB]
+Get:105 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcc1-0 amd64 5.4.0-6ubuntu1~16.04.10 [38.8 kB]
+Get:106 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgomp1 amd64 5.4.0-6ubuntu1~16.04.10 [55.1 kB]
+Get:107 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libitm1 amd64 5.4.0-6ubuntu1~16.04.10 [27.4 kB]
+Get:108 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libatomic1 amd64 5.4.0-6ubuntu1~16.04.10 [8888 B]
+Get:109 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasan2 amd64 5.4.0-6ubuntu1~16.04.10 [264 kB]
+Get:110 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 liblsan0 amd64 5.4.0-6ubuntu1~16.04.10 [105 kB]
+Get:111 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtsan0 amd64 5.4.0-6ubuntu1~16.04.10 [244 kB]
+Get:112 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libubsan0 amd64 5.4.0-6ubuntu1~16.04.10 [95.3 kB]
+Get:113 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcilkrts5 amd64 5.4.0-6ubuntu1~16.04.10 [40.1 kB]
+Get:114 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmpx0 amd64 5.4.0-6ubuntu1~16.04.10 [9764 B]
+Get:115 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libquadmath0 amd64 5.4.0-6ubuntu1~16.04.10 [131 kB]
+Get:116 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgcc-5-dev amd64 5.4.0-6ubuntu1~16.04.10 [2228 kB]
+Get:117 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 gcc-5 amd64 5.4.0-6ubuntu1~16.04.10 [8426 kB]
 Get:118 http://archive.ubuntu.com/ubuntu xenial/main amd64 gcc amd64 4:5.3.1-1ubuntu1 [5244 B]
-Get:119 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++-5-dev amd64 5.4.0-6ubuntu1~16.04.9 [1427 kB]
-Get:120 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 g++-5 amd64 5.4.0-6ubuntu1~16.04.9 [8333 kB]
+Get:119 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++-5-dev amd64 5.4.0-6ubuntu1~16.04.10 [1426 kB]
+Get:120 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 g++-5 amd64 5.4.0-6ubuntu1~16.04.10 [8319 kB]
 Get:121 http://archive.ubuntu.com/ubuntu xenial/main amd64 g++ amd64 4:5.3.1-1ubuntu1 [1504 B]
 Get:122 http://archive.ubuntu.com/ubuntu xenial/main amd64 make amd64 4.1-6 [151 kB]
 Get:123 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdpkg-perl all 1.18.4ubuntu1.4 [195 kB]
@@ -285,7 +285,7 @@ Get:128 http://archive.ubuntu.com/ubuntu xenial/main amd64 java-common all 0.56u
 Get:129 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libavahi-common-data amd64 0.6.32~rc+dfsg-1ubuntu2.2 [21.5 kB]
 Get:130 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libavahi-common3 amd64 0.6.32~rc+dfsg-1ubuntu2.2 [21.6 kB]
 Get:131 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libavahi-client3 amd64 0.6.32~rc+dfsg-1ubuntu2.2 [25.2 kB]
-Get:132 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcups2 amd64 2.1.3-4ubuntu0.4 [197 kB]
+Get:132 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcups2 amd64 2.1.3-4ubuntu0.5 [197 kB]
 Get:133 http://archive.ubuntu.com/ubuntu xenial/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2194 B]
 Get:134 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnspr4 amd64 2:4.13.1-0ubuntu0.16.04.1 [112 kB]
 Get:135 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnss3-nssdb all 2:3.28.4-0ubuntu0.16.04.3 [10.6 kB]
@@ -293,12 +293,12 @@ Get:136 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libnss3 amd64
 Get:137 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpcsclite1 amd64 1.8.14-1ubuntu1.16.04.1 [21.4 kB]
 Get:138 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxi6 amd64 2:1.7.6-1 [28.6 kB]
 Get:139 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxrender1 amd64 1:0.9.9-0ubuntu1 [18.5 kB]
-Get:140 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jre-headless amd64 8u171-b11-0ubuntu0.16.04.1 [27.0 MB]
+Get:140 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jre-headless amd64 8u181-b13-0ubuntu0.16.04.1 [27.0 MB]
 Get:141 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates-java all 20160321ubuntu1 [12.5 kB]
 Get:142 http://archive.ubuntu.com/ubuntu xenial/main amd64 libfakeroot amd64 1.20.2-1ubuntu1 [25.5 kB]
 Get:143 http://archive.ubuntu.com/ubuntu xenial/main amd64 fakeroot amd64 1.20.2-1ubuntu1 [61.8 kB]
 Get:144 http://archive.ubuntu.com/ubuntu xenial/main amd64 fonts-dejavu-extra all 2.35-1 [1749 kB]
-Get:145 http://archive.ubuntu.com/ubuntu xenial/main amd64 hicolor-icon-theme all 0.15-0ubuntu1 [7750 B]
+Get:145 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 hicolor-icon-theme all 0.15-0ubuntu1.1 [7698 B]
 Get:146 http://archive.ubuntu.com/ubuntu xenial/main amd64 javascript-common all 11 [6066 B]
 Get:147 http://archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-perl all 1.19.03-1 [47.6 kB]
 Get:148 http://archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-xs-perl amd64 0.04-4build1 [11.0 kB]
@@ -312,34 +312,34 @@ Get:155 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpixman-1-0 amd64 0
 Get:156 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-render0 amd64 1.11.1-1ubuntu1 [11.4 kB]
 Get:157 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-shm0 amd64 1.11.1-1ubuntu1 [5588 B]
 Get:158 http://archive.ubuntu.com/ubuntu xenial/main amd64 libcairo2 amd64 1.14.6-1 [555 kB]
-Get:159 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcups2-dev amd64 2.1.3-4ubuntu0.4 [238 kB]
+Get:159 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcups2-dev amd64 2.1.3-4ubuntu0.5 [238 kB]
 Get:160 http://archive.ubuntu.com/ubuntu xenial/main amd64 libdatrie1 amd64 0.2.10-2 [17.3 kB]
-Get:161 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-amdgpu1 amd64 2.4.83-1~16.04.1 [18.6 kB]
+Get:161 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-amdgpu1 amd64 2.4.91-2~16.04.1 [18.9 kB]
 Get:162 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpciaccess0 amd64 0.13.4-1 [18.1 kB]
-Get:163 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-intel1 amd64 2.4.83-1~16.04.1 [59.9 kB]
-Get:164 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-nouveau2 amd64 2.4.83-1~16.04.1 [16.3 kB]
-Get:165 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-radeon1 amd64 2.4.83-1~16.04.1 [21.5 kB]
-Get:166 http://archive.ubuntu.com/ubuntu xenial/main amd64 libelf-dev amd64 0.165-3ubuntu1 [54.4 kB]
+Get:163 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-intel1 amd64 2.4.91-2~16.04.1 [59.9 kB]
+Get:164 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-nouveau2 amd64 2.4.91-2~16.04.1 [16.3 kB]
+Get:165 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-radeon1 amd64 2.4.91-2~16.04.1 [21.5 kB]
+Get:166 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libelf-dev amd64 0.165-3ubuntu1.1 [54.3 kB]
 Get:167 http://archive.ubuntu.com/ubuntu xenial/main amd64 libfile-fcntllock-perl amd64 0.22-3 [32.0 kB]
 Get:168 http://archive.ubuntu.com/ubuntu xenial/main amd64 libflac8 amd64 1.3.1-4 [210 kB]
 Get:169 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 zlib1g-dev amd64 1:1.2.8.dfsg-2ubuntu4.1 [168 kB]
-Get:170 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpng12-dev amd64 1.2.54-1ubuntu1 [184 kB]
+Get:170 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpng12-dev amd64 1.2.54-1ubuntu1.1 [183 kB]
 Get:171 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libfreetype6-dev amd64 2.6.1-0.1ubuntu2.3 [956 kB]
 Get:172 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtiff5 amd64 4.0.6-1ubuntu0.4 [148 kB]
-Get:173 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgdk-pixbuf2.0-common all 2.32.2-1ubuntu1.4 [10.5 kB]
-Get:174 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgdk-pixbuf2.0-0 amd64 2.32.2-1ubuntu1.4 [158 kB]
+Get:173 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgdk-pixbuf2.0-common all 2.32.2-1ubuntu1.5 [10.3 kB]
+Get:174 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgdk-pixbuf2.0-0 amd64 2.32.2-1ubuntu1.5 [159 kB]
 Get:175 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgif7 amd64 5.1.4-0.3~16.04 [30.5 kB]
-Get:176 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libglapi-mesa amd64 17.2.8-0ubuntu0~16.04.1 [22.8 kB]
-Get:177 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libllvm5.0 amd64 1:5.0-3~16.04.1 [13.5 MB]
+Get:176 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libglapi-mesa amd64 18.0.5-0ubuntu0~16.04.1 [23.4 kB]
+Get:177 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libllvm6.0 amd64 1:6.0-1ubuntu2~16.04.1 [14.3 MB]
 Get:178 http://archive.ubuntu.com/ubuntu xenial/main amd64 libsensors4 amd64 1:3.4.0-2 [28.4 kB]
-Get:179 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgl1-mesa-dri amd64 17.2.8-0ubuntu0~16.04.1 [5782 kB]
+Get:179 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgl1-mesa-dri amd64 18.0.5-0ubuntu0~16.04.1 [6080 kB]
 Get:180 http://archive.ubuntu.com/ubuntu xenial/main amd64 libx11-xcb1 amd64 2:1.6.3-1ubuntu2 [8956 B]
 Get:181 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-dri2-0 amd64 1.11.1-1ubuntu1 [6882 B]
 Get:182 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-dri3-0 amd64 1.11.1-1ubuntu1 [5218 B]
 Get:183 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-glx0 amd64 1.11.1-1ubuntu1 [20.9 kB]
 Get:184 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-present0 amd64 1.11.1-1ubuntu1 [5218 B]
 Get:185 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxcb-sync1 amd64 1.11.1-1ubuntu1 [8324 B]
-Get:186 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgl1-mesa-glx amd64 17.2.8-0ubuntu0~16.04.1 [130 kB]
+Get:186 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgl1-mesa-glx amd64 18.0.5-0ubuntu0~16.04.1 [132 kB]
 Get:187 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgraphite2-3 amd64 1.3.10-0ubuntu0.16.04.1 [71.7 kB]
 Get:188 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgtk2.0-common all 2.24.30-1ubuntu1.16.04.2 [123 kB]
 Get:189 http://archive.ubuntu.com/ubuntu xenial/main amd64 libthai-data all 0.1.24-2 [131 kB]
@@ -348,7 +348,7 @@ Get:191 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpango-1.0-0 amd64 
 Get:192 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libharfbuzz0b amd64 1.0.1-1ubuntu0.1 [140 kB]
 Get:193 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpangoft2-1.0-0 amd64 1.38.1-1 [33.3 kB]
 Get:194 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpangocairo-1.0-0 amd64 1.38.1-1 [20.5 kB]
-Get:195 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libxcursor1 amd64 1:1.1.14-1ubuntu0.16.04.1 [20.2 kB]
+Get:195 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libxcursor1 amd64 1:1.1.14-1ubuntu0.16.04.2 [19.9 kB]
 Get:196 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxrandr2 amd64 2:1.5.0-1 [17.6 kB]
 Get:197 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgtk2.0-0 amd64 2.24.30-1ubuntu1.16.04.2 [1775 kB]
 Get:198 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgtk2.0-bin amd64 2.24.30-1ubuntu1.16.04.2 [9834 B]
@@ -384,15 +384,15 @@ Get:227 http://archive.ubuntu.com/ubuntu xenial/main amd64 libxtst-dev amd64 2:1
 Get:228 http://archive.ubuntu.com/ubuntu xenial/main amd64 manpages-dev all 4.04-2 [2048 kB]
 Get:229 http://archive.ubuntu.com/ubuntu xenial/universe amd64 mercurial-common all 3.7.3-1ubuntu1 [1833 kB]
 Get:230 http://archive.ubuntu.com/ubuntu xenial/universe amd64 mercurial amd64 3.7.3-1ubuntu1 [46.3 kB]
-Get:231 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jre amd64 8u171-b11-0ubuntu0.16.04.1 [69.4 kB]
-Get:232 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jdk-headless amd64 8u171-b11-0ubuntu0.16.04.1 [8213 kB]
-Get:233 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jdk amd64 8u171-b11-0ubuntu0.16.04.1 [451 kB]
+Get:231 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jre amd64 8u181-b13-0ubuntu0.16.04.1 [69.4 kB]
+Get:232 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jdk-headless amd64 8u181-b13-0ubuntu0.16.04.1 [8180 kB]
+Get:233 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 openjdk-8-jdk amd64 8u181-b13-0ubuntu0.16.04.1 [453 kB]
 Get:234 http://archive.ubuntu.com/ubuntu xenial/main amd64 rename all 0.20-4 [12.0 kB]
 Get:235 http://archive.ubuntu.com/ubuntu xenial/main amd64 tcpd amd64 7.6.q-25 [23.0 kB]
 Get:236 http://archive.ubuntu.com/ubuntu xenial/main amd64 unzip amd64 6.0-20ubuntu1 [158 kB]
 Get:237 http://archive.ubuntu.com/ubuntu xenial/main amd64 zip amd64 3.0-11 [158 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 142 MB in 35s (4024 kB/s)
+[0mFetched 143 MB in 31s (4570 kB/s)
 Selecting previously unselected package libatm1:amd64.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4768 files and directories currently installed.)
 Preparing to unpack .../libatm1_1%3a2.5.1-1.5_amd64.deb ...
@@ -406,6 +406,12 @@ Unpacking libmnl0:amd64 (1.0.3-5) ...
 Selecting previously unselected package libgdbm3:amd64.
 Preparing to unpack .../libgdbm3_1.8.3-13.1_amd64.deb ...
 Unpacking libgdbm3:amd64 (1.8.3-13.1) ...
+Selecting previously unselected package libffi6:amd64.
+Preparing to unpack .../libffi6_3.2.1-4_amd64.deb ...
+Unpacking libffi6:amd64 (3.2.1-4) ...
+Selecting previously unselected package libglib2.0-0:amd64.
+Preparing to unpack .../libglib2.0-0_2.48.2-0ubuntu4_amd64.deb ...
+Unpacking libglib2.0-0:amd64 (2.48.2-0ubuntu4) ...
 Selecting previously unselected package libxau6:amd64.
 Preparing to unpack .../libxau6_1%3a1.0.8-1_amd64.deb ...
 Unpacking libxau6:amd64 (1:1.0.8-1) ...
@@ -441,8 +447,8 @@ Selecting previously unselected package libexpat1:amd64.
 Preparing to unpack .../libexpat1_2.1.0-7ubuntu0.16.04.3_amd64.deb ...
 Unpacking libexpat1:amd64 (2.1.0-7ubuntu0.16.04.3) ...
 Selecting previously unselected package libpng12-0:amd64.
-Preparing to unpack .../libpng12-0_1.2.54-1ubuntu1_amd64.deb ...
-Unpacking libpng12-0:amd64 (1.2.54-1ubuntu1) ...
+Preparing to unpack .../libpng12-0_1.2.54-1ubuntu1.1_amd64.deb ...
+Unpacking libpng12-0:amd64 (1.2.54-1ubuntu1.1) ...
 Selecting previously unselected package libfreetype6:amd64.
 Preparing to unpack .../libfreetype6_2.6.1-0.1ubuntu2.3_amd64.deb ...
 Unpacking libfreetype6:amd64 (2.6.1-0.1ubuntu2.3) ...
@@ -456,14 +462,15 @@ Selecting previously unselected package libasyncns0:amd64.
 Preparing to unpack .../libasyncns0_0.8-5build1_amd64.deb ...
 Unpacking libasyncns0:amd64 (0.8-5build1) ...
 Selecting previously unselected package x11-common.
-Preparing to unpack .../x11-common_1%3a7.7+13ubuntu3_all.deb ...
-Unpacking x11-common (1:7.7+13ubuntu3) ...
+Preparing to unpack .../x11-common_1%3a7.7+13ubuntu3.1_all.deb ...
+dpkg-query: no packages found matching nux-tools
+Unpacking x11-common (1:7.7+13ubuntu3.1) ...
 Selecting previously unselected package libice6:amd64.
 Preparing to unpack .../libice6_2%3a1.0.9-1_amd64.deb ...
 Unpacking libice6:amd64 (2:1.0.9-1) ...
 Selecting previously unselected package libjpeg-turbo8:amd64.
-Preparing to unpack .../libjpeg-turbo8_1.4.2-0ubuntu3_amd64.deb ...
-Unpacking libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+Preparing to unpack .../libjpeg-turbo8_1.4.2-0ubuntu3.1_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.4.2-0ubuntu3.1) ...
 Selecting previously unselected package liblcms2-2:amd64.
 Preparing to unpack .../liblcms2-2_2.6-3ubuntu2_amd64.deb ...
 Unpacking liblcms2-2:amd64 (2.6-3ubuntu2) ...
@@ -498,14 +505,14 @@ Selecting previously unselected package libxxf86vm1:amd64.
 Preparing to unpack .../libxxf86vm1_1%3a1.1.4-1_amd64.deb ...
 Unpacking libxxf86vm1:amd64 (1:1.1.4-1) ...
 Selecting previously unselected package perl-modules-5.22.
-Preparing to unpack .../perl-modules-5.22_5.22.1-9ubuntu0.3_all.deb ...
-Unpacking perl-modules-5.22 (5.22.1-9ubuntu0.3) ...
+Preparing to unpack .../perl-modules-5.22_5.22.1-9ubuntu0.5_all.deb ...
+Unpacking perl-modules-5.22 (5.22.1-9ubuntu0.5) ...
 Selecting previously unselected package libperl5.22:amd64.
-Preparing to unpack .../libperl5.22_5.22.1-9ubuntu0.3_amd64.deb ...
-Unpacking libperl5.22:amd64 (5.22.1-9ubuntu0.3) ...
+Preparing to unpack .../libperl5.22_5.22.1-9ubuntu0.5_amd64.deb ...
+Unpacking libperl5.22:amd64 (5.22.1-9ubuntu0.5) ...
 Selecting previously unselected package perl.
-Preparing to unpack .../perl_5.22.1-9ubuntu0.3_amd64.deb ...
-Unpacking perl (5.22.1-9ubuntu0.3) ...
+Preparing to unpack .../perl_5.22.1-9ubuntu0.5_amd64.deb ...
+Unpacking perl (5.22.1-9ubuntu0.5) ...
 Selecting previously unselected package libpython2.7-minimal:amd64.
 Preparing to unpack .../libpython2.7-minimal_2.7.12-1ubuntu0~16.04.3_amd64.deb ...
 Unpacking libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.3) ...
@@ -518,15 +525,12 @@ Unpacking python-minimal (2.7.12-1~16.04) ...
 Selecting previously unselected package mime-support.
 Preparing to unpack .../mime-support_3.59ubuntu1_all.deb ...
 Unpacking mime-support (3.59ubuntu1) ...
-Selecting previously unselected package libffi6:amd64.
-Preparing to unpack .../libffi6_3.2.1-4_amd64.deb ...
-Unpacking libffi6:amd64 (3.2.1-4) ...
 Selecting previously unselected package libsqlite3-0:amd64.
 Preparing to unpack .../libsqlite3-0_3.11.0-1ubuntu1_amd64.deb ...
 Unpacking libsqlite3-0:amd64 (3.11.0-1ubuntu1) ...
 Selecting previously unselected package libssl1.0.0:amd64.
-Preparing to unpack .../libssl1.0.0_1.0.2g-1ubuntu4.12_amd64.deb ...
-Unpacking libssl1.0.0:amd64 (1.0.2g-1ubuntu4.12) ...
+Preparing to unpack .../libssl1.0.0_1.0.2g-1ubuntu4.13_amd64.deb ...
+Unpacking libssl1.0.0:amd64 (1.0.2g-1ubuntu4.13) ...
 Selecting previously unselected package libpython2.7-stdlib:amd64.
 Preparing to unpack .../libpython2.7-stdlib_2.7.12-1ubuntu0~16.04.3_amd64.deb ...
 Unpacking libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.3) ...
@@ -537,13 +541,13 @@ Selecting previously unselected package libpython-stdlib:amd64.
 Preparing to unpack .../libpython-stdlib_2.7.12-1~16.04_amd64.deb ...
 Unpacking libpython-stdlib:amd64 (2.7.12-1~16.04) ...
 Processing triggers for libc-bin (2.23-0ubuntu10) ...
-Processing triggers for systemd (229-4ubuntu21.2) ...
+Processing triggers for systemd (229-4ubuntu21.4) ...
 Setting up libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.3) ...
 Setting up python2.7-minimal (2.7.12-1ubuntu0~16.04.3) ...
 Linking and byte-compiling packages for runtime python2.7...
 Setting up python-minimal (2.7.12-1~16.04) ...
 Selecting previously unselected package python.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7977 files and directories currently installed.)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8004 files and directories currently installed.)
 Preparing to unpack .../python_2.7.12-1~16.04_amd64.deb ...
 Unpacking python (2.7.12-1~16.04) ...
 Selecting previously unselected package libjbig0:amd64.
@@ -565,17 +569,17 @@ Selecting previously unselected package bzip2.
 Preparing to unpack .../bzip2_1.0.6-8_amd64.deb ...
 Unpacking bzip2 (1.0.6-8) ...
 Selecting previously unselected package libmagic1:amd64.
-Preparing to unpack .../libmagic1_1%3a5.25-2ubuntu1_amd64.deb ...
-Unpacking libmagic1:amd64 (1:5.25-2ubuntu1) ...
+Preparing to unpack .../libmagic1_1%3a5.25-2ubuntu1.1_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.25-2ubuntu1.1) ...
 Selecting previously unselected package file.
-Preparing to unpack .../file_1%3a5.25-2ubuntu1_amd64.deb ...
-Unpacking file (1:5.25-2ubuntu1) ...
+Preparing to unpack .../file_1%3a5.25-2ubuntu1.1_amd64.deb ...
+Unpacking file (1:5.25-2ubuntu1.1) ...
 Selecting previously unselected package iproute2.
 Preparing to unpack .../iproute2_4.3.0-1ubuntu3.16.04.3_amd64.deb ...
 Unpacking iproute2 (4.3.0-1ubuntu3.16.04.3) ...
 Selecting previously unselected package ifupdown.
-Preparing to unpack .../ifupdown_0.8.10ubuntu1.3_amd64.deb ...
-Unpacking ifupdown (0.8.10ubuntu1.3) ...
+Preparing to unpack .../ifupdown_0.8.10ubuntu1.4_amd64.deb ...
+Unpacking ifupdown (0.8.10ubuntu1.4) ...
 Selecting previously unselected package libisc-export160.
 Preparing to unpack .../libisc-export160_1%3a9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb ...
 Unpacking libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
@@ -616,8 +620,8 @@ Selecting previously unselected package netbase.
 Preparing to unpack .../archives/netbase_5.3_all.deb ...
 Unpacking netbase (5.3) ...
 Selecting previously unselected package openssl.
-Preparing to unpack .../openssl_1.0.2g-1ubuntu4.12_amd64.deb ...
-Unpacking openssl (1.0.2g-1ubuntu4.12) ...
+Preparing to unpack .../openssl_1.0.2g-1ubuntu4.13_amd64.deb ...
+Unpacking openssl (1.0.2g-1ubuntu4.13) ...
 Selecting previously unselected package ca-certificates.
 Preparing to unpack .../ca-certificates_20170717~16.04.1_all.deb ...
 Unpacking ca-certificates (20170717~16.04.1) ...
@@ -634,23 +638,20 @@ Selecting previously unselected package krb5-locales.
 Preparing to unpack .../krb5-locales_1.13.2+dfsg-5ubuntu2_all.deb ...
 Unpacking krb5-locales (1.13.2+dfsg-5ubuntu2) ...
 Selecting previously unselected package libdrm-common.
-Preparing to unpack .../libdrm-common_2.4.83-1~16.04.1_all.deb ...
-Unpacking libdrm-common (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm-common_2.4.91-2~16.04.1_all.deb ...
+Unpacking libdrm-common (2.4.91-2~16.04.1) ...
 Selecting previously unselected package libdrm2:amd64.
-Preparing to unpack .../libdrm2_2.4.83-1~16.04.1_amd64.deb ...
-Unpacking libdrm2:amd64 (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm2_2.4.91-2~16.04.1_amd64.deb ...
+Unpacking libdrm2:amd64 (2.4.91-2~16.04.1) ...
 Selecting previously unselected package libedit2:amd64.
 Preparing to unpack .../libedit2_3.1-20150325-1ubuntu2_amd64.deb ...
 Unpacking libedit2:amd64 (3.1-20150325-1ubuntu2) ...
 Selecting previously unselected package libelf1:amd64.
-Preparing to unpack .../libelf1_0.165-3ubuntu1_amd64.deb ...
-Unpacking libelf1:amd64 (0.165-3ubuntu1) ...
-Selecting previously unselected package libglib2.0-0:amd64.
-Preparing to unpack .../libglib2.0-0_2.48.2-0ubuntu1_amd64.deb ...
-Unpacking libglib2.0-0:amd64 (2.48.2-0ubuntu1) ...
+Preparing to unpack .../libelf1_0.165-3ubuntu1.1_amd64.deb ...
+Unpacking libelf1:amd64 (0.165-3ubuntu1.1) ...
 Selecting previously unselected package libglib2.0-data.
-Preparing to unpack .../libglib2.0-data_2.48.2-0ubuntu1_all.deb ...
-Unpacking libglib2.0-data (2.48.2-0ubuntu1) ...
+Preparing to unpack .../libglib2.0-data_2.48.2-0ubuntu4_all.deb ...
+Unpacking libglib2.0-data (2.48.2-0ubuntu4) ...
 Selecting previously unselected package libkrb5support0:amd64.
 Preparing to unpack .../libkrb5support0_1.13.2+dfsg-5ubuntu2_amd64.deb ...
 Unpacking libkrb5support0:amd64 (1.13.2+dfsg-5ubuntu2) ...
@@ -670,8 +671,8 @@ Selecting previously unselected package libicu55:amd64.
 Preparing to unpack .../libicu55_55.1-7ubuntu0.4_amd64.deb ...
 Unpacking libicu55:amd64 (55.1-7ubuntu0.4) ...
 Selecting previously unselected package libxml2:amd64.
-Preparing to unpack .../libxml2_2.9.3+dfsg1-1ubuntu0.5_amd64.deb ...
-Unpacking libxml2:amd64 (2.9.3+dfsg1-1ubuntu0.5) ...
+Preparing to unpack .../libxml2_2.9.3+dfsg1-1ubuntu0.6_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.3+dfsg1-1ubuntu0.6) ...
 Selecting previously unselected package libxmuu1:amd64.
 Preparing to unpack .../libxmuu1_2%3a1.1.2-2_amd64.deb ...
 Unpacking libxmuu1:amd64 (2:1.1.2-2) ...
@@ -682,8 +683,8 @@ Selecting previously unselected package openssh-client.
 Preparing to unpack .../openssh-client_1%3a7.2p2-4ubuntu2.4_amd64.deb ...
 Unpacking openssh-client (1:7.2p2-4ubuntu2.4) ...
 Selecting previously unselected package shared-mime-info.
-Preparing to unpack .../shared-mime-info_1.5-2ubuntu0.1_amd64.deb ...
-Unpacking shared-mime-info (1.5-2ubuntu0.1) ...
+Preparing to unpack .../shared-mime-info_1.5-2ubuntu0.2_amd64.deb ...
+Unpacking shared-mime-info (1.5-2ubuntu0.2) ...
 Selecting previously unselected package xauth.
 Preparing to unpack .../xauth_1%3a1.0.9-1ubuntu2_amd64.deb ...
 Unpacking xauth (1:1.0.9-1ubuntu2) ...
@@ -700,8 +701,8 @@ Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../libc-dev-bin_2.23-0ubuntu10_amd64.deb ...
 Unpacking libc-dev-bin (2.23-0ubuntu10) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../linux-libc-dev_4.4.0-124.148_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (4.4.0-124.148) ...
+Preparing to unpack .../linux-libc-dev_4.4.0-133.159_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.4.0-133.159) ...
 Selecting previously unselected package libc6-dev:amd64.
 Preparing to unpack .../libc6-dev_2.23-0ubuntu10_amd64.deb ...
 Unpacking libc6-dev:amd64 (2.23-0ubuntu10) ...
@@ -709,59 +710,59 @@ Selecting previously unselected package libisl15:amd64.
 Preparing to unpack .../libisl15_0.16.1-1_amd64.deb ...
 Unpacking libisl15:amd64 (0.16.1-1) ...
 Selecting previously unselected package cpp-5.
-Preparing to unpack .../cpp-5_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking cpp-5 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../cpp-5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking cpp-5 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package cpp.
 Preparing to unpack .../cpp_4%3a5.3.1-1ubuntu1_amd64.deb ...
 Unpacking cpp (4:5.3.1-1ubuntu1) ...
 Selecting previously unselected package libcc1-0:amd64.
-Preparing to unpack .../libcc1-0_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libcc1-0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libgomp1:amd64.
-Preparing to unpack .../libgomp1_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libgomp1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libgomp1_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libgomp1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libitm1:amd64.
-Preparing to unpack .../libitm1_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libitm1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libitm1_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libitm1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libatomic1:amd64.
-Preparing to unpack .../libatomic1_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libatomic1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libatomic1_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libatomic1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libasan2:amd64.
-Preparing to unpack .../libasan2_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libasan2:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libasan2_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libasan2:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package liblsan0:amd64.
-Preparing to unpack .../liblsan0_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking liblsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../liblsan0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking liblsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libtsan0:amd64.
-Preparing to unpack .../libtsan0_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libtsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libtsan0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libtsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libubsan0:amd64.
-Preparing to unpack .../libubsan0_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libubsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libubsan0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libubsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libcilkrts5:amd64.
-Preparing to unpack .../libcilkrts5_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libcilkrts5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libmpx0:amd64.
-Preparing to unpack .../libmpx0_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libmpx0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libmpx0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libmpx0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libquadmath0:amd64.
-Preparing to unpack .../libquadmath0_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libquadmath0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package libgcc-5-dev:amd64.
-Preparing to unpack .../libgcc-5-dev_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libgcc-5-dev_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package gcc-5.
-Preparing to unpack .../gcc-5_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking gcc-5 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../gcc-5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking gcc-5 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package gcc.
 Preparing to unpack .../gcc_4%3a5.3.1-1ubuntu1_amd64.deb ...
 Unpacking gcc (4:5.3.1-1ubuntu1) ...
 Selecting previously unselected package libstdc++-5-dev:amd64.
-Preparing to unpack .../libstdc++-5-dev_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../libstdc++-5-dev_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package g++-5.
-Preparing to unpack .../g++-5_5.4.0-6ubuntu1~16.04.9_amd64.deb ...
-Unpacking g++-5 (5.4.0-6ubuntu1~16.04.9) ...
+Preparing to unpack .../g++-5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+Unpacking g++-5 (5.4.0-6ubuntu1~16.04.10) ...
 Selecting previously unselected package g++.
 Preparing to unpack .../g++_4%3a5.3.1-1ubuntu1_amd64.deb ...
 Unpacking g++ (4:5.3.1-1ubuntu1) ...
@@ -796,8 +797,8 @@ Selecting previously unselected package libavahi-client3:amd64.
 Preparing to unpack .../libavahi-client3_0.6.32~rc+dfsg-1ubuntu2.2_amd64.deb ...
 Unpacking libavahi-client3:amd64 (0.6.32~rc+dfsg-1ubuntu2.2) ...
 Selecting previously unselected package libcups2:amd64.
-Preparing to unpack .../libcups2_2.1.3-4ubuntu0.4_amd64.deb ...
-Unpacking libcups2:amd64 (2.1.3-4ubuntu0.4) ...
+Preparing to unpack .../libcups2_2.1.3-4ubuntu0.5_amd64.deb ...
+Unpacking libcups2:amd64 (2.1.3-4ubuntu0.5) ...
 Selecting previously unselected package libjpeg8:amd64.
 Preparing to unpack .../libjpeg8_8c-2ubuntu8_amd64.deb ...
 Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
@@ -820,8 +821,8 @@ Selecting previously unselected package libxrender1:amd64.
 Preparing to unpack .../libxrender1_1%3a0.9.9-0ubuntu1_amd64.deb ...
 Unpacking libxrender1:amd64 (1:0.9.9-0ubuntu1) ...
 Selecting previously unselected package openjdk-8-jre-headless:amd64.
-Preparing to unpack .../openjdk-8-jre-headless_8u171-b11-0ubuntu0.16.04.1_amd64.deb ...
-Unpacking openjdk-8-jre-headless:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Preparing to unpack .../openjdk-8-jre-headless_8u181-b13-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking openjdk-8-jre-headless:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 Selecting previously unselected package ca-certificates-java.
 Preparing to unpack .../ca-certificates-java_20160321ubuntu1_all.deb ...
 Unpacking ca-certificates-java (20160321ubuntu1) ...
@@ -835,8 +836,8 @@ Selecting previously unselected package fonts-dejavu-extra.
 Preparing to unpack .../fonts-dejavu-extra_2.35-1_all.deb ...
 Unpacking fonts-dejavu-extra (2.35-1) ...
 Selecting previously unselected package hicolor-icon-theme.
-Preparing to unpack .../hicolor-icon-theme_0.15-0ubuntu1_all.deb ...
-Unpacking hicolor-icon-theme (0.15-0ubuntu1) ...
+Preparing to unpack .../hicolor-icon-theme_0.15-0ubuntu1.1_all.deb ...
+Unpacking hicolor-icon-theme (0.15-0ubuntu1.1) ...
 Selecting previously unselected package javascript-common.
 Preparing to unpack .../javascript-common_11_all.deb ...
 Unpacking javascript-common (11) ...
@@ -877,29 +878,29 @@ Selecting previously unselected package libcairo2:amd64.
 Preparing to unpack .../libcairo2_1.14.6-1_amd64.deb ...
 Unpacking libcairo2:amd64 (1.14.6-1) ...
 Selecting previously unselected package libcups2-dev:amd64.
-Preparing to unpack .../libcups2-dev_2.1.3-4ubuntu0.4_amd64.deb ...
-Unpacking libcups2-dev:amd64 (2.1.3-4ubuntu0.4) ...
+Preparing to unpack .../libcups2-dev_2.1.3-4ubuntu0.5_amd64.deb ...
+Unpacking libcups2-dev:amd64 (2.1.3-4ubuntu0.5) ...
 Selecting previously unselected package libdatrie1:amd64.
 Preparing to unpack .../libdatrie1_0.2.10-2_amd64.deb ...
 Unpacking libdatrie1:amd64 (0.2.10-2) ...
 Selecting previously unselected package libdrm-amdgpu1:amd64.
-Preparing to unpack .../libdrm-amdgpu1_2.4.83-1~16.04.1_amd64.deb ...
-Unpacking libdrm-amdgpu1:amd64 (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm-amdgpu1_2.4.91-2~16.04.1_amd64.deb ...
+Unpacking libdrm-amdgpu1:amd64 (2.4.91-2~16.04.1) ...
 Selecting previously unselected package libpciaccess0:amd64.
 Preparing to unpack .../libpciaccess0_0.13.4-1_amd64.deb ...
 Unpacking libpciaccess0:amd64 (0.13.4-1) ...
 Selecting previously unselected package libdrm-intel1:amd64.
-Preparing to unpack .../libdrm-intel1_2.4.83-1~16.04.1_amd64.deb ...
-Unpacking libdrm-intel1:amd64 (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm-intel1_2.4.91-2~16.04.1_amd64.deb ...
+Unpacking libdrm-intel1:amd64 (2.4.91-2~16.04.1) ...
 Selecting previously unselected package libdrm-nouveau2:amd64.
-Preparing to unpack .../libdrm-nouveau2_2.4.83-1~16.04.1_amd64.deb ...
-Unpacking libdrm-nouveau2:amd64 (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm-nouveau2_2.4.91-2~16.04.1_amd64.deb ...
+Unpacking libdrm-nouveau2:amd64 (2.4.91-2~16.04.1) ...
 Selecting previously unselected package libdrm-radeon1:amd64.
-Preparing to unpack .../libdrm-radeon1_2.4.83-1~16.04.1_amd64.deb ...
-Unpacking libdrm-radeon1:amd64 (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm-radeon1_2.4.91-2~16.04.1_amd64.deb ...
+Unpacking libdrm-radeon1:amd64 (2.4.91-2~16.04.1) ...
 Selecting previously unselected package libelf-dev:amd64.
-Preparing to unpack .../libelf-dev_0.165-3ubuntu1_amd64.deb ...
-Unpacking libelf-dev:amd64 (0.165-3ubuntu1) ...
+Preparing to unpack .../libelf-dev_0.165-3ubuntu1.1_amd64.deb ...
+Unpacking libelf-dev:amd64 (0.165-3ubuntu1.1) ...
 Selecting previously unselected package libfile-fcntllock-perl.
 Preparing to unpack .../libfile-fcntllock-perl_0.22-3_amd64.deb ...
 Unpacking libfile-fcntllock-perl (0.22-3) ...
@@ -910,8 +911,8 @@ Selecting previously unselected package zlib1g-dev:amd64.
 Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4.1_amd64.deb ...
 Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4.1) ...
 Selecting previously unselected package libpng12-dev:amd64.
-Preparing to unpack .../libpng12-dev_1.2.54-1ubuntu1_amd64.deb ...
-Unpacking libpng12-dev:amd64 (1.2.54-1ubuntu1) ...
+Preparing to unpack .../libpng12-dev_1.2.54-1ubuntu1.1_amd64.deb ...
+Unpacking libpng12-dev:amd64 (1.2.54-1ubuntu1.1) ...
 Selecting previously unselected package libfreetype6-dev:amd64.
 Preparing to unpack .../libfreetype6-dev_2.6.1-0.1ubuntu2.3_amd64.deb ...
 Unpacking libfreetype6-dev:amd64 (2.6.1-0.1ubuntu2.3) ...
@@ -919,26 +920,26 @@ Selecting previously unselected package libtiff5:amd64.
 Preparing to unpack .../libtiff5_4.0.6-1ubuntu0.4_amd64.deb ...
 Unpacking libtiff5:amd64 (4.0.6-1ubuntu0.4) ...
 Selecting previously unselected package libgdk-pixbuf2.0-common.
-Preparing to unpack .../libgdk-pixbuf2.0-common_2.32.2-1ubuntu1.4_all.deb ...
-Unpacking libgdk-pixbuf2.0-common (2.32.2-1ubuntu1.4) ...
+Preparing to unpack .../libgdk-pixbuf2.0-common_2.32.2-1ubuntu1.5_all.deb ...
+Unpacking libgdk-pixbuf2.0-common (2.32.2-1ubuntu1.5) ...
 Selecting previously unselected package libgdk-pixbuf2.0-0:amd64.
-Preparing to unpack .../libgdk-pixbuf2.0-0_2.32.2-1ubuntu1.4_amd64.deb ...
-Unpacking libgdk-pixbuf2.0-0:amd64 (2.32.2-1ubuntu1.4) ...
+Preparing to unpack .../libgdk-pixbuf2.0-0_2.32.2-1ubuntu1.5_amd64.deb ...
+Unpacking libgdk-pixbuf2.0-0:amd64 (2.32.2-1ubuntu1.5) ...
 Selecting previously unselected package libgif7:amd64.
 Preparing to unpack .../libgif7_5.1.4-0.3~16.04_amd64.deb ...
 Unpacking libgif7:amd64 (5.1.4-0.3~16.04) ...
 Selecting previously unselected package libglapi-mesa:amd64.
-Preparing to unpack .../libglapi-mesa_17.2.8-0ubuntu0~16.04.1_amd64.deb ...
-Unpacking libglapi-mesa:amd64 (17.2.8-0ubuntu0~16.04.1) ...
-Selecting previously unselected package libllvm5.0:amd64.
-Preparing to unpack .../libllvm5.0_1%3a5.0-3~16.04.1_amd64.deb ...
-Unpacking libllvm5.0:amd64 (1:5.0-3~16.04.1) ...
+Preparing to unpack .../libglapi-mesa_18.0.5-0ubuntu0~16.04.1_amd64.deb ...
+Unpacking libglapi-mesa:amd64 (18.0.5-0ubuntu0~16.04.1) ...
+Selecting previously unselected package libllvm6.0:amd64.
+Preparing to unpack .../libllvm6.0_1%3a6.0-1ubuntu2~16.04.1_amd64.deb ...
+Unpacking libllvm6.0:amd64 (1:6.0-1ubuntu2~16.04.1) ...
 Selecting previously unselected package libsensors4:amd64.
 Preparing to unpack .../libsensors4_1%3a3.4.0-2_amd64.deb ...
 Unpacking libsensors4:amd64 (1:3.4.0-2) ...
 Selecting previously unselected package libgl1-mesa-dri:amd64.
-Preparing to unpack .../libgl1-mesa-dri_17.2.8-0ubuntu0~16.04.1_amd64.deb ...
-Unpacking libgl1-mesa-dri:amd64 (17.2.8-0ubuntu0~16.04.1) ...
+Preparing to unpack .../libgl1-mesa-dri_18.0.5-0ubuntu0~16.04.1_amd64.deb ...
+Unpacking libgl1-mesa-dri:amd64 (18.0.5-0ubuntu0~16.04.1) ...
 Selecting previously unselected package libx11-xcb1:amd64.
 Preparing to unpack .../libx11-xcb1_2%3a1.6.3-1ubuntu2_amd64.deb ...
 Unpacking libx11-xcb1:amd64 (2:1.6.3-1ubuntu2) ...
@@ -958,8 +959,8 @@ Selecting previously unselected package libxcb-sync1:amd64.
 Preparing to unpack .../libxcb-sync1_1.11.1-1ubuntu1_amd64.deb ...
 Unpacking libxcb-sync1:amd64 (1.11.1-1ubuntu1) ...
 Selecting previously unselected package libgl1-mesa-glx:amd64.
-Preparing to unpack .../libgl1-mesa-glx_17.2.8-0ubuntu0~16.04.1_amd64.deb ...
-Unpacking libgl1-mesa-glx:amd64 (17.2.8-0ubuntu0~16.04.1) ...
+Preparing to unpack .../libgl1-mesa-glx_18.0.5-0ubuntu0~16.04.1_amd64.deb ...
+Unpacking libgl1-mesa-glx:amd64 (18.0.5-0ubuntu0~16.04.1) ...
 Selecting previously unselected package libgraphite2-3:amd64.
 Preparing to unpack .../libgraphite2-3_1.3.10-0ubuntu0.16.04.1_amd64.deb ...
 Unpacking libgraphite2-3:amd64 (1.3.10-0ubuntu0.16.04.1) ...
@@ -985,8 +986,8 @@ Selecting previously unselected package libpangocairo-1.0-0:amd64.
 Preparing to unpack .../libpangocairo-1.0-0_1.38.1-1_amd64.deb ...
 Unpacking libpangocairo-1.0-0:amd64 (1.38.1-1) ...
 Selecting previously unselected package libxcursor1:amd64.
-Preparing to unpack .../libxcursor1_1%3a1.1.14-1ubuntu0.16.04.1_amd64.deb ...
-Unpacking libxcursor1:amd64 (1:1.1.14-1ubuntu0.16.04.1) ...
+Preparing to unpack .../libxcursor1_1%3a1.1.14-1ubuntu0.16.04.2_amd64.deb ...
+Unpacking libxcursor1:amd64 (1:1.1.14-1ubuntu0.16.04.2) ...
 Selecting previously unselected package libxrandr2:amd64.
 Preparing to unpack .../libxrandr2_2%3a1.5.0-1_amd64.deb ...
 Unpacking libxrandr2:amd64 (2:1.5.0-1) ...
@@ -1093,14 +1094,14 @@ Selecting previously unselected package mercurial.
 Preparing to unpack .../mercurial_3.7.3-1ubuntu1_amd64.deb ...
 Unpacking mercurial (3.7.3-1ubuntu1) ...
 Selecting previously unselected package openjdk-8-jre:amd64.
-Preparing to unpack .../openjdk-8-jre_8u171-b11-0ubuntu0.16.04.1_amd64.deb ...
-Unpacking openjdk-8-jre:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Preparing to unpack .../openjdk-8-jre_8u181-b13-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking openjdk-8-jre:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 Selecting previously unselected package openjdk-8-jdk-headless:amd64.
-Preparing to unpack .../openjdk-8-jdk-headless_8u171-b11-0ubuntu0.16.04.1_amd64.deb ...
-Unpacking openjdk-8-jdk-headless:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Preparing to unpack .../openjdk-8-jdk-headless_8u181-b13-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking openjdk-8-jdk-headless:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 Selecting previously unselected package openjdk-8-jdk:amd64.
-Preparing to unpack .../openjdk-8-jdk_8u171-b11-0ubuntu0.16.04.1_amd64.deb ...
-Unpacking openjdk-8-jdk:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Preparing to unpack .../openjdk-8-jdk_8u181-b13-0ubuntu0.16.04.1_amd64.deb ...
+Unpacking openjdk-8-jdk:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 Selecting previously unselected package rename.
 Preparing to unpack .../archives/rename_0.20-4_all.deb ...
 Unpacking rename (0.20-4) ...
@@ -1114,11 +1115,14 @@ Selecting previously unselected package zip.
 Preparing to unpack .../archives/zip_3.0-11_amd64.deb ...
 Unpacking zip (3.0-11) ...
 Processing triggers for libc-bin (2.23-0ubuntu10) ...
-Processing triggers for systemd (229-4ubuntu21.2) ...
+Processing triggers for systemd (229-4ubuntu21.4) ...
 Setting up libatm1:amd64 (1:2.5.1-1.5) ...
 Setting up libjson-c2:amd64 (0.11-4ubuntu2) ...
 Setting up libmnl0:amd64 (1.0.3-5) ...
 Setting up libgdbm3:amd64 (1.8.3-13.1) ...
+Setting up libffi6:amd64 (3.2.1-4) ...
+Setting up libglib2.0-0:amd64 (2.48.2-0ubuntu4) ...
+No schema files found: doing nothing.
 Setting up libxau6:amd64 (1:1.0.8-1) ...
 Setting up libxdmcp6:amd64 (1:1.1.2-1.1) ...
 Setting up libxcb1:amd64 (1.11.1-1ubuntu1) ...
@@ -1133,13 +1137,13 @@ debconf: (TERM is not set, so the dialog frontend is not usable.)
 debconf: falling back to frontend: Readline
 Setting up fontconfig-config (2.11.94-0ubuntu1.1) ...
 Setting up libexpat1:amd64 (2.1.0-7ubuntu0.16.04.3) ...
-Setting up libpng12-0:amd64 (1.2.54-1ubuntu1) ...
+Setting up libpng12-0:amd64 (1.2.54-1ubuntu1.1) ...
 Setting up libfreetype6:amd64 (2.6.1-0.1ubuntu2.3) ...
 Setting up libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
 Setting up fontconfig (2.11.94-0ubuntu1.1) ...
 Regenerating fonts cache... done.
 Setting up libasyncns0:amd64 (0.8-5build1) ...
-Setting up x11-common (1:7.7+13ubuntu3) ...
+Setting up x11-common (1:7.7+13ubuntu3.1) ...
 debconf: unable to initialize frontend: Dialog
 debconf: (TERM is not set, so the dialog frontend is not usable.)
 debconf: falling back to frontend: Readline
@@ -1147,7 +1151,7 @@ update-rc.d: warning: start and stop actions are no longer supported; falling ba
 invoke-rc.d: could not determine current runlevel
 invoke-rc.d: policy-rc.d denied execution of start.
 Setting up libice6:amd64 (2:1.0.9-1) ...
-Setting up libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+Setting up libjpeg-turbo8:amd64 (1.4.2-0ubuntu3.1) ...
 Setting up liblcms2-2:amd64 (2.6-3ubuntu2) ...
 Setting up libogg0:amd64 (1.3.2-1) ...
 Setting up libsm6:amd64 (2:1.2.2-1) ...
@@ -1159,14 +1163,13 @@ Setting up libxinerama1:amd64 (2:1.1.3-1) ...
 Setting up libxshmfence1:amd64 (1.2-1) ...
 Setting up libxtst6:amd64 (2:1.2.2-1) ...
 Setting up libxxf86vm1:amd64 (1:1.1.4-1) ...
-Setting up perl-modules-5.22 (5.22.1-9ubuntu0.3) ...
-Setting up libperl5.22:amd64 (5.22.1-9ubuntu0.3) ...
-Setting up perl (5.22.1-9ubuntu0.3) ...
+Setting up perl-modules-5.22 (5.22.1-9ubuntu0.5) ...
+Setting up libperl5.22:amd64 (5.22.1-9ubuntu0.5) ...
+Setting up perl (5.22.1-9ubuntu0.5) ...
 update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode
 Setting up mime-support (3.59ubuntu1) ...
-Setting up libffi6:amd64 (3.2.1-4) ...
 Setting up libsqlite3-0:amd64 (3.11.0-1ubuntu1) ...
-Setting up libssl1.0.0:amd64 (1.0.2g-1ubuntu4.12) ...
+Setting up libssl1.0.0:amd64 (1.0.2g-1ubuntu4.13) ...
 debconf: unable to initialize frontend: Dialog
 debconf: (TERM is not set, so the dialog frontend is not usable.)
 debconf: falling back to frontend: Readline
@@ -1181,10 +1184,10 @@ Setting up libmpc3:amd64 (1.0.3-1) ...
 Setting up libtxc-dxtn-s2tc0:amd64 (0~git20131104-1.1) ...
 update-alternatives: using /usr/lib/x86_64-linux-gnu/libtxc_dxtn_s2tc.so.0 to provide /usr/lib/x86_64-linux-gnu/libtxc_dxtn.so (libtxc-dxtn-x86_64-linux-gnu) in auto mode
 Setting up bzip2 (1.0.6-8) ...
-Setting up libmagic1:amd64 (1:5.25-2ubuntu1) ...
-Setting up file (1:5.25-2ubuntu1) ...
+Setting up libmagic1:amd64 (1:5.25-2ubuntu1.1) ...
+Setting up file (1:5.25-2ubuntu1.1) ...
 Setting up iproute2 (4.3.0-1ubuntu3.16.04.3) ...
-Setting up ifupdown (0.8.10ubuntu1.3) ...
+Setting up ifupdown (0.8.10ubuntu1.4) ...
 Creating /etc/network/interfaces.
 Setting up libisc-export160 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
 Setting up libdns-export162 (1:9.10.3.dfsg.P4-8ubuntu1.10) ...
@@ -1199,7 +1202,7 @@ Setting up libtasn1-6:amd64 (4.7-3ubuntu0.16.04.3) ...
 Setting up libgnutls30:amd64 (3.4.10-4ubuntu1.4) ...
 Setting up libxtables11:amd64 (1.6.0-2ubuntu3) ...
 Setting up netbase (5.3) ...
-Setting up openssl (1.0.2g-1ubuntu4.12) ...
+Setting up openssl (1.0.2g-1ubuntu4.13) ...
 Setting up ca-certificates (20170717~16.04.1) ...
 debconf: unable to initialize frontend: Dialog
 debconf: (TERM is not set, so the dialog frontend is not usable.)
@@ -1208,50 +1211,48 @@ Setting up libcap-ng0:amd64 (0.7.7-1) ...
 Setting up libdbus-1-3:amd64 (1.10.6-1ubuntu3.3) ...
 Setting up dbus (1.10.6-1ubuntu3.3) ...
 Setting up krb5-locales (1.13.2+dfsg-5ubuntu2) ...
-Setting up libdrm-common (2.4.83-1~16.04.1) ...
-Setting up libdrm2:amd64 (2.4.83-1~16.04.1) ...
+Setting up libdrm-common (2.4.91-2~16.04.1) ...
+Setting up libdrm2:amd64 (2.4.91-2~16.04.1) ...
 Setting up libedit2:amd64 (3.1-20150325-1ubuntu2) ...
-Setting up libelf1:amd64 (0.165-3ubuntu1) ...
-Setting up libglib2.0-0:amd64 (2.48.2-0ubuntu1) ...
-No schema files found: doing nothing.
-Setting up libglib2.0-data (2.48.2-0ubuntu1) ...
+Setting up libelf1:amd64 (0.165-3ubuntu1.1) ...
+Setting up libglib2.0-data (2.48.2-0ubuntu4) ...
 Setting up libkrb5support0:amd64 (1.13.2+dfsg-5ubuntu2) ...
 Setting up libk5crypto3:amd64 (1.13.2+dfsg-5ubuntu2) ...
 Setting up libkeyutils1:amd64 (1.5.9-8ubuntu1) ...
 Setting up libkrb5-3:amd64 (1.13.2+dfsg-5ubuntu2) ...
 Setting up libgssapi-krb5-2:amd64 (1.13.2+dfsg-5ubuntu2) ...
 Setting up libicu55:amd64 (55.1-7ubuntu0.4) ...
-Setting up libxml2:amd64 (2.9.3+dfsg1-1ubuntu0.5) ...
+Setting up libxml2:amd64 (2.9.3+dfsg1-1ubuntu0.6) ...
 Setting up libxmuu1:amd64 (2:1.1.2-2) ...
 Setting up manpages (4.04-2) ...
 Setting up openssh-client (1:7.2p2-4ubuntu2.4) ...
-Setting up shared-mime-info (1.5-2ubuntu0.1) ...
+Setting up shared-mime-info (1.5-2ubuntu0.2) ...
 Setting up xauth (1:1.0.9-1ubuntu2) ...
 Setting up xdg-user-dirs (0.15-2ubuntu6.16.04.1) ...
 Setting up xml-core (0.13+nmu2) ...
 Setting up binutils (2.26.1-1ubuntu1~16.04.6) ...
 Setting up libc-dev-bin (2.23-0ubuntu10) ...
-Setting up linux-libc-dev:amd64 (4.4.0-124.148) ...
+Setting up linux-libc-dev:amd64 (4.4.0-133.159) ...
 Setting up libc6-dev:amd64 (2.23-0ubuntu10) ...
 Setting up libisl15:amd64 (0.16.1-1) ...
-Setting up cpp-5 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up cpp-5 (5.4.0-6ubuntu1~16.04.10) ...
 Setting up cpp (4:5.3.1-1ubuntu1) ...
-Setting up libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libgomp1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libitm1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libatomic1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libasan2:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up liblsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libtsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libubsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libmpx0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up gcc-5 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libgomp1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libitm1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libatomic1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libasan2:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up liblsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libtsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libubsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libmpx0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up gcc-5 (5.4.0-6ubuntu1~16.04.10) ...
 Setting up gcc (4:5.3.1-1ubuntu1) ...
-Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.9) ...
-Setting up g++-5 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+Setting up g++-5 (5.4.0-6ubuntu1~16.04.10) ...
 Setting up g++ (4:5.3.1-1ubuntu1) ...
 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
 Setting up make (4.1-6) ...
@@ -1265,7 +1266,7 @@ Setting up java-common (0.56ubuntu2) ...
 Setting up libavahi-common-data:amd64 (0.6.32~rc+dfsg-1ubuntu2.2) ...
 Setting up libavahi-common3:amd64 (0.6.32~rc+dfsg-1ubuntu2.2) ...
 Setting up libavahi-client3:amd64 (0.6.32~rc+dfsg-1ubuntu2.2) ...
-Setting up libcups2:amd64 (2.1.3-4ubuntu0.4) ...
+Setting up libcups2:amd64 (2.1.3-4ubuntu0.5) ...
 Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
 Setting up libnspr4:amd64 (2:4.13.1-0ubuntu0.16.04.1) ...
 Setting up libpcsclite1:amd64 (1.8.14-1ubuntu1.16.04.1) ...
@@ -1275,7 +1276,7 @@ Setting up libfakeroot:amd64 (1.20.2-1ubuntu1) ...
 Setting up fakeroot (1.20.2-1ubuntu1) ...
 update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
 Setting up fonts-dejavu-extra (2.35-1) ...
-Setting up hicolor-icon-theme (0.15-0ubuntu1) ...
+Setting up hicolor-icon-theme (0.15-0ubuntu1.1) ...
 Setting up javascript-common (11) ...
 Setting up libalgorithm-diff-perl (1.19.03-1) ...
 Setting up libalgorithm-diff-xs-perl (0.04-4build1) ...
@@ -1289,34 +1290,34 @@ Setting up libpixman-1-0:amd64 (0.33.6-1) ...
 Setting up libxcb-render0:amd64 (1.11.1-1ubuntu1) ...
 Setting up libxcb-shm0:amd64 (1.11.1-1ubuntu1) ...
 Setting up libcairo2:amd64 (1.14.6-1) ...
-Setting up libcups2-dev:amd64 (2.1.3-4ubuntu0.4) ...
+Setting up libcups2-dev:amd64 (2.1.3-4ubuntu0.5) ...
 Setting up libdatrie1:amd64 (0.2.10-2) ...
-Setting up libdrm-amdgpu1:amd64 (2.4.83-1~16.04.1) ...
+Setting up libdrm-amdgpu1:amd64 (2.4.91-2~16.04.1) ...
 Setting up libpciaccess0:amd64 (0.13.4-1) ...
-Setting up libdrm-intel1:amd64 (2.4.83-1~16.04.1) ...
-Setting up libdrm-nouveau2:amd64 (2.4.83-1~16.04.1) ...
-Setting up libdrm-radeon1:amd64 (2.4.83-1~16.04.1) ...
-Setting up libelf-dev:amd64 (0.165-3ubuntu1) ...
+Setting up libdrm-intel1:amd64 (2.4.91-2~16.04.1) ...
+Setting up libdrm-nouveau2:amd64 (2.4.91-2~16.04.1) ...
+Setting up libdrm-radeon1:amd64 (2.4.91-2~16.04.1) ...
+Setting up libelf-dev:amd64 (0.165-3ubuntu1.1) ...
 Setting up libfile-fcntllock-perl (0.22-3) ...
 Setting up libflac8:amd64 (1.3.1-4) ...
 Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4.1) ...
-Setting up libpng12-dev:amd64 (1.2.54-1ubuntu1) ...
+Setting up libpng12-dev:amd64 (1.2.54-1ubuntu1.1) ...
 Setting up libfreetype6-dev:amd64 (2.6.1-0.1ubuntu2.3) ...
 Setting up libtiff5:amd64 (4.0.6-1ubuntu0.4) ...
-Setting up libgdk-pixbuf2.0-common (2.32.2-1ubuntu1.4) ...
-Setting up libgdk-pixbuf2.0-0:amd64 (2.32.2-1ubuntu1.4) ...
+Setting up libgdk-pixbuf2.0-common (2.32.2-1ubuntu1.5) ...
+Setting up libgdk-pixbuf2.0-0:amd64 (2.32.2-1ubuntu1.5) ...
 Setting up libgif7:amd64 (5.1.4-0.3~16.04) ...
-Setting up libglapi-mesa:amd64 (17.2.8-0ubuntu0~16.04.1) ...
-Setting up libllvm5.0:amd64 (1:5.0-3~16.04.1) ...
+Setting up libglapi-mesa:amd64 (18.0.5-0ubuntu0~16.04.1) ...
+Setting up libllvm6.0:amd64 (1:6.0-1ubuntu2~16.04.1) ...
 Setting up libsensors4:amd64 (1:3.4.0-2) ...
-Setting up libgl1-mesa-dri:amd64 (17.2.8-0ubuntu0~16.04.1) ...
+Setting up libgl1-mesa-dri:amd64 (18.0.5-0ubuntu0~16.04.1) ...
 Setting up libx11-xcb1:amd64 (2:1.6.3-1ubuntu2) ...
 Setting up libxcb-dri2-0:amd64 (1.11.1-1ubuntu1) ...
 Setting up libxcb-dri3-0:amd64 (1.11.1-1ubuntu1) ...
 Setting up libxcb-glx0:amd64 (1.11.1-1ubuntu1) ...
 Setting up libxcb-present0:amd64 (1.11.1-1ubuntu1) ...
 Setting up libxcb-sync1:amd64 (1.11.1-1ubuntu1) ...
-Setting up libgl1-mesa-glx:amd64 (17.2.8-0ubuntu0~16.04.1) ...
+Setting up libgl1-mesa-glx:amd64 (18.0.5-0ubuntu0~16.04.1) ...
 update-alternatives: using /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf to provide /etc/ld.so.conf.d/x86_64-linux-gnu_GL.conf (x86_64-linux-gnu_gl_conf) in auto mode
 Setting up libgraphite2-3:amd64 (1.3.10-0ubuntu0.16.04.1) ...
 Setting up libgtk2.0-common (2.24.30-1ubuntu1.16.04.2) ...
@@ -1326,7 +1327,7 @@ Setting up libpango-1.0-0:amd64 (1.38.1-1) ...
 Setting up libharfbuzz0b:amd64 (1.0.1-1ubuntu0.1) ...
 Setting up libpangoft2-1.0-0:amd64 (1.38.1-1) ...
 Setting up libpangocairo-1.0-0:amd64 (1.38.1-1) ...
-Setting up libxcursor1:amd64 (1:1.1.14-1ubuntu0.16.04.1) ...
+Setting up libxcursor1:amd64 (1:1.1.14-1ubuntu0.16.04.2) ...
 Setting up libxrandr2:amd64 (2:1.5.0-1) ...
 Setting up libgtk2.0-0:amd64 (2.24.30-1ubuntu1.16.04.2) ...
 Setting up libgtk2.0-bin (2.24.30-1ubuntu1.16.04.2) ...
@@ -1374,7 +1375,7 @@ Setting up unzip (6.0-20ubuntu1) ...
 Setting up zip (3.0-11) ...
 Setting up libnss3-nssdb (2:3.28.4-0ubuntu0.16.04.3) ...
 Setting up libnss3:amd64 (2:3.28.4-0ubuntu0.16.04.3) ...
-Setting up openjdk-8-jre-headless:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Setting up openjdk-8-jre-headless:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
@@ -1388,41 +1389,41 @@ update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/tnameserv t
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
 Setting up ca-certificates-java (20160321ubuntu1) ...
 done.
-Setting up openjdk-8-jre:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Setting up openjdk-8-jre:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/policytool to provide /usr/bin/policytool (policytool) in auto mode
-Setting up openjdk-8-jdk-headless:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Setting up openjdk-8-jdk-headless:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/idlj to provide /usr/bin/idlj (idlj) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/wsimport to provide /usr/bin/wsimport (wsimport) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/rmic to provide /usr/bin/rmic (rmic) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jsadebugd to provide /usr/bin/jsadebugd (jsadebugd) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/native2ascii to provide /usr/bin/native2ascii (native2ascii) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javah to provide /usr/bin/javah (javah) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jhat to provide /usr/bin/jhat (jhat) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode
-update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/xjc to provide /usr/bin/xjc (xjc) in auto mode
-update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/schemagen to provide /usr/bin/schemagen (schemagen) in auto mode
-update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/extcheck to provide /usr/bin/extcheck (extcheck) in auto mode
-update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/rmic to provide /usr/bin/rmic (rmic) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/schemagen to provide /usr/bin/schemagen (schemagen) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/xjc to provide /usr/bin/xjc (xjc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode
-update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jhat to provide /usr/bin/jhat (jhat) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/wsgen to provide /usr/bin/wsgen (wsgen) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode
-update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
-Setting up openjdk-8-jdk:amd64 (8u171-b11-0ubuntu0.16.04.1) ...
+Setting up openjdk-8-jdk:amd64 (8u181-b13-0ubuntu0.16.04.1) ...
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/appletviewer to provide /usr/bin/appletviewer (appletviewer) in auto mode
 update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode
 Processing triggers for libc-bin (2.23-0ubuntu10) ...
-Processing triggers for systemd (229-4ubuntu21.2) ...
+Processing triggers for systemd (229-4ubuntu21.4) ...
 Processing triggers for ca-certificates (20170717~16.04.1) ...
 Updating certificates in /etc/ssl/certs...
 148 added, 0 removed; done.
@@ -1579,14 +1580,14 @@ Adding debian:thawte_Primary_Root_CA_-_G3.pem
 done.
 done.
 Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
+----> Creating CA certs bundle
 [91m+ echo '----> Creating CA certs bundle'
 + mkdir cacerts/
-[0m----> Creating CA certs bundle
-[91m+ awk '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/{ print $0; }' /etc/ssl/certs/ca-certificates.crt
 [0m[91m+ csplit -n 3 -s -f cacerts/ - '/-----BEGIN CERTIFICATE-----/' '{*}'
+[0m[91m+ awk '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/{ print $0; }' /etc/ssl/certs/ca-certificates.crt
 [0m[91m+ rm cacerts/000
 [0m[91m++ find cacerts -type f
-[0m[91m++ sort
+++ sort
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/001
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/001 -alias 001
@@ -1666,7 +1667,7 @@ Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/020
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/020 -alias 020
-[0m[91mCertificate was added to keystore[0m[91m
+[0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/021
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/021 -alias 021
@@ -2038,7 +2039,7 @@ Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/113
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/113 -alias 113
-[0m[91mCertificate was added to keystore[0m[91m
+[0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/114
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/114 -alias 114
@@ -2046,7 +2047,7 @@ Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/115
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/115 -alias 115
-[0m[91mCertificate was added to keystore
+[0m[91mCertificate was added to keystore[0m[91m
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/116
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/116 -alias 116
@@ -2080,7 +2081,7 @@ Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/123 -alias 123
 [0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
-++ basename cacerts/124
+[0m[91m++ basename cacerts/124
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/124 -alias 124
 [0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
@@ -2097,7 +2098,7 @@ Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
 [0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/128
-+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/128 -alias 128
+[0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/128 -alias 128
 [0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
 [0m[91m++ basename cacerts/129
@@ -2116,7 +2117,7 @@ Processing triggers for sgml-base (1.26+nmu4ubuntu1) ...
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/132 -alias 132
 [0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
-++ basename cacerts/133
+[0m[91m++ basename cacerts/133
 [0m[91m+ keytool -importcert -noprompt -keystore cacerts.jks -storepass changeit -file cacerts/133 -alias 133
 [0m[91mCertificate was added to keystore
 [0m[91m+ for I in '$(find cacerts -type f | sort)'
@@ -2252,56 +2253,56 @@ updating to branch default
                   jdk:   updating to branch default
                   jdk:   27322 files updated, 0 files merged, 0 files removed, 0 files unresolved
 # Repositories:  . corba jaxp jaxws langtools jdk hotspot nashorn 
-                 jaxp:   cd jaxp && hg pull -u
-                 jaxp:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/jaxp
-                 jaxp:   searching for changes
-                 jaxp:   no changes found
-              nashorn:   cd nashorn && hg pull -u
-              nashorn:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/nashorn
-              nashorn:   searching for changes
-              nashorn:   no changes found
-                jaxws:   cd jaxws && hg pull -u
-                jaxws:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/jaxws
-                jaxws:   searching for changes
-                jaxws:   no changes found
                 corba:   cd corba && hg pull -u
                 corba:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/corba
                 corba:   searching for changes
                 corba:   no changes found
-              hotspot:   cd hotspot && hg pull -u
-              hotspot:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/hotspot
-              hotspot:   searching for changes
-              hotspot:   no changes found
+                 jaxp:   cd jaxp && hg pull -u
+                 jaxp:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/jaxp
+                 jaxp:   searching for changes
+                 jaxp:   no changes found
                     .:   cd . && hg pull -u
                     .:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u
                     .:   searching for changes
                     .:   no changes found
+                jaxws:   cd jaxws && hg pull -u
+                jaxws:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/jaxws
+                jaxws:   searching for changes
+                jaxws:   no changes found
             langtools:   cd langtools && hg pull -u
             langtools:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/langtools
             langtools:   searching for changes
             langtools:   no changes found
+              hotspot:   cd hotspot && hg pull -u
+              hotspot:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/hotspot
+              hotspot:   searching for changes
+              hotspot:   no changes found
+              nashorn:   cd nashorn && hg pull -u
+              nashorn:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/nashorn
+              nashorn:   searching for changes
+              nashorn:   no changes found
                   jdk:   cd jdk && hg pull -u
                   jdk:   pulling from http://hg.openjdk.java.net/jdk-updates/jdk9u/jdk
                   jdk:   searching for changes
                   jdk:   no changes found
 [91m+ ./common/bin/hgforest.sh checkout jdk-9.0.4+12
 [0m# Repositories:  . corba jaxp jaxws langtools jdk hotspot nashorn 
-                corba:   cd corba && hg checkout jdk-9.0.4+12
-                corba:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
-                    .:   cd . && hg checkout jdk-9.0.4+12
-                    .:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
-                  jdk:   cd jdk && hg checkout jdk-9.0.4+12
-                  jdk:   16 files updated, 0 files merged, 7 files removed, 0 files unresolved
-                 jaxp:   cd jaxp && hg checkout jdk-9.0.4+12
-                 jaxp:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
-              nashorn:   cd nashorn && hg checkout jdk-9.0.4+12
-              nashorn:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
                 jaxws:   cd jaxws && hg checkout jdk-9.0.4+12
                 jaxws:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
-            langtools:   cd langtools && hg checkout jdk-9.0.4+12
-            langtools:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
+                    .:   cd . && hg checkout jdk-9.0.4+12
+                    .:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
               hotspot:   cd hotspot && hg checkout jdk-9.0.4+12
               hotspot:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
+                corba:   cd corba && hg checkout jdk-9.0.4+12
+                corba:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
+                  jdk:   cd jdk && hg checkout jdk-9.0.4+12
+                  jdk:   16 files updated, 0 files merged, 7 files removed, 0 files unresolved
+            langtools:   cd langtools && hg checkout jdk-9.0.4+12
+            langtools:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
+              nashorn:   cd nashorn && hg checkout jdk-9.0.4+12
+              nashorn:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
+                 jaxp:   cd jaxp && hg checkout jdk-9.0.4+12
+                 jaxp:   1 files updated, 0 files merged, 0 files removed, 0 files unresolved
 [91m+ popd
 + echo '----> Building OpenJDK 9'
 + pushd jdk9u
@@ -2311,7 +2312,7 @@ updating to branch default
 [91m++ pwd
 [0m[91m+ ./configure --disable-warnings-as-errors --with-boot-jdk=/usr/lib/jvm/java-8-openjdk-amd64/ --with-cacerts-file=/tmp/jdk9u/../cacerts.jks --with-native-debug-symbols=none --with-version-pre= --with-version-opt= --with-version-build=12
 [0mRunning generated-configure.sh
-configure: Configuration created at Tue May 15 18:18:37 UTC 2018.
+configure: Configuration created at Wed Aug 22 22:23:02 UTC 2018.
 configure: configure script generated at timestamp 1512412485.
 checking for basename... /usr/bin/basename
 checking for bash... /bin/bash
@@ -2419,7 +2420,7 @@ checking if packaged modules are kept... yes (default)
 checking for version string... 9.0.4+12
 configure: Found potential Boot JDK using configure arguments
 checking for Boot JDK... /usr/lib/jvm/java-8-openjdk-amd64
-checking Boot JDK version... openjdk version "1.8.0_171" OpenJDK Runtime Environment (build 1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11) OpenJDK 64-Bit Server VM (build 25.171-b11, mixed mode) 
+checking Boot JDK version... openjdk version "1.8.0_181" OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13) OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode) 
 checking for java in Boot JDK... ok
 checking for javac in Boot JDK... ok
 checking for javah in Boot JDK... ok
@@ -2431,7 +2432,7 @@ checking for Build JDK... yes, will use output dir
 configure: Using default toolchain gcc (GNU Compiler Collection)
 checking for gcc... /usr/bin/gcc
 checking resolved symbolic links for CC... /usr/bin/gcc-5
-configure: Using gcc C compiler version 5.4.0 [gcc (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609]
+configure: Using gcc C compiler version 5.4.0 [gcc (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609]
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
 checking for suffix of executables... 
@@ -2442,7 +2443,7 @@ checking whether /usr/bin/gcc accepts -g... yes
 checking for /usr/bin/gcc option to accept ISO C89... none needed
 checking for g++... /usr/bin/g++
 checking resolved symbolic links for CXX... /usr/bin/g++-5
-configure: Using gcc C++ compiler version 5.4.0 [g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609]
+configure: Using gcc C++ compiler version 5.4.0 [g++ (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609]
 checking whether we are using the GNU C++ compiler... yes
 checking whether /usr/bin/g++ accepts -g... yes
 checking how to run the C preprocessor... /usr/bin/gcc -E
@@ -2550,7 +2551,7 @@ checking if elliptic curve crypto implementation is present... yes
 checking if jtreg failure handler should be built... no, missing jtreg
 checking if the CDS classlist generation should be enabled... yes
 checking for number of cores... 8
-checking for memory size... 16047 MB
+checking for memory size... 16046 MB
 checking for appropriate number of jobs to run in parallel... 8
 checking flags for boot jdk java command ...  -Duser.language=en -Duser.country=US 
 checking flags for boot jdk java command for big workloads...  -Xms64M -Xmx1600M -XX:ThreadStackSize=1536
@@ -2584,14 +2585,14 @@ Configuration summary:
 * Version string: 9.0.4+12 (9.0.4)
 
 Tools summary:
-* Boot JDK:       openjdk version "1.8.0_171" OpenJDK Runtime Environment (build 1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11) OpenJDK 64-Bit Server VM (build 25.171-b11, mixed mode)  (at /usr/lib/jvm/java-8-openjdk-amd64)
+* Boot JDK:       openjdk version "1.8.0_181" OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13) OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)  (at /usr/lib/jvm/java-8-openjdk-amd64)
 * Toolchain:      gcc (GNU Compiler Collection)
 * C Compiler:     Version 5.4.0 (at /usr/bin/gcc)
 * C++ Compiler:   Version 5.4.0 (at /usr/bin/g++)
 
 Build performance summary:
 * Cores to use:   8
-* Memory limit:   16047 MB
+* Memory limit:   16046 MB
 
 [91m+ COMPANY_NAME=github.com/bosh-packages/java-release
 + make images
@@ -2601,10 +2602,10 @@ Creating hotspot/variant-server/tools/adlc/adlc from 13 file(s)
 Compiling 2 files for BUILD_JVMTI_TOOLS
 Creating support/modules_libs/java.base/libjsig.so from 1 file(s)
 Parsing 1 properties into enum-like class for jdk.compiler
+Compiling 17 properties into resource bundles for jdk.compiler
 Compiling 19 properties into resource bundles for jdk.javadoc
 Compiling 12 properties into resource bundles for jdk.jdeps
 Compiling 7 properties into resource bundles for jdk.jshell
-Compiling 17 properties into resource bundles for jdk.compiler
 Compiling 117 files for BUILD_INTERIM_java.compiler
 Creating support/modules_libs/java.base/server/libjvm.so from 695 file(s)
 Creating hotspot/variant-server/libjvm/gtest/libjvm.so from 53 file(s)
@@ -2613,46 +2614,46 @@ Compiling 396 files for BUILD_INTERIM_jdk.compiler
 Compiling 61 files for BUILD_INTERIM_jdk.jdeps
 Compiling 457 files for BUILD_INTERIM_jdk.javadoc
 [91mNote: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
 [0mCompiling 159 files for BUILD_TOOLS_JDK
 Compiling 141 files for BUILD_IDLJ
 Compiling 6 files for BUILD_TOOLS_CORBA
-[91mNote: /tmp/jdk9u/corba/src/java.corba/share/classes/com/sun/tools/corba/se/idl/som/idlemit/MetaPragma.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-[0m[91mNote: Some input files use unchecked or unsafe operations.
-[0m[91mNote: Recompile with -Xlint:unchecked for details.
-[0mCompiling 928 files for BUILD_VM_COMPILER_MATCH_PROCESSOR
+Compiling 928 files for BUILD_VM_COMPILER_MATCH_PROCESSOR
 Compiling 9 files for BUILD_VM_COMPILER_NODEINFO_PROCESSOR
 Compiling 12 files for BUILD_VM_COMPILER_OPTIONS_PROCESSOR
 Compiling 311 files for BUILD_VM_COMPILER_REPLACEMENTS_VERIFIER
 Compiling 8 files for BUILD_VM_COMPILER_SERVICEPROVIDER_PROCESSOR
 Creating buildtools/jdk.vm.compiler.nodeinfo.processor.jar
 Creating buildtools/jdk.vm.compiler.options.processor.jar
+[91mNote: /tmp/jdk9u/corba/src/java.corba/share/classes/com/sun/tools/corba/se/idl/som/idlemit/MetaPragma.java uses or overrides a deprecated API.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
+[0m[91mNote: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+[0m[91mNote: Some input files use unchecked or unsafe operations.
+[0m[91mNote: Recompile with -Xlint:unchecked for details.
+[0mCreating buildtools/jdk.vm.compiler.serviceprovider.processor.jar
+Compiling 198 files for BUILD_INTERIM_RMIC
+Compiling 31 files for BUILD_JRTFS
+Creating support/modules_libs/java.base/jrt-fs.jar
+[91mNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+[0mCreating buildtools/jdk.vm.compiler.replacements.verifier.jar
+Compiling 2 files for BUILD_BREAKITERATOR_BASE
+Compiling 2 files for BUILD_BREAKITERATOR_LD
+Creating buildtools/jdk.vm.compiler.match.processor.jar
+Compiling 11 properties into resource bundles for java.logging
 Compiling 11 properties into resource bundles for jdk.jartool
 Compiling 11 properties into resource bundles for jdk.management.agent
-Creating buildtools/jdk.vm.compiler.serviceprovider.processor.jar
+Compiling 11 properties into resource bundles for java.base
+Compiling 6 properties into resource bundles for java.base
 Compiling 3 properties into resource bundles for jdk.jdi
 Compiling 4 properties into resource bundles for jdk.jlink
 Compiling 3 properties into resource bundles for jdk.jlink
 Compiling 1 properties into resource bundles for jdk.jlink
-Compiling 224 properties into resource bundles for jdk.localedata
 Compiling 3 files for COMPILE_CREATE_SYMBOLS
-Compiling 198 files for BUILD_INTERIM_RMIC
-Compiling 31 files for BUILD_JRTFS
+Compiling 224 properties into resource bundles for jdk.localedata
 Creating ct.sym classes
-Creating buildtools/jdk.vm.compiler.replacements.verifier.jar
-Creating support/modules_libs/java.base/jrt-fs.jar
-[91mNote: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-[0mCompiling 2 files for BUILD_BREAKITERATOR_BASE
-Compiling 2 files for BUILD_BREAKITERATOR_LD
-Creating buildtools/jdk.vm.compiler.match.processor.jar
 Creating support/symbols/ct.sym
-Compiling 11 properties into resource bundles for java.logging
-Compiling 11 properties into resource bundles for java.base
-Compiling 6 properties into resource bundles for java.base
 Compiling 2900 files for java.base
 Compiling 100 properties into resource bundles for java.desktop
 Compiling 34 files for java.logging
@@ -2666,6 +2667,7 @@ Compiling 6 files for java.xml.ws.annotation
 Compiling 44 files for jdk.httpserver
 Compiling 21 files for java.smartcardio
 Compiling 181 files for jdk.internal.vm.ci
+Compiling 24 files for jdk.management
 Compiling 59 files for jdk.internal.jvmstat
 Compiling 118 files for jdk.charsets
 Compiling 399 files for jdk.compiler
@@ -2675,113 +2677,112 @@ Compiling 3 files for jdk.internal.ed
 Compiling 124 files for jdk.incubator.httpclient
 Compiling 46 files for jdk.internal.le
 Compiling 46 files for jdk.internal.opt
-Compiling 32 files for jdk.jartool
 Compiling 1833 files for java.xml
+Compiling 32 files for jdk.jartool
 Compiling 1 files for jdk.jdwp.agent
 Compiling 2102 files for jdk.localedata
 Compiling 6 files for jdk.net
 Compiling 1 files for jdk.pack
-Compiling 117 files for BUILD_NASGEN
 Compiling 33 files for jdk.sctp
+Compiling 117 files for BUILD_NASGEN
 Compiling 14 files for jdk.zipfs
 Compiling 25 files for java.activation
+Compiling 30 files for java.security.sasl
 [91mNote: Some input files use or override a deprecated API.
-[0m[91mNote: Recompile with -Xlint:deprecation for details.
+Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-[0mCompiling 30 files for java.security.sasl
-Compiling 24 files for jdk.management
-Compiling 127 files for java.rmi
+[0mCompiling 15 files for jdk.attach
 Compiling 595 files for jdk.scripting.nashorn
-Compiling 15 files for jdk.attach
+Compiling 127 files for java.rmi
 Compiling 67 files for jdk.crypto.cryptoki
-Compiling 193 files for java.naming
 Compiling 38 files for jdk.jcmd
-Compiling 16 files for jdk.naming.dns
+Compiling 131 files for jdk.jdeps
 Compiling 250 files for jdk.jdi
 Compiling 11 files for jdk.jstatd
-Compiling 7 files for jdk.naming.rmi
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 193 files for java.naming
 Compiling 4 files for java.transaction
-Warning: generation and use of skeletons and static stubs for JRMP
-is deprecated. Skeletons are unnecessary, and static stubs have
-been superseded by dynamically generated stubs. Users are
-encouraged to migrate away from using rmic to generate skeletons and static
-stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
-Compiling 14 files for java.management.rmi
-Compiling 211 files for java.security.jgss
-Compiling 131 files for jdk.jdeps
-Running nasgen
-Compiling 31 files for jdk.management.agent
-Warning: generation and use of skeletons and static stubs for JRMP
-is deprecated. Skeletons are unnecessary, and static stubs have
-been superseded by dynamically generated stubs. Users are
-encouraged to migrate away from using rmic to generate skeletons and static
-stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
-Warning: generation and use of skeletons and static stubs for JRMP
-is deprecated. Skeletons are unnecessary, and static stubs have
-been superseded by dynamically generated stubs. Users are
-encouraged to migrate away from using rmic to generate skeletons and static
-stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
 Compiling 76 files for jdk.jlink
-Compiling 16 files for jdk.security.jgss
+Running nasgen
+Compiling 14 files for java.management.rmi
 [91mNote: Some input files use or override a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
-Note: Some input files use or override a deprecated API that is marked for removal.
+[0m[91mNote: Some input files use or override a deprecated API that is marked for removal.
 [0m[91mNote: Recompile with -Xlint:removal for details.
 [0m[91mNote: Some input files use unchecked or unsafe operations.
 [0m[91mNote: Recompile with -Xlint:unchecked for details.
-[0mCompiling 37 files for jdk.security.auth
-Compiling 94 files for jdk.xml.dom
-Compiling 14 files for java.prefs
+[0mCompiling 211 files for java.security.jgss
 Compiling 78 files for java.sql
 Compiling 283 files for java.xml.crypto
-Compiling 94 files for jdk.jshell
+Compiling 31 files for jdk.management.agent
+Compiling 16 files for jdk.naming.dns
+Compiling 7 files for jdk.naming.rmi
 Compiling 460 files for jdk.javadoc
+Compiling 16 files for jdk.security.jgss
+Compiling 37 files for jdk.security.auth
+Compiling 94 files for jdk.xml.dom
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+Compiling 14 files for java.prefs
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
 Compiling 51 files for java.sql.rowset
+Compiling 94 files for jdk.jshell
 Compiling 2887 files for java.desktop
-Compiling 1572 files for jdk.internal.vm.compiler
 Updating support/src.zip
+Compiling 1572 files for jdk.internal.vm.compiler
 Compiling 72 files for jdk.aot
+Compiling 1483 files for java.corba
 Compiling 1 files for java.se
 Compiling 18 files for jdk.accessibility
-Compiling 1483 files for java.corba
 Compiling 3 files for jdk.editpad
-Compiling 985 files for jdk.hotspot.agent
 Compiling 64 files for jdk.jconsole
 Compiling 5 files for jdk.jsobject
+Compiling 985 files for jdk.hotspot.agent
 Compiling 14 files for jdk.policytool
-Compiling 760 files for java.xml.bind
 Compiling 10 files for jdk.scripting.nashorn.shell
+Compiling 760 files for java.xml.bind
 [91mNote: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
+[0m[91mNote: Some input files use or override a deprecated API that is marked for removal.
+[0m[91mNote: Recompile with -Xlint:removal for details.
 Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-[0m[91mNote: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Note: Some input files use or override a deprecated API that is marked for removal.
-Note: Recompile with -Xlint:removal for details.
-Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
+[0m[91mNote: Recompile with -Xlint:unchecked for details.
 [0mCompiling 227 files for jdk.rmic
 [91mNote: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
-Note: /tmp/jdk9u/jaxws/src/java.xml.bind/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
-Note: Recompile with -Xlint:removal for details.
 [0m[91mNote: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 [0m[91mNote: Some input files use or override a deprecated API.
-[0m[91mNote: Recompile with -Xlint:deprecation for details.
+Note: Recompile with -Xlint:deprecation for details.
 Note: /tmp/jdk9u/jdk/src/jdk.rmic/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+[0m[91mNote: Some input files use unchecked or unsafe operations.
+[0m[91mNote: Recompile with -Xlint:unchecked for details.
+[0m[91mNote: Some input files use or override a deprecated API.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
+Note: /tmp/jdk9u/jaxws/src/java.xml.bind/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
 Note: Recompile with -Xlint:removal for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 [0mCompiling 791 files for jdk.xml.bind
 [91mNote: Some input files use or override a deprecated API.
-[0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0m[91mNote: /tmp/jdk9u/jaxws/src/jdk.xml.bind/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
-[0m[91mNote: Recompile with -Xlint:removal for details.
-[0m[91mNote: Some input files use unchecked or unsafe operations.
-[0m[91mNote: Recompile with -Xlint:unchecked for details.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /tmp/jdk9u/jaxws/src/jdk.xml.bind/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
+Note: Recompile with -Xlint:removal for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
 [0mCompiling 1241 files for java.xml.ws
 [91m/tmp/jdk9u/jaxws/src/java.xml.ws/share/classes/com/sun/xml/internal/messaging/saaj/packaging/mime/internet/MimeBodyPart.java:1097: warning: auxiliary class hdr in /tmp/jdk9u/jaxws/src/java.xml.ws/share/classes/com/sun/xml/internal/messaging/saaj/packaging/mime/internet/InternetHeaders.java should not be accessed from outside its own source file
     public FinalArrayList<hdr> getAllHeaders() {
@@ -2792,7 +2793,7 @@ Note: /tmp/jdk9u/jaxws/src/java.xml.ws/share/classes/module-info.java uses or ov
 Note: Recompile with -Xlint:removal for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-[0m[91m1 warning
+1 warning
 [0mCompiling 1 files for java.se.ee
 Compiling 236 files for jdk.xml.ws
 [91mNote: Some input files use or override a deprecated API.
@@ -2800,32 +2801,33 @@ Note: Recompile with -Xlint:deprecation for details.
 Note: /tmp/jdk9u/jaxws/src/jdk.xml.ws/share/classes/module-info.java uses or overrides a deprecated API that is marked for removal.
 Note: Recompile with -Xlint:removal for details.
 Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-[0mCreating support/modules_libs/java.base/libverify.so from 2 file(s)
-Creating support/modules_libs/java.base/libjava.so from 60 file(s)
+[0m[91mNote: Recompile with -Xlint:unchecked for details.
+[0mCreating support/modules_libs/java.base/libjava.so from 60 file(s)
+Creating support/modules_libs/java.base/libverify.so from 2 file(s)
 Creating support/native/java.base/libfdlibm.a from 57 file(s)
-Creating support/modules_libs/java.base/jli/libjli.so from 8 file(s)
-Creating support/modules_libs/java.base/libnio.so from 24 file(s)
-Creating support/modules_libs/java.base/libnet.so from 21 file(s)
 Creating support/modules_libs/java.base/libjimage.so from 6 file(s)
+Creating support/modules_libs/java.base/jli/libjli.so from 8 file(s)
 Creating support/modules_libs/java.base/libzip.so from 5 file(s)
-Creating support/modules_cmds/java.desktop/appletviewer from 1 file(s)
-Creating support/modules_libs/java.prefs/libprefs.so from 1 file(s)
+Creating support/modules_libs/java.base/libnet.so from 21 file(s)
+Creating support/modules_libs/java.base/libnio.so from 24 file(s)
 Creating support/modules_libs/java.instrument/libinstrument.so from 12 file(s)
-Creating support/modules_libs/java.management/libmanagement.so from 9 file(s)
+Creating support/modules_cmds/java.desktop/appletviewer from 1 file(s)
 Creating support/modules_cmds/java.corba/idlj from 1 file(s)
-Creating support/modules_cmds/jdk.jlink/jimage from 1 file(s)
 Creating support/modules_cmds/java.corba/orbd from 1 file(s)
-Creating support/native/java.base/java_objs/java from 1 file(s)
-Creating support/modules_cmds/jdk.jlink/jlink from 1 file(s)
 Creating support/modules_cmds/java.corba/servertool from 1 file(s)
-Creating support/modules_cmds/java.corba/tnameserv from 1 file(s)
+Creating support/modules_libs/java.prefs/libprefs.so from 1 file(s)
+Creating support/native/java.base/java_objs/java from 1 file(s)
 Creating support/modules_cmds/java.base/keytool from 1 file(s)
-Creating support/modules_cmds/jdk.jlink/jmod from 1 file(s)
+Creating support/modules_cmds/java.corba/tnameserv from 1 file(s)
+Creating support/modules_libs/java.management/libmanagement.so from 9 file(s)
+Creating support/modules_cmds/jdk.jlink/jimage from 1 file(s)
+Creating support/modules_cmds/jdk.jlink/jlink from 1 file(s)
 Creating support/modules_libs/java.base/jexec from 1 file(s)
+Creating support/modules_cmds/jdk.jlink/jmod from 1 file(s)
 Creating support/modules_libs/java.rmi/librmi.so from 1 file(s)
 Creating support/modules_cmds/java.rmi/rmid from 1 file(s)
 Creating support/modules_cmds/java.rmi/rmiregistry from 1 file(s)
+Creating support/modules_cmds/java.scripting/jrunscript from 1 file(s)
 Creating support/modules_libs/java.desktop/libmlib_image.so from 50 file(s)
 Creating support/modules_libs/java.desktop/libawt.so from 73 file(s)
 Creating support/modules_libs/java.desktop/libawt_xawt.so from 57 file(s)
@@ -2837,7 +2839,6 @@ Creating support/modules_libs/java.desktop/libjawt.so from 1 file(s)
 Creating support/modules_libs/java.desktop/libsplashscreen.so from 67 file(s)
 Creating support/modules_libs/java.desktop/libjsound.so from 2 file(s)
 Creating support/modules_libs/java.desktop/libjsoundalsa.so from 17 file(s)
-Creating support/modules_cmds/java.scripting/jrunscript from 1 file(s)
 Creating support/modules_libs/java.security.jgss/libj2gss.so from 3 file(s)
 Creating support/modules_libs/java.smartcardio/libj2pcsc.so from 2 file(s)
 Creating support/modules_libs/jdk.aot/libjelfshim.so from 2 file(s)
@@ -2845,8 +2846,8 @@ Creating support/modules_cmds/jdk.aot/jaotc from 1 file(s)
 Creating support/modules_libs/jdk.attach/libattach.so from 1 file(s)
 Creating support/modules_cmds/jdk.compiler/javac from 1 file(s)
 Creating support/modules_cmds/jdk.compiler/javah from 1 file(s)
-Creating support/modules_cmds/jdk.compiler/serialver from 1 file(s)
 Creating support/modules_libs/jdk.crypto.cryptoki/libj2pkcs11.so from 14 file(s)
+Creating support/modules_cmds/jdk.compiler/serialver from 1 file(s)
 Creating support/modules_libs/jdk.crypto.ec/libsunec.so from 28 file(s)
 Creating support/modules_libs/jdk.hotspot.agent/libsaproc.so from 7 file(s)
 Creating support/modules_cmds/jdk.hotspot.agent/jhsdb from 1 file(s)
@@ -2855,23 +2856,23 @@ Creating support/modules_cmds/jdk.jartool/jarsigner from 1 file(s)
 Creating support/modules_cmds/jdk.javadoc/javadoc from 1 file(s)
 Creating support/modules_cmds/jdk.jcmd/jinfo from 1 file(s)
 Creating support/modules_cmds/jdk.jcmd/jmap from 1 file(s)
+Creating support/modules_cmds/jdk.jconsole/jconsole from 1 file(s)
 Creating support/modules_cmds/jdk.jcmd/jps from 1 file(s)
 Creating support/modules_cmds/jdk.jcmd/jstack from 1 file(s)
 Creating support/modules_cmds/jdk.jcmd/jstat from 1 file(s)
 Creating support/modules_cmds/jdk.jcmd/jcmd from 1 file(s)
-Creating support/modules_cmds/jdk.jconsole/jconsole from 1 file(s)
 Creating support/modules_cmds/jdk.jdeps/javap from 1 file(s)
 Creating support/modules_cmds/jdk.jdeps/jdeps from 1 file(s)
 Creating support/modules_cmds/jdk.jdeps/jdeprscan from 1 file(s)
 Creating support/modules_cmds/jdk.jdi/jdb from 1 file(s)
 Creating support/modules_libs/jdk.jdwp.agent/libdt_socket.so from 2 file(s)
 Creating support/modules_libs/jdk.jdwp.agent/libjdwp.so from 42 file(s)
-Creating support/modules_cmds/jdk.jstatd/jstatd from 1 file(s)
 Creating support/modules_cmds/jdk.jshell/jshell from 1 file(s)
+Creating support/modules_cmds/jdk.jstatd/jstatd from 1 file(s)
 Creating support/modules_libs/jdk.management/libmanagement_ext.so from 8 file(s)
 Creating support/modules_libs/jdk.management.agent/libmanagement_agent.so from 1 file(s)
-Creating support/modules_libs/jdk.pack/libunpack.so from 7 file(s)
 Creating support/modules_cmds/jdk.pack/pack200 from 1 file(s)
+Creating support/modules_libs/jdk.pack/libunpack.so from 7 file(s)
 Creating support/modules_cmds/jdk.pack/unpack200 from 7 file(s)
 Creating support/modules_cmds/jdk.policytool/policytool from 1 file(s)
 Creating support/modules_cmds/jdk.rmic/rmic from 1 file(s)
@@ -2879,30 +2880,30 @@ Creating support/modules_cmds/jdk.scripting.nashorn.shell/jjs from 1 file(s)
 Creating support/modules_libs/jdk.sctp/libsctp.so from 3 file(s)
 Creating support/modules_libs/jdk.security.auth/libjaas_unix.so from 1 file(s)
 Creating support/modules_cmds/jdk.xml.bind/schemagen from 1 file(s)
-Creating support/modules_cmds/jdk.xml.ws/wsgen from 1 file(s)
 Creating support/modules_cmds/jdk.xml.bind/xjc from 1 file(s)
+Creating support/modules_cmds/jdk.xml.ws/wsgen from 1 file(s)
 Creating support/modules_cmds/jdk.xml.ws/wsimport from 1 file(s)
 Updating images/sec-bin.zip
 Compiling 4 files for BUILD_JIGSAW_TOOLS
-Creating images/jmods/java.instrument.jmod
-Creating images/jmods/java.activation.jmod
 Creating support/interim-jmods/java.logging.jmod
+Creating images/jmods/java.activation.jmod
 Creating images/jmods/java.compiler.jmod
 Creating images/jmods/java.datatransfer.jmod
+Creating images/jmods/java.instrument.jmod
 Creating images/jmods/java.corba.jmod
 Creating support/interim-jmods/java.base.jmod
 Creating images/jmods/java.desktop.jmod
 Creating images/jmods/java.logging.jmod
-Creating images/jmods/java.management.rmi.jmod
 Creating images/jmods/java.management.jmod
-Creating images/jmods/java.naming.jmod
+Creating images/jmods/java.management.rmi.jmod
 Creating images/jmods/java.prefs.jmod
-Creating images/jmods/java.rmi.jmod
+Creating images/jmods/java.naming.jmod
 Creating images/jmods/java.scripting.jmod
-Creating images/jmods/java.se.ee.jmod
 Creating images/jmods/java.se.jmod
-Creating images/jmods/java.security.sasl.jmod
+Creating images/jmods/java.rmi.jmod
+Creating images/jmods/java.se.ee.jmod
 Creating images/jmods/java.security.jgss.jmod
+Creating images/jmods/java.security.sasl.jmod
 Creating images/jmods/java.smartcardio.jmod
 Creating images/jmods/java.sql.jmod
 Creating images/jmods/java.sql.rowset.jmod
@@ -2910,9 +2911,9 @@ Creating images/jmods/java.transaction.jmod
 Creating images/jmods/java.xml.jmod
 Creating images/jmods/java.xml.bind.jmod
 Creating images/jmods/java.xml.crypto.jmod
+Creating images/jmods/java.xml.ws.annotation.jmod
 Creating images/jmods/java.xml.ws.jmod
 Creating images/jmods/jdk.accessibility.jmod
-Creating images/jmods/java.xml.ws.annotation.jmod
 Creating images/jmods/jdk.aot.jmod
 Creating images/jmods/jdk.attach.jmod
 Creating images/jmods/jdk.charsets.jmod
@@ -2921,17 +2922,17 @@ Creating images/jmods/jdk.crypto.cryptoki.jmod
 Creating images/jmods/jdk.crypto.ec.jmod
 Creating images/jmods/jdk.dynalink.jmod
 Creating images/jmods/jdk.editpad.jmod
-Creating images/jmods/jdk.hotspot.agent.jmod
 Creating images/jmods/jdk.httpserver.jmod
+Creating images/jmods/jdk.hotspot.agent.jmod
 Creating images/jmods/jdk.incubator.httpclient.jmod
-Creating images/jmods/jdk.internal.jvmstat.jmod
 Creating images/jmods/jdk.internal.ed.jmod
+Creating images/jmods/jdk.internal.jvmstat.jmod
 Creating images/jmods/jdk.internal.le.jmod
 Creating images/jmods/jdk.internal.opt.jmod
 Creating images/jmods/jdk.internal.vm.ci.jmod
+Creating images/jmods/jdk.internal.vm.compiler.jmod
 Creating images/jmods/jdk.jartool.jmod
 Creating images/jmods/jdk.javadoc.jmod
-Creating images/jmods/jdk.internal.vm.compiler.jmod
 Creating images/jmods/jdk.jcmd.jmod
 Creating images/jmods/jdk.jconsole.jmod
 Creating images/jmods/jdk.jdeps.jmod
@@ -2949,9 +2950,9 @@ Creating images/jmods/jdk.net.jmod
 Creating images/jmods/jdk.pack.jmod
 Creating images/jmods/jdk.policytool.jmod
 Creating images/jmods/jdk.rmic.jmod
-Creating images/jmods/jdk.scripting.nashorn.shell.jmod
 Creating images/jmods/jdk.scripting.nashorn.jmod
 Creating images/jmods/jdk.sctp.jmod
+Creating images/jmods/jdk.scripting.nashorn.shell.jmod
 Creating images/jmods/jdk.security.auth.jmod
 Creating images/jmods/jdk.security.jgss.jmod
 Creating images/jmods/jdk.unsupported.jmod
@@ -2966,22 +2967,22 @@ Compiling 1 files for BUILD_DEMO_APPLET_Blink
 Compiling 1 files for BUILD_DEMO_APPLET_CardTest
 Compiling 1 files for BUILD_DEMO_APPLET_Clock
 Compiling 1 files for BUILD_DEMO_APPLET_DitherTest
-[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/CardTest/CardTest.java uses or overrides a deprecated API.
-[0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/ArcTest/ArcTest.java uses or overrides a deprecated API.
-[0mCompiling 1 files for BUILD_DEMO_APPLET_DrawTest
-[91mNote: Recompile with -Xlint:deprecation for details.
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/ArcTest/ArcTest.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
 [0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/BarChart/BarChart.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
-[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/Blink/Blink.java uses or overrides a deprecated API.
+[0mCompiling 1 files for BUILD_DEMO_APPLET_DrawTest
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/CardTest/CardTest.java uses or overrides a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
 [0mCompiling 1 files for BUILD_DEMO_APPLET_Fractal
-Compiling 2 files for BUILD_DEMO_APPLET_GraphicsTest
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/Blink/Blink.java uses or overrides a deprecated API.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
+[0mCompiling 2 files for BUILD_DEMO_APPLET_GraphicsTest
 Compiling 1 files for BUILD_DEMO_APPLET_NervousText
-Compiling 1 files for BUILD_DEMO_APPLET_SimpleGraph
 [91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/Clock/Clock.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/DitherTest/DitherTest.java uses or overrides a deprecated API.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
+[0mCompiling 1 files for BUILD_DEMO_APPLET_SimpleGraph
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/DitherTest/DitherTest.java uses or overrides a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
 [0mCompiling 5 files for BUILD_DEMO_APPLET_SortDemo
 Compiling 1 files for BUILD_DEMO_APPLET_SpreadSheet
@@ -2989,74 +2990,74 @@ Compiling 1 files for BUILD_DEMO_APPLET_SpreadSheet
 Note: Recompile with -Xlint:deprecation for details.
 [0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/Fractal/CLSFractal.java uses or overrides a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/SimpleGraph/GraphApplet.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
 [0mCompiling 3 files for BUILD_DEMO_CodePointIM
-[91mNote: Some input files use or override a deprecated API.
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/SimpleGraph/GraphApplet.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
+[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/NervousText/NervousText.java uses or overrides a deprecated API.
+[0m[91mNote: Recompile with -Xlint:deprecation for details.
 [0mUpdating support/demos/image/jfc/CodePointIM/src.zip
-[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/NervousText/NervousText.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-[0mCompiling 2 files for BUILD_DEMO_MoleculeViewer
 [91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/SortDemo/SortItem.java uses or overrides a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0mUpdating support/demos/image/applets/MoleculeViewer/src.zip
-Compiling 2 files for BUILD_DEMO_WireFrame
-Updating support/demos/image/applets/WireFrame/src.zip
-[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/SpreadSheet/SpreadSheet.java uses or overrides a deprecated API.
+[0mCompiling 2 files for BUILD_DEMO_MoleculeViewer
+Updating support/demos/image/applets/MoleculeViewer/src.zip
+[91mNote: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/SpreadSheet/SpreadSheet.java uses or overrides a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0mCompiling 1 files for BUILD_DEMO_SwingApplet
+[0mCompiling 2 files for BUILD_DEMO_WireFrame
+Updating support/demos/image/applets/WireFrame/src.zip
+Compiling 1 files for BUILD_DEMO_SwingApplet
 Updating support/demos/image/jfc/SwingApplet/src.zip
 Compiling 3 files for BUILD_DEMO_FileChooserDemo
 Updating support/demos/image/jfc/FileChooserDemo/src.zip
 Compiling 4 files for BUILD_DEMO_Font2DTest
 Updating support/demos/image/jfc/Font2DTest/src.zip
+Compiling 15 files for BUILD_DEMO_Metalworks
 [91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/MoleculeViewer/XYZApp.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-[0mCompiling 15 files for BUILD_DEMO_Metalworks
-Updating support/demos/image/jfc/Metalworks/src.zip
-[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/WireFrame/ThreeD.java uses or overrides a deprecated API.
 [0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/jfc/SwingApplet/SwingApplet.java uses or overrides a deprecated API.
-[0m[91mNote: Recompile with -Xlint:deprecation for details.
-[0mCompiling 2 files for BUILD_DEMO_Notepad
+[0mUpdating support/demos/image/jfc/Metalworks/src.zip
+Compiling 2 files for BUILD_DEMO_Notepad
 Updating support/demos/image/jfc/Notepad/src.zip
-Compiling 5 files for BUILD_DEMO_SampleTree
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/applets/WireFrame/ThreeD.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+[0mCompiling 5 files for BUILD_DEMO_SampleTree
 Updating support/demos/image/jfc/SampleTree/src.zip
 Compiling 8 files for BUILD_DEMO_TableExample
-Updating support/demos/image/jfc/TableExample/src.zip
-Compiling 1 files for BUILD_DEMO_TransparentRuler
+[91mNote: /tmp/jdk9u/jdk/src/demo/share/jfc/SwingApplet/SwingApplet.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+[0mUpdating support/demos/image/jfc/TableExample/src.zip
 [91mNote: /tmp/jdk9u/jdk/src/demo/share/jfc/FileChooserDemo/FileChooserDemo.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: /tmp/jdk9u/jdk/src/demo/share/jfc/FileChooserDemo/FileChooserDemo.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-[0mUpdating support/demos/image/jfc/TransparentRuler/src.zip
+[0mCompiling 1 files for BUILD_DEMO_TransparentRuler
+Updating support/demos/image/jfc/TransparentRuler/src.zip
 [91mNote: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
-Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
+[0m[91mNote: Some input files use unchecked or unsafe operations.
+[0m[91mNote: Recompile with -Xlint:unchecked for details.
 [0m[91mNote: /tmp/jdk9u/jdk/src/demo/share/jfc/Metalworks/MetalworksPrefs.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
+[0m[91mNote: Recompile with -Xlint:unchecked for details.
 [0m[91mNote: Some input files use or override a deprecated API.
-[0m[91mNote: Recompile with -Xlint:deprecation for details.
+Note: Recompile with -Xlint:deprecation for details.
 Note: /tmp/jdk9u/jdk/src/demo/share/jfc/TableExample/TableExample4.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 [0mCreating support/demos/image/jfc/CodePointIM/CodePointIM.jar
 Creating support/demos/image/applets/MoleculeViewer/MoleculeViewer.jar
 Creating support/demos/image/jfc/SwingApplet/SwingApplet.jar
-Creating support/demos/image/jfc/Metalworks/Metalworks.jar
-Creating support/demos/image/jfc/FileChooserDemo/FileChooserDemo.jar
 Creating support/demos/image/applets/WireFrame/WireFrame.jar
+Creating support/demos/image/jfc/FileChooserDemo/FileChooserDemo.jar
 Creating support/demos/image/jfc/Font2DTest/Font2DTest.jar
+Creating support/demos/image/jfc/Metalworks/Metalworks.jar
 Creating support/demos/image/jfc/Notepad/Notepad.jar
 Creating support/demos/image/jfc/SampleTree/SampleTree.jar
-Creating support/classlist.jar
 Creating support/demos/image/jfc/TableExample/TableExample.jar
 Creating support/demos/image/jfc/TransparentRuler/TransparentRuler.jar
+Creating support/classlist.jar
 Creating images/jmods/jdk.jlink.jmod
 Creating images/jmods/java.base.jmod
-Creating jre jimage
 Creating jdk jimage
+Creating jre jimage
 WARNING: Using incubator modules: jdk.incubator.httpclient
 WARNING: Using incubator modules: jdk.incubator.httpclient
 Stopping sjavac server
@@ -3111,10 +3112,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./lib/psfont.properties.ja
 ./lib/psfontj2d.properties
 ./lib/libmlib_image.so
-./lib/libjavajpeg.so
 ./lib/libawt.so
-./lib/libsplashscreen.so
+./lib/libjavajpeg.so
 ./lib/libjsound.so
+./lib/libsplashscreen.so
 ./lib/libjsoundalsa.so
 ./lib/liblcms.so
 ./lib/libawt_xawt.so
@@ -3123,17 +3124,17 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./lib/libfontmanager.so
 ./lib/src.zip
 ./bin/
-./bin/rmic
 ./bin/jimage
 ./bin/jlink
 ./bin/jmod
-./bin/policytool
+./bin/rmic
+./bin/jdb
 ./bin/jinfo
 ./bin/jmap
 ./bin/jps
-./bin/jcmd
 ./bin/jstack
 ./bin/jstat
+./bin/jcmd
 ./bin/schemagen
 ./bin/xjc
 ./bin/jaotc
@@ -3145,7 +3146,7 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./bin/pack200
 ./bin/unpack200
 ./bin/jshell
-./bin/jdb
+./bin/policytool
 ./bin/javac
 ./bin/javah
 ./bin/serialver
@@ -3156,8 +3157,8 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./bin/javap
 ./bin/jdeps
 ./bin/jdeprscan
-./bin/rmiregistry
 ./bin/rmid
+./bin/rmiregistry
 ./bin/jconsole
 ./bin/jjs
 ./bin/jstatd
@@ -3266,10 +3267,22 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.incubator.httpclient/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.incubator.httpclient/LICENSE
 ./legal/jdk.incubator.httpclient/ASSEMBLY_EXCEPTION
-./legal/jdk.unsupported/
-./legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO
-./legal/jdk.unsupported/LICENSE
-./legal/jdk.unsupported/ASSEMBLY_EXCEPTION
+./legal/java.compiler/
+./legal/java.compiler/ADDITIONAL_LICENSE_INFO
+./legal/java.compiler/LICENSE
+./legal/java.compiler/ASSEMBLY_EXCEPTION
+./legal/jdk.compiler/
+./legal/jdk.compiler/ADDITIONAL_LICENSE_INFO
+./legal/jdk.compiler/LICENSE
+./legal/jdk.compiler/ASSEMBLY_EXCEPTION
+./legal/jdk.jdeps/
+./legal/jdk.jdeps/ADDITIONAL_LICENSE_INFO
+./legal/jdk.jdeps/LICENSE
+./legal/jdk.jdeps/ASSEMBLY_EXCEPTION
+./legal/jdk.jlink/
+./legal/jdk.jlink/ADDITIONAL_LICENSE_INFO
+./legal/jdk.jlink/LICENSE
+./legal/jdk.jlink/ASSEMBLY_EXCEPTION
 ./legal/jdk.crypto.ec/
 ./legal/jdk.crypto.ec/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.crypto.ec/ecc.md
@@ -3291,18 +3304,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.naming.dns/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.naming.dns/LICENSE
 ./legal/jdk.naming.dns/ASSEMBLY_EXCEPTION
-./legal/java.compiler/
-./legal/java.compiler/ADDITIONAL_LICENSE_INFO
-./legal/java.compiler/LICENSE
-./legal/java.compiler/ASSEMBLY_EXCEPTION
-./legal/jdk.compiler/
-./legal/jdk.compiler/ADDITIONAL_LICENSE_INFO
-./legal/jdk.compiler/LICENSE
-./legal/jdk.compiler/ASSEMBLY_EXCEPTION
-./legal/java.prefs/
-./legal/java.prefs/ADDITIONAL_LICENSE_INFO
-./legal/java.prefs/LICENSE
-./legal/java.prefs/ASSEMBLY_EXCEPTION
+./legal/jdk.unsupported/
+./legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO
+./legal/jdk.unsupported/LICENSE
+./legal/jdk.unsupported/ASSEMBLY_EXCEPTION
 ./legal/java.rmi/
 ./legal/java.rmi/ADDITIONAL_LICENSE_INFO
 ./legal/java.rmi/LICENSE
@@ -3311,6 +3316,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/java.transaction/ADDITIONAL_LICENSE_INFO
 ./legal/java.transaction/LICENSE
 ./legal/java.transaction/ASSEMBLY_EXCEPTION
+./legal/java.prefs/
+./legal/java.prefs/ADDITIONAL_LICENSE_INFO
+./legal/java.prefs/LICENSE
+./legal/java.prefs/ASSEMBLY_EXCEPTION
 ./legal/java.corba/
 ./legal/java.corba/ADDITIONAL_LICENSE_INFO
 ./legal/java.corba/LICENSE
@@ -3319,11 +3328,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.rmic/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.rmic/LICENSE
 ./legal/jdk.rmic/ASSEMBLY_EXCEPTION
-./legal/jdk.internal.le/
-./legal/jdk.internal.le/ADDITIONAL_LICENSE_INFO
-./legal/jdk.internal.le/LICENSE
-./legal/jdk.internal.le/jline.md
-./legal/jdk.internal.le/ASSEMBLY_EXCEPTION
+./legal/java.xml.ws.annotation/
+./legal/java.xml.ws.annotation/ADDITIONAL_LICENSE_INFO
+./legal/java.xml.ws.annotation/LICENSE
+./legal/java.xml.ws.annotation/ASSEMBLY_EXCEPTION
 ./legal/jdk.localedata/
 ./legal/jdk.localedata/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.localedata/LICENSE
@@ -3334,47 +3342,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.charsets/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.charsets/LICENSE
 ./legal/jdk.charsets/ASSEMBLY_EXCEPTION
-./legal/jdk.jdeps/
-./legal/jdk.jdeps/ADDITIONAL_LICENSE_INFO
-./legal/jdk.jdeps/LICENSE
-./legal/jdk.jdeps/ASSEMBLY_EXCEPTION
-./legal/jdk.jlink/
-./legal/jdk.jlink/ADDITIONAL_LICENSE_INFO
-./legal/jdk.jlink/LICENSE
-./legal/jdk.jlink/ASSEMBLY_EXCEPTION
-./legal/java.security.jgss/
-./legal/java.security.jgss/ADDITIONAL_LICENSE_INFO
-./legal/java.security.jgss/LICENSE
-./legal/java.security.jgss/ASSEMBLY_EXCEPTION
-./legal/jdk.security.jgss/
-./legal/jdk.security.jgss/ADDITIONAL_LICENSE_INFO
-./legal/jdk.security.jgss/LICENSE
-./legal/jdk.security.jgss/ASSEMBLY_EXCEPTION
-./legal/jdk.net/
-./legal/jdk.net/ADDITIONAL_LICENSE_INFO
-./legal/jdk.net/LICENSE
-./legal/jdk.net/ASSEMBLY_EXCEPTION
-./legal/java.management/
-./legal/java.management/ADDITIONAL_LICENSE_INFO
-./legal/java.management/LICENSE
-./legal/java.management/ASSEMBLY_EXCEPTION
-./legal/java.sql/
-./legal/java.sql/ADDITIONAL_LICENSE_INFO
-./legal/java.sql/LICENSE
-./legal/java.sql/ASSEMBLY_EXCEPTION
-./legal/jdk.policytool/
-./legal/jdk.policytool/ADDITIONAL_LICENSE_INFO
-./legal/jdk.policytool/LICENSE
-./legal/jdk.policytool/ASSEMBLY_EXCEPTION
-./legal/jdk.dynalink/
-./legal/jdk.dynalink/ADDITIONAL_LICENSE_INFO
-./legal/jdk.dynalink/dynalink.md
-./legal/jdk.dynalink/LICENSE
-./legal/jdk.dynalink/ASSEMBLY_EXCEPTION
-./legal/jdk.naming.rmi/
-./legal/jdk.naming.rmi/ADDITIONAL_LICENSE_INFO
-./legal/jdk.naming.rmi/LICENSE
-./legal/jdk.naming.rmi/ASSEMBLY_EXCEPTION
+./legal/jdk.jdwp.agent/
+./legal/jdk.jdwp.agent/ADDITIONAL_LICENSE_INFO
+./legal/jdk.jdwp.agent/LICENSE
+./legal/jdk.jdwp.agent/ASSEMBLY_EXCEPTION
 ./legal/jdk.internal.jvmstat/
 ./legal/jdk.internal.jvmstat/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.internal.jvmstat/LICENSE
@@ -3383,10 +3354,23 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.attach/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.attach/LICENSE
 ./legal/jdk.attach/ASSEMBLY_EXCEPTION
+./legal/jdk.jdi/
+./legal/jdk.jdi/ADDITIONAL_LICENSE_INFO
+./legal/jdk.jdi/LICENSE
+./legal/jdk.jdi/ASSEMBLY_EXCEPTION
+./legal/jdk.dynalink/
+./legal/jdk.dynalink/ADDITIONAL_LICENSE_INFO
+./legal/jdk.dynalink/dynalink.md
+./legal/jdk.dynalink/LICENSE
+./legal/jdk.dynalink/ASSEMBLY_EXCEPTION
 ./legal/jdk.jcmd/
 ./legal/jdk.jcmd/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.jcmd/LICENSE
 ./legal/jdk.jcmd/ASSEMBLY_EXCEPTION
+./legal/java.management/
+./legal/java.management/ADDITIONAL_LICENSE_INFO
+./legal/java.management/LICENSE
+./legal/java.management/ASSEMBLY_EXCEPTION
 ./legal/java.management.rmi/
 ./legal/java.management.rmi/ADDITIONAL_LICENSE_INFO
 ./legal/java.management.rmi/LICENSE
@@ -3399,10 +3383,6 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.httpserver/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.httpserver/LICENSE
 ./legal/jdk.httpserver/ASSEMBLY_EXCEPTION
-./legal/java.xml.ws.annotation/
-./legal/java.xml.ws.annotation/ADDITIONAL_LICENSE_INFO
-./legal/java.xml.ws.annotation/LICENSE
-./legal/java.xml.ws.annotation/ASSEMBLY_EXCEPTION
 ./legal/java.activation/
 ./legal/java.activation/ADDITIONAL_LICENSE_INFO
 ./legal/java.activation/LICENSE
@@ -3453,22 +3433,31 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.scripting.nashorn/LICENSE
 ./legal/jdk.scripting.nashorn/ASSEMBLY_EXCEPTION
 ./legal/jdk.scripting.nashorn/joni.md
+./legal/jdk.naming.rmi/
+./legal/jdk.naming.rmi/ADDITIONAL_LICENSE_INFO
+./legal/jdk.naming.rmi/LICENSE
+./legal/jdk.naming.rmi/ASSEMBLY_EXCEPTION
 ./legal/jdk.zipfs/
 ./legal/jdk.zipfs/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.zipfs/LICENSE
 ./legal/jdk.zipfs/ASSEMBLY_EXCEPTION
-./legal/jdk.jdwp.agent/
-./legal/jdk.jdwp.agent/ADDITIONAL_LICENSE_INFO
-./legal/jdk.jdwp.agent/LICENSE
-./legal/jdk.jdwp.agent/ASSEMBLY_EXCEPTION
-./legal/jdk.jdi/
-./legal/jdk.jdi/ADDITIONAL_LICENSE_INFO
-./legal/jdk.jdi/LICENSE
-./legal/jdk.jdi/ASSEMBLY_EXCEPTION
+./legal/jdk.internal.le/
+./legal/jdk.internal.le/ADDITIONAL_LICENSE_INFO
+./legal/jdk.internal.le/LICENSE
+./legal/jdk.internal.le/jline.md
+./legal/jdk.internal.le/ASSEMBLY_EXCEPTION
 ./legal/jdk.jshell/
 ./legal/jdk.jshell/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.jshell/LICENSE
 ./legal/jdk.jshell/ASSEMBLY_EXCEPTION
+./legal/java.sql/
+./legal/java.sql/ADDITIONAL_LICENSE_INFO
+./legal/java.sql/LICENSE
+./legal/java.sql/ASSEMBLY_EXCEPTION
+./legal/java.security.jgss/
+./legal/java.security.jgss/ADDITIONAL_LICENSE_INFO
+./legal/java.security.jgss/LICENSE
+./legal/java.security.jgss/ASSEMBLY_EXCEPTION
 ./legal/java.sql.rowset/
 ./legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO
 ./legal/java.sql.rowset/LICENSE
@@ -3486,6 +3475,18 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.editpad/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.editpad/LICENSE
 ./legal/jdk.editpad/ASSEMBLY_EXCEPTION
+./legal/jdk.security.jgss/
+./legal/jdk.security.jgss/ADDITIONAL_LICENSE_INFO
+./legal/jdk.security.jgss/LICENSE
+./legal/jdk.security.jgss/ASSEMBLY_EXCEPTION
+./legal/jdk.net/
+./legal/jdk.net/ADDITIONAL_LICENSE_INFO
+./legal/jdk.net/LICENSE
+./legal/jdk.net/ASSEMBLY_EXCEPTION
+./legal/jdk.policytool/
+./legal/jdk.policytool/ADDITIONAL_LICENSE_INFO
+./legal/jdk.policytool/LICENSE
+./legal/jdk.policytool/ASSEMBLY_EXCEPTION
 ./legal/jdk.management.agent/
 ./legal/jdk.management.agent/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.management.agent/LICENSE
@@ -3543,19 +3544,19 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./jmods/
 ./jmods/java.datatransfer.jmod
 ./jmods/jdk.incubator.httpclient.jmod
-./jmods/jdk.unsupported.jmod
+./jmods/jdk.jlink.jmod
 ./jmods/jdk.crypto.cryptoki.jmod
 ./jmods/jdk.naming.dns.jmod
 ./jmods/jdk.rmic.jmod
-./jmods/jdk.internal.le.jmod
+./jmods/java.xml.ws.annotation.jmod
 ./jmods/jdk.localedata.jmod
 ./jmods/jdk.charsets.jmod
 ./jmods/java.transaction.jmod
-./jmods/jdk.jlink.jmod
+./jmods/jdk.unsupported.jmod
 ./jmods/java.naming.jmod
-./jmods/jdk.policytool.jmod
+./jmods/jdk.jdi.jmod
 ./jmods/jdk.dynalink.jmod
-./jmods/jdk.naming.rmi.jmod
+./jmods/jdk.internal.opt.jmod
 ./jmods/jdk.internal.jvmstat.jmod
 ./jmods/jdk.jcmd.jmod
 ./jmods/java.management.rmi.jmod
@@ -3570,14 +3571,14 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./jmods/jdk.hotspot.agent.jmod
 ./jmods/jdk.pack.jmod
 ./jmods/jdk.scripting.nashorn.jmod
-./jmods/jdk.internal.opt.jmod
+./jmods/jdk.naming.rmi.jmod
 ./jmods/jdk.zipfs.jmod
 ./jmods/jdk.jshell.jmod
 ./jmods/java.se.jmod
 ./jmods/java.prefs.jmod
 ./jmods/jdk.editpad.jmod
 ./jmods/jdk.attach.jmod
-./jmods/jdk.jdi.jmod
+./jmods/jdk.policytool.jmod
 ./jmods/jdk.management.agent.jmod
 ./jmods/jdk.compiler.jmod
 ./jmods/java.xml.bind.jmod
@@ -3585,13 +3586,13 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./jmods/java.base.jmod
 ./jmods/jdk.management.jmod
 ./jmods/java.sql.jmod
-./jmods/jdk.httpserver.jmod
+./jmods/java.se.ee.jmod
 ./jmods/java.security.sasl.jmod
 ./jmods/jdk.jdeps.jmod
 ./jmods/java.sql.rowset.jmod
 ./jmods/java.instrument.jmod
 ./jmods/java.rmi.jmod
-./jmods/java.se.ee.jmod
+./jmods/jdk.httpserver.jmod
 ./jmods/java.smartcardio.jmod
 ./jmods/jdk.jconsole.jmod
 ./jmods/java.compiler.jmod
@@ -3612,7 +3613,7 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./jmods/jdk.xml.dom.jmod
 ./jmods/jdk.jdwp.agent.jmod
 ./jmods/jdk.javadoc.jmod
-./jmods/java.xml.ws.annotation.jmod
+./jmods/jdk.internal.le.jmod
 ./jmods/jdk.jartool.jmod
 ./jmods/java.xml.crypto.jmod
 ./jmods/java.desktop.jmod
@@ -3620,102 +3621,102 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./man/man1/
 ./man/man1/jjs.1
 ./man/man1/java.1
-./man/man1/rmid.1
-./man/man1/orbd.1
 ./man/man1/keytool.1
+./man/man1/orbd.1
+./man/man1/rmid.1
 ./man/man1/pack200.1
 ./man/man1/rmiregistry.1
 ./man/man1/servertool.1
 ./man/man1/tnameserv.1
 ./man/man1/unpack200.1
 ./man/man1/appletviewer.1
-./man/man1/idlj.1
 ./man/man1/jar.1
+./man/man1/idlj.1
 ./man/man1/jarsigner.1
-./man/man1/javac.1
-./man/man1/javah.1
 ./man/man1/javadoc.1
-./man/man1/jconsole.1
-./man/man1/jcmd.1
+./man/man1/javac.1
 ./man/man1/javap.1
+./man/man1/jconsole.1
+./man/man1/javah.1
+./man/man1/jcmd.1
 ./man/man1/jdb.1
 ./man/man1/jdeps.1
 ./man/man1/jmap.1
-./man/man1/jps.1
 ./man/man1/jrunscript.1
-./man/man1/jinfo.1
+./man/man1/jstack.1
+./man/man1/jps.1
 ./man/man1/jstatd.1
+./man/man1/jinfo.1
 ./man/man1/jstat.1
 ./man/man1/policytool.1
-./man/man1/jstack.1
-./man/man1/serialver.1
 ./man/man1/rmic.1
+./man/man1/serialver.1
+./man/man1/schemagen.1
 ./man/man1/wsgen.1
 ./man/man1/xjc.1
-./man/man1/schemagen.1
 ./man/man1/wsimport.1
 ./man/ja_JP.UTF-8/
 ./man/ja_JP.UTF-8/man1/
 ./man/ja_JP.UTF-8/man1/jjs.1
-./man/ja_JP.UTF-8/man1/java.1
-./man/ja_JP.UTF-8/man1/pack200.1
-./man/ja_JP.UTF-8/man1/orbd.1
 ./man/ja_JP.UTF-8/man1/keytool.1
+./man/ja_JP.UTF-8/man1/java.1
+./man/ja_JP.UTF-8/man1/orbd.1
 ./man/ja_JP.UTF-8/man1/rmid.1
+./man/ja_JP.UTF-8/man1/pack200.1
 ./man/ja_JP.UTF-8/man1/rmiregistry.1
-./man/ja_JP.UTF-8/man1/unpack200.1
-./man/ja_JP.UTF-8/man1/tnameserv.1
-./man/ja_JP.UTF-8/man1/appletviewer.1
 ./man/ja_JP.UTF-8/man1/servertool.1
+./man/ja_JP.UTF-8/man1/tnameserv.1
+./man/ja_JP.UTF-8/man1/unpack200.1
+./man/ja_JP.UTF-8/man1/appletviewer.1
 ./man/ja_JP.UTF-8/man1/idlj.1
 ./man/ja_JP.UTF-8/man1/jar.1
 ./man/ja_JP.UTF-8/man1/javac.1
-./man/ja_JP.UTF-8/man1/javadoc.1
-./man/ja_JP.UTF-8/man1/jarsigner.1
 ./man/ja_JP.UTF-8/man1/javah.1
-./man/ja_JP.UTF-8/man1/javap.1
 ./man/ja_JP.UTF-8/man1/jconsole.1
+./man/ja_JP.UTF-8/man1/jarsigner.1
+./man/ja_JP.UTF-8/man1/javap.1
+./man/ja_JP.UTF-8/man1/javadoc.1
 ./man/ja_JP.UTF-8/man1/jcmd.1
 ./man/ja_JP.UTF-8/man1/jdb.1
 ./man/ja_JP.UTF-8/man1/jdeps.1
 ./man/ja_JP.UTF-8/man1/jinfo.1
-./man/ja_JP.UTF-8/man1/jps.1
 ./man/ja_JP.UTF-8/man1/jmap.1
-./man/ja_JP.UTF-8/man1/jstat.1
-./man/ja_JP.UTF-8/man1/jstatd.1
+./man/ja_JP.UTF-8/man1/jps.1
 ./man/ja_JP.UTF-8/man1/jrunscript.1
-./man/ja_JP.UTF-8/man1/jstack.1
+./man/ja_JP.UTF-8/man1/jstatd.1
 ./man/ja_JP.UTF-8/man1/policytool.1
 ./man/ja_JP.UTF-8/man1/rmic.1
+./man/ja_JP.UTF-8/man1/jstack.1
 ./man/ja_JP.UTF-8/man1/schemagen.1
+./man/ja_JP.UTF-8/man1/jstat.1
 ./man/ja_JP.UTF-8/man1/serialver.1
-./man/ja_JP.UTF-8/man1/wsgen.1
 ./man/ja_JP.UTF-8/man1/wsimport.1
+./man/ja_JP.UTF-8/man1/wsgen.1
 ./man/ja_JP.UTF-8/man1/xjc.1
 ./man/ja
 ./demo/
 ./demo/applets/
 ./demo/applets/ArcTest/
-./demo/applets/ArcTest/ArcTest.java
 ./demo/applets/ArcTest/example1.html
-./demo/applets/ArcTest/ArcControls.class
 ./demo/applets/ArcTest/ArcTest.class
-./demo/applets/ArcTest/IntegerTextField.class
+./demo/applets/ArcTest/ArcTest.java
+./demo/applets/ArcTest/ArcControls.class
 ./demo/applets/ArcTest/ArcCanvas.class
+./demo/applets/ArcTest/IntegerTextField.class
 ./demo/applets/BarChart/
-./demo/applets/BarChart/BarChart.java
 ./demo/applets/BarChart/example1.html
+./demo/applets/BarChart/BarChart.java
 ./demo/applets/BarChart/example2.html
 ./demo/applets/BarChart/BarChart.class
 ./demo/applets/Blink/
 ./demo/applets/Blink/Blink.java
 ./demo/applets/Blink/example1.html
-./demo/applets/Blink/Blink$1.class
 ./demo/applets/Blink/Blink.class
+./demo/applets/Blink/Blink$1.class
 ./demo/applets/CardTest/
+./demo/applets/CardTest/CardTest.java
 ./demo/applets/CardTest/example1.html
 ./demo/applets/CardTest/CardPanel.class
-./demo/applets/CardTest/CardTest.java
 ./demo/applets/CardTest/CardTest.class
 ./demo/applets/Clock/
 ./demo/applets/Clock/Clock.java
@@ -3727,43 +3728,43 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./demo/applets/DitherTest/DitherMethod.class
 ./demo/applets/DitherTest/DitherTest$1.class
 ./demo/applets/DitherTest/DitherControls.class
-./demo/applets/DitherTest/CardinalTextField.class
 ./demo/applets/DitherTest/DitherTest.class
 ./demo/applets/DitherTest/DitherCanvas.class
+./demo/applets/DitherTest/CardinalTextField.class
 ./demo/applets/DrawTest/
 ./demo/applets/DrawTest/DrawTest.java
 ./demo/applets/DrawTest/example1.html
+./demo/applets/DrawTest/DrawPanel.class
 ./demo/applets/DrawTest/DrawTest.class
 ./demo/applets/DrawTest/DrawControls.class
-./demo/applets/DrawTest/DrawPanel.class
 ./demo/applets/Fractal/
 ./demo/applets/Fractal/CLSFractal.java
 ./demo/applets/Fractal/example1.html
-./demo/applets/Fractal/ContextLSystem.class
-./demo/applets/Fractal/CLSRule.class
 ./demo/applets/Fractal/CLSFractal.class
+./demo/applets/Fractal/CLSRule.class
 ./demo/applets/Fractal/CLSTurtle.class
+./demo/applets/Fractal/ContextLSystem.class
 ./demo/applets/GraphicsTest/
-./demo/applets/GraphicsTest/GraphicsTest.java
 ./demo/applets/GraphicsTest/AppletFrame.java
+./demo/applets/GraphicsTest/GraphicsTest.java
 ./demo/applets/GraphicsTest/example1.html
 ./demo/applets/GraphicsTest/AppletFrame.class
 ./demo/applets/GraphicsTest/GraphicsPanel.class
 ./demo/applets/GraphicsTest/GraphicsCards.class
 ./demo/applets/GraphicsTest/GraphicsTest.class
-./demo/applets/GraphicsTest/ArcCard.class
 ./demo/applets/GraphicsTest/ArcDegreePanel.class
 ./demo/applets/GraphicsTest/ArcPanel.class
-./demo/applets/GraphicsTest/OvalShape.class
 ./demo/applets/GraphicsTest/Shape.class
+./demo/applets/GraphicsTest/ArcCard.class
 ./demo/applets/GraphicsTest/RectShape.class
+./demo/applets/GraphicsTest/OvalShape.class
 ./demo/applets/GraphicsTest/RoundRectShape.class
 ./demo/applets/GraphicsTest/PolygonShape.class
 ./demo/applets/GraphicsTest/ShapeTest.class
 ./demo/applets/GraphicsTest/ColorUtils.class
 ./demo/applets/NervousText/
-./demo/applets/NervousText/NervousText.java
 ./demo/applets/NervousText/example1.html
+./demo/applets/NervousText/NervousText.java
 ./demo/applets/NervousText/NervousText.class
 ./demo/applets/SimpleGraph/
 ./demo/applets/SimpleGraph/GraphApplet.java
@@ -3773,39 +3774,39 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
 ./demo/applets/SortDemo/BubbleSortAlgorithm.java
 ./demo/applets/SortDemo/QSortAlgorithm.java
-./demo/applets/SortDemo/SortAlgorithm.java
 ./demo/applets/SortDemo/SortItem.java
 ./demo/applets/SortDemo/example1.html
-./demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
-./demo/applets/SortDemo/SortAlgorithm.class
+./demo/applets/SortDemo/SortAlgorithm.java
 ./demo/applets/SortDemo/SortItem.class
+./demo/applets/SortDemo/SortAlgorithm.class
+./demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
 ./demo/applets/SortDemo/BubbleSortAlgorithm.class
 ./demo/applets/SortDemo/QSortAlgorithm.class
 ./demo/applets/SpreadSheet/
 ./demo/applets/SpreadSheet/SpreadSheet.java
 ./demo/applets/SpreadSheet/example1.html
-./demo/applets/SpreadSheet/SpreadSheet.class
 ./demo/applets/SpreadSheet/SpreadSheetInput.class
-./demo/applets/SpreadSheet/InputField.class
+./demo/applets/SpreadSheet/SpreadSheet.class
 ./demo/applets/SpreadSheet/Cell.class
+./demo/applets/SpreadSheet/InputField.class
 ./demo/applets/SpreadSheet/Node.class
 ./demo/applets/SpreadSheet/CellUpdater.class
 ./demo/applets/MoleculeViewer/
 ./demo/applets/MoleculeViewer/Matrix3D.java
+./demo/applets/MoleculeViewer/example1.html
 ./demo/applets/MoleculeViewer/XYZApp.java
 ./demo/applets/MoleculeViewer/example2.html
 ./demo/applets/MoleculeViewer/example3.html
-./demo/applets/MoleculeViewer/example1.html
-./demo/applets/MoleculeViewer/src.zip
 ./demo/applets/MoleculeViewer/MoleculeViewer.jar
+./demo/applets/MoleculeViewer/src.zip
 ./demo/applets/WireFrame/
 ./demo/applets/WireFrame/Matrix3D.java
 ./demo/applets/WireFrame/ThreeD.java
-./demo/applets/WireFrame/example2.html
-./demo/applets/WireFrame/example1.html
-./demo/applets/WireFrame/src.zip
 ./demo/applets/WireFrame/example3.html
+./demo/applets/WireFrame/example1.html
+./demo/applets/WireFrame/example2.html
 ./demo/applets/WireFrame/example4.html
+./demo/applets/WireFrame/src.zip
 ./demo/applets/WireFrame/WireFrame.jar
 ./demo/jfc/
 ./demo/jfc/CodePointIM/
@@ -3825,17 +3826,17 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./demo/jfc/FileChooserDemo/FileChooserDemo.jar
 ./demo/jfc/Font2DTest/
 ./demo/jfc/Font2DTest/Font2DTest.html
-./demo/jfc/Font2DTest/README.txt
 ./demo/jfc/Font2DTest/src.zip
 ./demo/jfc/Font2DTest/Font2DTest.jar
+./demo/jfc/Font2DTest/README.txt
 ./demo/jfc/Metalworks/
 ./demo/jfc/Metalworks/README.txt
-./demo/jfc/Metalworks/Metalworks.jar
 ./demo/jfc/Metalworks/src.zip
+./demo/jfc/Metalworks/Metalworks.jar
 ./demo/jfc/Notepad/
-./demo/jfc/Notepad/README.txt
 ./demo/jfc/Notepad/src.zip
 ./demo/jfc/Notepad/Notepad.jar
+./demo/jfc/Notepad/README.txt
 ./demo/jfc/SampleTree/
 ./demo/jfc/SampleTree/src.zip
 ./demo/jfc/SampleTree/README.txt
@@ -3848,117 +3849,117 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./demo/jfc/TransparentRuler/src.zip
 ./demo/jfc/TransparentRuler/README.txt
 ./demo/jfc/TransparentRuler/TransparentRuler.jar
-./demo/README
 ./demo/nbproject/
 ./demo/nbproject/README.txt
 ./demo/nbproject/jfc/
 ./demo/nbproject/jfc/FileChooserDemo/
 ./demo/nbproject/jfc/FileChooserDemo/build.properties
+./demo/nbproject/jfc/FileChooserDemo/build.xml
 ./demo/nbproject/jfc/FileChooserDemo/nbproject/
 ./demo/nbproject/jfc/FileChooserDemo/nbproject/file-targets.xml
 ./demo/nbproject/jfc/FileChooserDemo/nbproject/jdk.xml
-./demo/nbproject/jfc/FileChooserDemo/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/FileChooserDemo/nbproject/project.xml
-./demo/nbproject/jfc/FileChooserDemo/build.xml
+./demo/nbproject/jfc/FileChooserDemo/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/Font2DTest/
 ./demo/nbproject/jfc/Font2DTest/build.xml
 ./demo/nbproject/jfc/Font2DTest/build.properties
 ./demo/nbproject/jfc/Font2DTest/nbproject/
 ./demo/nbproject/jfc/Font2DTest/nbproject/file-targets.xml
+./demo/nbproject/jfc/Font2DTest/nbproject/jdk.xml
 ./demo/nbproject/jfc/Font2DTest/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/Font2DTest/nbproject/project.xml
-./demo/nbproject/jfc/Font2DTest/nbproject/jdk.xml
 ./demo/nbproject/jfc/Metalworks/
 ./demo/nbproject/jfc/Metalworks/build.properties
-./demo/nbproject/jfc/Metalworks/build.xml
 ./demo/nbproject/jfc/Metalworks/nbproject/
 ./demo/nbproject/jfc/Metalworks/nbproject/file-targets.xml
-./demo/nbproject/jfc/Metalworks/nbproject/jdk.xml
 ./demo/nbproject/jfc/Metalworks/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/Metalworks/nbproject/project.xml
+./demo/nbproject/jfc/Metalworks/nbproject/jdk.xml
+./demo/nbproject/jfc/Metalworks/build.xml
 ./demo/nbproject/jfc/Notepad/
-./demo/nbproject/jfc/Notepad/build.xml
+./demo/nbproject/jfc/Notepad/build.properties
 ./demo/nbproject/jfc/Notepad/nbproject/
 ./demo/nbproject/jfc/Notepad/nbproject/file-targets.xml
 ./demo/nbproject/jfc/Notepad/nbproject/jdk.xml
 ./demo/nbproject/jfc/Notepad/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/Notepad/nbproject/project.xml
-./demo/nbproject/jfc/Notepad/build.properties
+./demo/nbproject/jfc/Notepad/build.xml
 ./demo/nbproject/jfc/SampleTree/
-./demo/nbproject/jfc/SampleTree/build.xml
+./demo/nbproject/jfc/SampleTree/build.properties
 ./demo/nbproject/jfc/SampleTree/nbproject/
-./demo/nbproject/jfc/SampleTree/nbproject/jdk.xml
 ./demo/nbproject/jfc/SampleTree/nbproject/file-targets.xml
+./demo/nbproject/jfc/SampleTree/nbproject/jdk.xml
 ./demo/nbproject/jfc/SampleTree/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/SampleTree/nbproject/project.xml
-./demo/nbproject/jfc/SampleTree/build.properties
+./demo/nbproject/jfc/SampleTree/build.xml
 ./demo/nbproject/jfc/SwingApplet/
-./demo/nbproject/jfc/SwingApplet/build.properties
-./demo/nbproject/jfc/SwingApplet/build.xml
 ./demo/nbproject/jfc/SwingApplet/nbproject/
 ./demo/nbproject/jfc/SwingApplet/nbproject/file-targets.xml
-./demo/nbproject/jfc/SwingApplet/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/SwingApplet/nbproject/jdk.xml
+./demo/nbproject/jfc/SwingApplet/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/SwingApplet/nbproject/project.xml
+./demo/nbproject/jfc/SwingApplet/build.xml
+./demo/nbproject/jfc/SwingApplet/build.properties
 ./demo/nbproject/jfc/TableExample/
+./demo/nbproject/jfc/TableExample/build.properties
 ./demo/nbproject/jfc/TableExample/nbproject/
 ./demo/nbproject/jfc/TableExample/nbproject/file-targets.xml
 ./demo/nbproject/jfc/TableExample/nbproject/jdk.xml
 ./demo/nbproject/jfc/TableExample/nbproject/project.xml
 ./demo/nbproject/jfc/TableExample/nbproject/netbeans-targets.xml
 ./demo/nbproject/jfc/TableExample/build.xml
-./demo/nbproject/jfc/TableExample/build.properties
 ./demo/nbproject/jfc/TransparentRuler/
 ./demo/nbproject/jfc/TransparentRuler/build.properties
+./demo/nbproject/jfc/TransparentRuler/build.xml
 ./demo/nbproject/jfc/TransparentRuler/nbproject/
+./demo/nbproject/jfc/TransparentRuler/nbproject/jdk.xml
 ./demo/nbproject/jfc/TransparentRuler/nbproject/file-targets.xml
 ./demo/nbproject/jfc/TransparentRuler/nbproject/project.xml
-./demo/nbproject/jfc/TransparentRuler/nbproject/jdk.xml
 ./demo/nbproject/jfc/TransparentRuler/nbproject/netbeans-targets.xml
-./demo/nbproject/jfc/TransparentRuler/build.xml
 ./demo/nbproject/management/
 ./demo/nbproject/management/FullThreadDump/
 ./demo/nbproject/management/FullThreadDump/build.properties
+./demo/nbproject/management/FullThreadDump/build.xml
 ./demo/nbproject/management/FullThreadDump/nbproject/
+./demo/nbproject/management/FullThreadDump/nbproject/jdk.xml
+./demo/nbproject/management/FullThreadDump/nbproject/file-targets.xml
 ./demo/nbproject/management/FullThreadDump/nbproject/netbeans-targets.xml
 ./demo/nbproject/management/FullThreadDump/nbproject/project.xml
-./demo/nbproject/management/FullThreadDump/nbproject/file-targets.xml
-./demo/nbproject/management/FullThreadDump/nbproject/jdk.xml
-./demo/nbproject/management/FullThreadDump/build.xml
 ./demo/nbproject/management/JTop/
 ./demo/nbproject/management/JTop/build.properties
-./demo/nbproject/management/JTop/build.xml
 ./demo/nbproject/management/JTop/nbproject/
-./demo/nbproject/management/JTop/nbproject/jdk.xml
-./demo/nbproject/management/JTop/nbproject/netbeans-targets.xml
-./demo/nbproject/management/JTop/nbproject/project.xml
 ./demo/nbproject/management/JTop/nbproject/file-targets.xml
+./demo/nbproject/management/JTop/nbproject/netbeans-targets.xml
+./demo/nbproject/management/JTop/nbproject/jdk.xml
+./demo/nbproject/management/JTop/nbproject/project.xml
+./demo/nbproject/management/JTop/build.xml
 ./demo/nbproject/management/MemoryMonitor/
 ./demo/nbproject/management/MemoryMonitor/build.properties
+./demo/nbproject/management/MemoryMonitor/build.xml
 ./demo/nbproject/management/MemoryMonitor/nbproject/
 ./demo/nbproject/management/MemoryMonitor/nbproject/file-targets.xml
 ./demo/nbproject/management/MemoryMonitor/nbproject/netbeans-targets.xml
-./demo/nbproject/management/MemoryMonitor/nbproject/project.xml
 ./demo/nbproject/management/MemoryMonitor/nbproject/jdk.xml
-./demo/nbproject/management/MemoryMonitor/build.xml
+./demo/nbproject/management/MemoryMonitor/nbproject/project.xml
 ./demo/nbproject/management/VerboseGC/
-./demo/nbproject/management/VerboseGC/build.xml
 ./demo/nbproject/management/VerboseGC/build.properties
 ./demo/nbproject/management/VerboseGC/nbproject/
-./demo/nbproject/management/VerboseGC/nbproject/file-targets.xml
-./demo/nbproject/management/VerboseGC/nbproject/netbeans-targets.xml
-./demo/nbproject/management/VerboseGC/nbproject/project.xml
 ./demo/nbproject/management/VerboseGC/nbproject/jdk.xml
+./demo/nbproject/management/VerboseGC/nbproject/netbeans-targets.xml
+./demo/nbproject/management/VerboseGC/nbproject/file-targets.xml
+./demo/nbproject/management/VerboseGC/nbproject/project.xml
+./demo/nbproject/management/VerboseGC/build.xml
 ./demo/nbproject/scripting/
 ./demo/nbproject/scripting/jconsole-plugin/
 ./demo/nbproject/scripting/jconsole-plugin/build.properties
 ./demo/nbproject/scripting/jconsole-plugin/nbproject/
-./demo/nbproject/scripting/jconsole-plugin/nbproject/file-targets.xml
 ./demo/nbproject/scripting/jconsole-plugin/nbproject/jdk.xml
-./demo/nbproject/scripting/jconsole-plugin/nbproject/project.xml
+./demo/nbproject/scripting/jconsole-plugin/nbproject/file-targets.xml
 ./demo/nbproject/scripting/jconsole-plugin/nbproject/netbeans-targets.xml
+./demo/nbproject/scripting/jconsole-plugin/nbproject/project.xml
 ./demo/nbproject/scripting/jconsole-plugin/build.xml
 ./demo/nbproject/project.xml
+./demo/README
 [91m++ pwd
 [0m[91m+ tar czvf /tmp/jdk9u/../openjdk.tar.gz -C build/linux-x86_64-normal-server-release/images/jre . -C ../jdk ./bin/jcmd ./bin/jmap ./bin/jstack ./man/man1/jcmd.1 ./man/man1/jmap.1 ./man/man1/jstack.1 ./lib/libattach.so
 [0m./
@@ -3968,6 +3969,7 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./lib/libinstrument.so
 ./lib/libunpack.so
 ./lib/libmanagement_agent.so
+./lib/libj2pcsc.so
 ./lib/jvm.cfg
 ./lib/security/
 ./lib/security/default.policy
@@ -3992,17 +3994,16 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./lib/classlist
 ./lib/libmanagement_ext.so
 ./lib/librmi.so
-./lib/libj2pcsc.so
 ./lib/libjaas_unix.so
 ./lib/libprefs.so
 ./lib/libsunec.so
 ./lib/psfont.properties.ja
 ./lib/psfontj2d.properties
 ./lib/libmlib_image.so
-./lib/libjavajpeg.so
 ./lib/libawt.so
-./lib/libsplashscreen.so
+./lib/libjavajpeg.so
 ./lib/libjsound.so
+./lib/libsplashscreen.so
 ./lib/libjsoundalsa.so
 ./lib/liblcms.so
 ./lib/libawt_xawt.so
@@ -4012,16 +4013,16 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./lib/libj2pkcs11.so
 ./lib/libdt_socket.so
 ./lib/libjdwp.so
-./lib/libsctp.so
 ./lib/libj2gss.so
+./lib/libsctp.so
 ./bin/
 ./bin/jrunscript
 ./bin/pack200
 ./bin/unpack200
 ./bin/keytool
 ./bin/java
-./bin/rmiregistry
 ./bin/rmid
+./bin/rmiregistry
 ./bin/jjs
 ./bin/appletviewer
 ./bin/idlj
@@ -4046,8 +4047,8 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./conf/security/policy/unlimited/default_local.policy
 ./conf/security/java.security
 ./conf/net.properties
-./conf/sound.properties
 ./conf/logging.properties
+./conf/sound.properties
 ./legal/
 ./legal/java.desktop/
 ./legal/java.desktop/mesa3d.md
@@ -4196,6 +4197,11 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.management.agent/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.management.agent/LICENSE
 ./legal/jdk.management.agent/ASSEMBLY_EXCEPTION
+./legal/java.smartcardio/
+./legal/java.smartcardio/ADDITIONAL_LICENSE_INFO
+./legal/java.smartcardio/pcsclite.md
+./legal/java.smartcardio/LICENSE
+./legal/java.smartcardio/ASSEMBLY_EXCEPTION
 ./legal/jdk.scripting.nashorn/
 ./legal/jdk.scripting.nashorn/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.scripting.nashorn/double-conversion.md
@@ -4206,20 +4212,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.naming.dns/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.naming.dns/LICENSE
 ./legal/jdk.naming.dns/ASSEMBLY_EXCEPTION
-./legal/java.smartcardio/
-./legal/java.smartcardio/ADDITIONAL_LICENSE_INFO
-./legal/java.smartcardio/pcsclite.md
-./legal/java.smartcardio/LICENSE
-./legal/java.smartcardio/ASSEMBLY_EXCEPTION
 ./legal/jdk.security.auth/
 ./legal/jdk.security.auth/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.security.auth/LICENSE
 ./legal/jdk.security.auth/ASSEMBLY_EXCEPTION
-./legal/java.xml.crypto/
-./legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO
-./legal/java.xml.crypto/LICENSE
-./legal/java.xml.crypto/santuario.md
-./legal/java.xml.crypto/ASSEMBLY_EXCEPTION
 ./legal/java.compiler/
 ./legal/java.compiler/ADDITIONAL_LICENSE_INFO
 ./legal/java.compiler/LICENSE
@@ -4232,6 +4228,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.scripting.nashorn.shell/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.scripting.nashorn.shell/LICENSE
 ./legal/jdk.scripting.nashorn.shell/ASSEMBLY_EXCEPTION
+./legal/jdk.jsobject/
+./legal/jdk.jsobject/ADDITIONAL_LICENSE_INFO
+./legal/jdk.jsobject/LICENSE
+./legal/jdk.jsobject/ASSEMBLY_EXCEPTION
 ./legal/java.sql/
 ./legal/java.sql/ADDITIONAL_LICENSE_INFO
 ./legal/java.sql/LICENSE
@@ -4240,6 +4240,11 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO
 ./legal/java.sql.rowset/LICENSE
 ./legal/java.sql.rowset/ASSEMBLY_EXCEPTION
+./legal/java.xml.crypto/
+./legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO
+./legal/java.xml.crypto/LICENSE
+./legal/java.xml.crypto/santuario.md
+./legal/java.xml.crypto/ASSEMBLY_EXCEPTION
 ./legal/java.se/
 ./legal/java.se/ADDITIONAL_LICENSE_INFO
 ./legal/java.se/LICENSE
@@ -4269,6 +4274,10 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.net/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.net/LICENSE
 ./legal/jdk.net/ASSEMBLY_EXCEPTION
+./legal/jdk.xml.dom/
+./legal/jdk.xml.dom/ADDITIONAL_LICENSE_INFO
+./legal/jdk.xml.dom/LICENSE
+./legal/jdk.xml.dom/ASSEMBLY_EXCEPTION
 ./legal/jdk.jdwp.agent/
 ./legal/jdk.jdwp.agent/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.jdwp.agent/LICENSE
@@ -4285,14 +4294,6 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./legal/jdk.sctp/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.sctp/LICENSE
 ./legal/jdk.sctp/ASSEMBLY_EXCEPTION
-./legal/jdk.xml.dom/
-./legal/jdk.xml.dom/ADDITIONAL_LICENSE_INFO
-./legal/jdk.xml.dom/LICENSE
-./legal/jdk.xml.dom/ASSEMBLY_EXCEPTION
-./legal/jdk.jsobject/
-./legal/jdk.jsobject/ADDITIONAL_LICENSE_INFO
-./legal/jdk.jsobject/LICENSE
-./legal/jdk.jsobject/ASSEMBLY_EXCEPTION
 ./legal/jdk.zipfs/
 ./legal/jdk.zipfs/ADDITIONAL_LICENSE_INFO
 ./legal/jdk.zipfs/LICENSE
@@ -4300,27 +4301,27 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./release
 ./man/
 ./man/man1/
-./man/man1/jjs.1
 ./man/man1/java.1
+./man/man1/jjs.1
 ./man/man1/keytool.1
-./man/man1/rmiregistry.1
-./man/man1/pack200.1
-./man/man1/servertool.1
-./man/man1/unpack200.1
-./man/man1/rmid.1
 ./man/man1/orbd.1
+./man/man1/pack200.1
+./man/man1/rmid.1
+./man/man1/servertool.1
+./man/man1/rmiregistry.1
 ./man/man1/tnameserv.1
+./man/man1/unpack200.1
 ./man/ja_JP.UTF-8/
 ./man/ja_JP.UTF-8/man1/
 ./man/ja_JP.UTF-8/man1/java.1
-./man/ja_JP.UTF-8/man1/orbd.1
 ./man/ja_JP.UTF-8/man1/keytool.1
-./man/ja_JP.UTF-8/man1/rmid.1
-./man/ja_JP.UTF-8/man1/jjs.1
-./man/ja_JP.UTF-8/man1/rmiregistry.1
-./man/ja_JP.UTF-8/man1/servertool.1
+./man/ja_JP.UTF-8/man1/orbd.1
 ./man/ja_JP.UTF-8/man1/pack200.1
+./man/ja_JP.UTF-8/man1/rmiregistry.1
+./man/ja_JP.UTF-8/man1/jjs.1
+./man/ja_JP.UTF-8/man1/rmid.1
 ./man/ja_JP.UTF-8/man1/tnameserv.1
+./man/ja_JP.UTF-8/man1/servertool.1
 ./man/ja_JP.UTF-8/man1/unpack200.1
 ./man/ja
 ./bin/jcmd
@@ -4331,17 +4332,17 @@ Finished building target 'images' in configuration 'linux-x86_64-normal-server-r
 ./man/man1/jstack.1
 ./lib/libattach.so
 [91m+ popd
-+ echo '----> Export'
-[0m[91m+ mkdir output/
 [0m/tmp
 ----> Export
-[91m+ mv openjdk-jdk.tar.gz output/jdk-9.0.4+12-jdk.tar.gz
+[91m+ echo '----> Export'
++ mkdir output/
+[0m[91m+ mv openjdk-jdk.tar.gz output/jdk-9.0.4+12-jdk.tar.gz
 [0m[91m+ mv openjdk.tar.gz output/jdk-9.0.4+12.tar.gz
 [0m[91m+ shasum -a 256 output/jdk-9.0.4+12-jdk.tar.gz output/jdk-9.0.4+12.tar.gz
 [0m[91m+ cat output/shasums
-[0m4bbc4833e493b17f145b3704e915d72439d9f8ae3b1d5bff02d7ba3ffc5ef05b  output/jdk-9.0.4+12-jdk.tar.gz
-078cc4dfe4016bf5f51194b98f9f23486def5ae801394ce24af13727ad6bcf87  output/jdk-9.0.4+12.tar.gz
- ---> 6e0cec3be3b0
-Removing intermediate container d06e530587bb
-Successfully built 6e0cec3be3b0
-Successfully tagged openjdk-11b72b63-b337-4b8b-bf09-ed183e996479:latest
+[0m2fecae45d09750621e2d542a9605735f11478fbb92096fcd221380dd7e640031  output/jdk-9.0.4+12-jdk.tar.gz
+ba739b9abd8045e52e251e87dbeedba35601064bcb2a9e1aab702eae8b610f1f  output/jdk-9.0.4+12.tar.gz
+ ---> ebb0b9940f25
+Removing intermediate container ade83fec4a77
+Successfully built ebb0b9940f25
+Successfully tagged openjdk-d7f43dcf-cb69-4a32-b7fa-2bd701ecd25e:latest
