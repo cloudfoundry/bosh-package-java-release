@@ -41,3 +41,15 @@ instance_groups:
   stemcell: default
   networks:
   - name: default
+
+- name: openjdk-11-test
+  azs: [z1]
+  instances: 1
+  jobs:
+  - name: openjdk-11-test
+    release: java
+    properties: {}
+  vm_type: default
+  stemcell: default
+  networks:
+  - name: default

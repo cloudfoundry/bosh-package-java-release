@@ -1,0 +1,11 @@
+---
+name: openjdk-11-test
+
+templates:
+  run: bin/run
+
+packages:
+- openjdk-11
+- openjdk-11-test
+
+properties: {}

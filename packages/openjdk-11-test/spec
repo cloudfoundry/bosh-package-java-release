@@ -1,0 +1,7 @@
+---
+name: openjdk-11-test
+
+dependencies:
+- openjdk-11
+
+files: []

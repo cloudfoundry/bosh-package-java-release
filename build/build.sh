@@ -42,3 +42,8 @@ echo "----> OpenJDK 9"
 pushd packages/openjdk-9/
   build_jdk
 popd
+
+echo "----> OpenJDK 11"
+pushd packages/openjdk-11/
+  build_jdk
+popd

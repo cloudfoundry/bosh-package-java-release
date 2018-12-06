@@ -18,6 +18,7 @@ echo "-----> `date`: Deploy"
 echo "-----> `date`: Run test errand"
 bosh -n -d test run-errand openjdk-8-test
 bosh -n -d test run-errand openjdk-9-test
+bosh -n -d test run-errand openjdk-11-test
 
 echo "-----> `date`: Delete deployments"
 bosh -n -d test delete-deployment
