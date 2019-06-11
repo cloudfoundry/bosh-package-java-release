@@ -3,7 +3,7 @@
 set -e # -x
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-build_dir="${script_dir}/../../.."
+build_dir="${script_dir}/../.."
 stemcell="${build_dir}/stemcell/stemcell.tgz"
 
 echo "-----> $(date): Uploading stemcell"
