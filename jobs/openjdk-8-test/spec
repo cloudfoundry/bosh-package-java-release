@@ -1,0 +1,7 @@
+---
+name: openjdk-8-test
+templates:
+  run: bin/run
+packages:
+- openjdk-8
+properties: {}

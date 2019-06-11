@@ -1,0 +1,7 @@
+---
+name: openjdk-8
+dependencies: []
+files:
+- openjdk-8/compile.env
+- openjdk-8/runtime.env
+- jre-1.8.0_212.tar.gz

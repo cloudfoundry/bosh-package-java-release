@@ -30,3 +30,7 @@ jdk8u192-b03.tar.gz:
   size: 45670457
   object_id: 8f7f0dda-a4af-4aa5-7a36-234c3cb25065
   sha: sha256:5d8203117cad2ed7ef1e20d951f3c1b1515f725484e35cc10c61307e66018efe
+jre-1.8.0_212.tar.gz:
+  size: 40459533
+  object_id: 1108f8b0-2f5a-4ed9-4ae7-7d8de215ec83
+  sha: sha256:775ddcccfa03d694f4570f6cd501f25feb2cb42f5162129de88d551c460d58b8
