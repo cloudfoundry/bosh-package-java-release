@@ -51,6 +51,7 @@ resources:
 
 jobs:
 - name: build-8
+  serial: true
   plan:
   - aggregate:
     - get: java-release
@@ -75,6 +76,7 @@ jobs:
       repository: java-release-out
 
 - name: build-11
+  serial: true
   plan:
   - aggregate:
     - get: java-release
