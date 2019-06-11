@@ -13,6 +13,9 @@ resources:
     branch: maintain
     private_key: ((github_deployment_key))
 
+# https://java-buildpack.cloudfoundry.org/openjdk/bionic/x86_64/index.yml
+# https://java-buildpack.cloudfoundry.org/openjdk-jdk/bionic/x86_64/index.yml
+
 - name: jdk-8
   type: repository-resource
   source:
@@ -27,8 +30,22 @@ resources:
     path: '/openjdk/bionic/x86_64'
     version_pattern: 1\.8\.0.*
 
+- name: jdk-11
+  type: repository-resource
+  source:
+    bucket: download.pivotal.io
+    path:   /openjdk-jdk/bionic/x86_64
+    version_pattern: 11\..*
+
+- name: jre-11
+  type: repository-resource
+  source:
+    bucket: download.pivotal.io
+    path: '/openjdk/bionic/x86_64'
+    version_pattern: 11\..*
+
 jobs:
-- name: build
+- name: build-8
   plan:
   - aggregate:
     - get: java-release
@@ -47,4 +64,27 @@ jobs:
       jre: jre-8
   - put: java-release
     params:
+      rebase: true
+      repository: java-release-out
+
+- name: build-11
+  plan:
+  - aggregate:
+    - get: java-release
+    - get: jdk-11
+      trigger: true
+    - get: jre-11
+      trigger: true
+  - task: build
+    privileged: true
+    file: java-release/ci/build.yml
+    params:
+      BLOBSTORE_ACCESS_KEY_ID: ((release_blobs_access_key_id))
+      BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
+    input_mapping:
+      jdk: jdk-11
+      jre: jre-11
+  - put: java-release
+    params:
+      rebase: true
       repository: java-release-out
