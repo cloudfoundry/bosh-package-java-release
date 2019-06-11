@@ -1,0 +1,7 @@
+---
+name: openjdk-11
+dependencies: []
+files:
+- openjdk-11/compile.env
+- openjdk-11/runtime.env
+- jre-11.0.3_07.tar.gz
