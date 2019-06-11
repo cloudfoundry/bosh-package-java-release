@@ -1,27 +1,50 @@
----
-groups:
-- name: all
-  jobs:
-  - build
-
-jobs:
-- name: build
-  plan:
-  - get: java-release
-  - task: build
-    privileged: true
-    file: java-release/ci/build.yml
-    params:
-      BLOBSTORE_ACCESS_KEY_ID: {{release_blobs_access_key_id}}
-      BLOBSTORE_SECRET_ACCESS_KEY: {{release_blobs_secret_access_key}}
-  - put: java-release
-    params:
-      repository: java-release-out
+resource_types:
+- name: repository-resource
+  type: docker-image
+  source:
+    repository: cfje/repository-resource
+    tag: latest
 
 resources:
 - name: java-release
   type: git
   source:
     uri: git@github.com:bosh-packages/java-release
-    branch: master
-    private_key: {{github_deployment_key}}
+    branch: maintain
+    private_key: ((github_deployment_key))
+
+- name: jdk-8
+  type: repository-resource
+  source:
+    bucket: download.pivotal.io
+    path:   /openjdk-jdk/bionic/x86_64
+    version_pattern: 1\.8\.0.*
+
+- name: jre-8
+  type: repository-resource
+  source:
+    bucket: download.pivotal.io
+    path: '/openjdk/bionic/x86_64'
+    version_pattern: 1\.8\.0.*
+
+jobs:
+- name: build
+  plan:
+  - aggregate:
+    - get: java-release
+    - get: jdk-8
+      trigger: true
+    - get: jre-8
+      trigger: true
+  - task: build
+    privileged: true
+    file: java-release/ci/build.yml
+    params:
+      BLOBSTORE_ACCESS_KEY_ID: ((release_blobs_access_key_id))
+      BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
+    input_mapping:
+      jdk: jdk-8
+      jre: jre-8
+  - put: java-release
+    params:
+      repository: java-release-out

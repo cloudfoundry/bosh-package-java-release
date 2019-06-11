@@ -1,27 +1,116 @@
 #!/bin/bash
 
-set -e -o pipefail
+set -eu -o pipefail
 
+function get_major_version() {
+  local version="$1"
+  local major="$(echo "$version" | cut -d. -f1)"
+  if [[ "$major" -eq 1 ]]; then
+    local major="$(echo "$version" | cut -d. -f2)"
+  fi
+  echo "$major"
+}
+
+echo "Checking JRE & JDK versions"
+jdk_version="$(ls jdk/*.tar.gz | grep -Po '\d.*\d')"
+jre_version="$(ls jre/*.tar.gz | grep -Po '\d.*\d')"
+major_version="$(get_major_version "$jdk_version")"
+
+if [[ "$jdk_version" != "$jre_version" ]]; then
+  echo "jdk version: $jdk_version does not match jre version: $jre_version, cowardly exit 😣"
+  exit 1
+fi
+
+echo "version: $jdk_version"
+
+echo "Adding openjdk to bosh blobs"
+jdk_file="jdk-${jdk_version}.tar.gz"
+jre_file="jre-${jdk_version}.tar.gz"
+
+# TODO: add jdk part
+# bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_file"
+bosh add-blob --sha2 --dir java-release jre/*.tar.gz "$jre_file"
+
+echo "Create release folder structure"
 cd java-release
 
-echo "Starting Docker and Director"
-source `which start-bosh` # source to load DOCKER_ env vars
+mkdir -p "src/openjdk-$major_version"
+cat > "src/openjdk-$major_version/compile.env" <<EOF
+export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}/jre
+export PATH=\$JAVA_HOME/bin:\$PATH
+EOF
+cat > "src/openjdk-$major_version/runtime.env" <<EOF
+export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}/jre
+export PATH=\$JAVA_HOME/bin:\$PATH
+EOF
+
+mkdir -p "packages/openjdk-$major_version"
+cat > "packages/openjdk-$major_version/spec" <<EOF
+---
+name: openjdk-${major_version}
+dependencies: []
+files:
+- openjdk-${major_version}/compile.env
+- openjdk-${major_version}/runtime.env
+- ${jre_file}
+EOF
+cat > "packages/openjdk-$major_version/packaging" <<EOF
+set -ex
+mkdir \${BOSH_INSTALL_TARGET}/bosh
+cp openjdk-${major_version}/runtime.env \${BOSH_INSTALL_TARGET}/bosh/runtime.env
+cp openjdk-${major_version}/compile.env \${BOSH_INSTALL_TARGET}/bosh/compile.env
+
+cd \${BOSH_INSTALL_TARGET}
+mkdir jre
+tar zxvf \${BOSH_COMPILE_TARGET}/*.tar.gz -C jre
+
+# latest JRE release didn't have correct permissions
+chmod -R a+r jre
+EOF
+
+mkdir -p "jobs/openjdk-$major_version-test/templates"
+touch "jobs/openjdk-$major_version-test/monit"
+cat > "jobs/openjdk-$major_version-test/spec" <<EOF
+---
+name: openjdk-${major_version}-test
+templates:
+  run: bin/run
+packages:
+- openjdk-${major_version}
+properties: {}
+EOF
+cat > "jobs/openjdk-$major_version-test/templates/run" <<EOF
+#!/bin/bash
+set -ex
+source /var/vcap/packages/openjdk-${major_version}/bosh/runtime.env
+java -version
+EOF
+
+mkdir -p manifests
+cat > manifests/test.yml <<EOF
+{"name":"test",
+"releases":[{"name":"java","version":"create","url":"file://."}],
+"stemcells":[{"alias":"default","os":"ubuntu-xenial","version":"latest"}],
+"update":{"canaries":2,"max_in_flight":1,"canary_watch_time":"5000-60000","update_watch_time":"5000-60000"},
+"instance_groups":[
+{"name":"openjdk-test",
+"azs":["z1"],
+"instances":1,
+"lifecycle":"errand",
+"jobs":[{"name":"openjdk-${major_version}-test","release":"java","properties":{}}],
+"vm_type":"default",
+"stemcell":"default",
+"networks":[{"name":"default"}]}]}
+EOF
+
+echo "Starting Director"
+start-bosh
 source /tmp/local-bosh/director/env
 
-# echo "(debug) Starting Docker daemon and Director"
-# source ./ci/start-docker.sh
-# start_docker
-
-echo "Docker env useful for copy-pasta during debugging"
-env | grep DOCKER_ | xargs -n1 echo export
-
-echo "Build assets"
-./build/build.sh
-
 echo "Run tests"
-pushd tests
+pushd tests &> /dev/null
 	./run.sh
-popd
+popd &> /dev/null
 
 echo "Issue new release"
 ./ci/finalize.sh

@@ -8,6 +8,8 @@ image_resource:
 
 inputs:
 - name: java-release
+- name: jdk
+- name: jre
 
 outputs:
 - name: java-release-out

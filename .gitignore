@@ -13,3 +13,6 @@ releases/**/*.tgz
 *#
 #*
 tmp/
+
+
+ci-old

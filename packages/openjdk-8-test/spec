@@ -1,7 +1,0 @@
----
-name: openjdk-8-test
-
-dependencies:
-- openjdk-8
-
-files: []
