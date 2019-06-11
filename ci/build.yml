@@ -2,7 +2,7 @@
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source:
     repository: bosh/main-bosh-docker
 
@@ -10,6 +10,7 @@ inputs:
 - name: java-release
 - name: jdk
 - name: jre
+- name: stemcell
 
 outputs:
 - name: java-release-out

@@ -2,9 +2,12 @@
 
 set -e # -x
 
-echo "-----> `date`: Upload stemcell"
-bosh -n upload-stemcell 'https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-xenial-go_agent?v=315.36' \
-  --sha1 b33bc047562aab2d9860420228aadbd88c5fccfb
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+build_dir="${script_dir}/../../.."
+stemcell="${build_dir}/stemcell/stemcell.tgz"
+
+echo "-----> $(date): Uploading stemcell"
+bosh -n upload-stemcell "${stemcell}"
 
 echo "-----> `date`: Delete previous deployment"
 bosh -n -d test delete-deployment --force

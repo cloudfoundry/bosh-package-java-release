@@ -1,6 +1,6 @@
 resource_types:
 - name: repository-resource
-  type: docker-image
+  type: registry-image
   source:
     repository: cfje/repository-resource
     tag: latest
@@ -44,6 +44,11 @@ resources:
     path: '/openjdk/bionic/x86_64'
     version_pattern: 11\..*
 
+- name: stemcell
+  type: bosh-io-stemcell
+  source:
+    name: bosh-warden-boshlite-ubuntu-xenial-go_agent
+
 jobs:
 - name: build-8
   plan:
@@ -52,6 +57,8 @@ jobs:
     - get: jdk-8
       trigger: true
     - get: jre-8
+      trigger: true
+    - get: stemcell
       trigger: true
   - task: build
     privileged: true
@@ -74,6 +81,8 @@ jobs:
     - get: jdk-11
       trigger: true
     - get: jre-11
+      trigger: true
+    - get: stemcell
       trigger: true
   - task: build
     privileged: true
