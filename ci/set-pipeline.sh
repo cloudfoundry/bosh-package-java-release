@@ -19,7 +19,7 @@ function login() {
       --team-name "$TEAM_NAME"
 }
 
-lpass sync
+#lpass sync
 authorized || login
 
 fly --target production set-pipeline \

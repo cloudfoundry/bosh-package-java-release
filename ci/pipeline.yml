@@ -13,35 +13,35 @@ resources:
     branch: maintain
     private_key: ((github_deployment_key))
 
-# https://java-buildpack.cloudfoundry.org/openjdk/bionic/x86_64/index.yml
-# https://java-buildpack.cloudfoundry.org/openjdk-jdk/bionic/x86_64/index.yml
+# https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/index.yml
+# https://java-buildpack.cloudfoundry.org/openjdk-jdk/trusty/x86_64/index.yml
 
 - name: jdk-8
   type: repository-resource
   source:
     bucket: download.pivotal.io
-    path:   /openjdk-jdk/bionic/x86_64
+    path: '/openjdk-jdk/trusty/x86_64'
     version_pattern: 1\.8\.0.*
 
 - name: jre-8
   type: repository-resource
   source:
     bucket: download.pivotal.io
-    path: '/openjdk/bionic/x86_64'
+    path: '/openjdk/trusty/x86_64'
     version_pattern: 1\.8\.0.*
 
 - name: jdk-11
   type: repository-resource
   source:
     bucket: download.pivotal.io
-    path:   /openjdk-jdk/bionic/x86_64
+    path: '/openjdk-jdk/trusty/x86_64'
     version_pattern: 11\..*
 
 - name: jre-11
   type: repository-resource
   source:
     bucket: download.pivotal.io
-    path: '/openjdk/bionic/x86_64'
+    path: '/openjdk/trusty/x86_64'
     version_pattern: 11\..*
 
 - name: stemcell
