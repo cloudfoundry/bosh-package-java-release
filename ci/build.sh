@@ -4,11 +4,7 @@ set -eu -o pipefail
 
 function get_major_version() {
   local version="$1"
-  local major="$(echo "$version" | cut -d. -f1)"
-  if [[ "$major" -eq 1 ]]; then
-    local major="$(echo "$version" | cut -d. -f2)"
-  fi
-  echo "$major"
+  echo "$version" | grep -Po '^\d+'
 }
 
 echo "Checking JRE & JDK versions"
@@ -62,7 +58,7 @@ cp openjdk-${major_version}/compile.env \${BOSH_INSTALL_TARGET}/bosh/compile.env
 
 cd \${BOSH_INSTALL_TARGET}
 mkdir jre
-tar zxvf \${BOSH_COMPILE_TARGET}/*.tar.gz -C jre
+tar zxvf \${BOSH_COMPILE_TARGET}/*.tar.gz --strip 1 -C jre
 
 # latest JRE release didn't have correct permissions
 chmod -R a+r jre
