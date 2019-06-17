@@ -1,0 +1,32 @@
+name: java
+version: "8"
+commit_hash: 6ed98c1
+uncommitted_changes: false
+jobs:
+- name: openjdk-11-test
+  version: 35e5e3ea03530e0eb8ac0e84045fd08f48b5bd6d1b42c664d9317fc96b469087
+  fingerprint: 35e5e3ea03530e0eb8ac0e84045fd08f48b5bd6d1b42c664d9317fc96b469087
+  sha1: sha256:3d159e668dfa7c8c3c2ae1c8981c2084c54409df0482c1e0f8f3657cc6a7ee35
+  packages:
+  - openjdk-11
+- name: openjdk-8-test
+  version: dc2faf6666f21ee0016c405c16a3fe23914c1b4d581c56edb7bcf1808f89faa4
+  fingerprint: dc2faf6666f21ee0016c405c16a3fe23914c1b4d581c56edb7bcf1808f89faa4
+  sha1: sha256:93f98f4d26fbcaab84c2331cd4e7977c75aa8f42fd1ea2a80af35f0b80c650f3
+  packages:
+  - openjdk-8
+packages:
+- name: openjdk-11
+  version: 66cb4b8096e9ece685404061b2ef838b6d527ae0eefd05b4bbfd48d104e5c920
+  fingerprint: 66cb4b8096e9ece685404061b2ef838b6d527ae0eefd05b4bbfd48d104e5c920
+  sha1: sha256:aa2df1f8be68a422d35b20d50979f094a1387686bade2a6f4ac78845454c0391
+  dependencies: []
+- name: openjdk-8
+  version: 6b6b24300d00230a504b81776feee105ac09ec83ee94158cb8f04394e7386396
+  fingerprint: 6b6b24300d00230a504b81776feee105ac09ec83ee94158cb8f04394e7386396
+  sha1: sha256:676b84ee30c22d1668241812fe6695134966bfcbfc98fabedc699bb5b3927974
+  dependencies: []
+license:
+  version: 2f960572106acc0a3aa7d49b2edfc405d46a0394794769da19041c8d4f5f0451
+  fingerprint: 2f960572106acc0a3aa7d49b2edfc405d46a0394794769da19041c8d4f5f0451
+  sha1: sha256:0c74374c8eae39db40b4e9bffe1bf9154fd66100ce226f390ea3b10627649bde
