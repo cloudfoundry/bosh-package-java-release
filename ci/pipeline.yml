@@ -5,6 +5,12 @@ resource_types:
     repository: cfje/repository-resource
     tag: latest
 
+- name: glenn-github-release-resource
+  type: registry-image
+  source:
+    repository: pcfmetrics/glenn-github-release-resource
+    tag: latest
+
 resources:
 - name: java-release
   type: git
@@ -17,18 +23,12 @@ resources:
 # https://java-buildpack.cloudfoundry.org/openjdk-jdk/trusty/x86_64/index.yml
 
 - name: jdk-8
-  type: repository-resource
+  type: glenn-github-release-resource
+  check_every: 20m
   source:
-    bucket: download.pivotal.io
-    path: '/openjdk-jdk/trusty/x86_64'
-    version_pattern: 1\.8\.0.*
-
-- name: jre-8
-  type: repository-resource
-  source:
-    bucket: download.pivotal.io
-    path: '/openjdk/trusty/x86_64'
-    version_pattern: 1\.8\.0.*
+    owner: AdoptOpenJDK
+    repository: openjdk8-binaries
+    tag_filter: 'jdk8u(\d+\-b\d+)'
 
 - name: jdk-11
   type: repository-resource
@@ -56,9 +56,8 @@ jobs:
   - aggregate:
     - get: java-release
     - get: jdk-8
-      trigger: true
-    - get: jre-8
-      trigger: true
+      params:
+        globs: ['*_x64_linux_hotspot*']
     - get: stemcell
       trigger: true
   - task: build
@@ -69,7 +68,6 @@ jobs:
       BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
     input_mapping:
       jdk: jdk-8
-      jre: jre-8
   - put: java-release
     params:
       rebase: true
