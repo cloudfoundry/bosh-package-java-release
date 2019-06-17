@@ -34,6 +34,10 @@ jre-1.8.0_212.tar.gz:
   size: 40459533
   object_id: 3e3858f5-be6f-46bc-46e5-ecdcc4f58152
   sha: sha256:775ddcccfa03d694f4570f6cd501f25feb2cb42f5162129de88d551c460d58b8
+jre-8u212b04.tar.gz:
+  size: 40871664
+  object_id: cee066cb-db41-436e-60b6-2931e1671cb5
+  sha: sha256:96d24d94c022b3e414b612cae8829244329d71ad2cce790f099c020f33247e7e
 jre-11.0.3_07.tar.gz:
   size: 41180710
   object_id: 6efdaa89-d202-4d23-7085-7abcef0e5220
