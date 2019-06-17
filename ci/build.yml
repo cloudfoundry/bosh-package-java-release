@@ -9,6 +9,7 @@ image_resource:
 inputs:
 - name: java-release
 - name: jdk
+- name: jre
 - name: stemcell
 
 outputs:
