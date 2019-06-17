@@ -12,8 +12,8 @@ function get_major_version() {
 }
 
 echo "Checking JRE & JDK versions"
-jdk_version="$(ls jdk/*.tar.gz | grep -Po '\d.*\d')"
-jre_version="$(ls jre/*.tar.gz | grep -Po '\d.*\d')"
+jdk_version="$(ls jdk/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
+jre_version="$(ls jre/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
 major_version="$(get_major_version "$jdk_version")"
 
 if [[ "$jdk_version" != "$jre_version" ]]; then

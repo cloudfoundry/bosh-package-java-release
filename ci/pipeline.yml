@@ -22,13 +22,13 @@ resources:
 # https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/index.yml
 # https://java-buildpack.cloudfoundry.org/openjdk-jdk/trusty/x86_64/index.yml
 
-- name: jdk-8
+- name: java-8
   type: glenn-github-release-resource
   check_every: 20m
   source:
     owner: AdoptOpenJDK
     repository: openjdk8-binaries
-    tag_filter: 'jdk8u(\d+\-b\d+)'
+    tag_filter: 'jdk8u(\d+\-b\d+)$'
 
 - name: jdk-11
   type: repository-resource
@@ -56,8 +56,13 @@ jobs:
   - aggregate:
     - get: java-release
     - get: jdk-8
+      resource: java-8
       params:
-        globs: ['*_x64_linux_hotspot*']
+        globs: ['*jdk_x64_linux_hotspot*']
+    - get: jre-8
+      resource: java-8
+      params:
+        globs: ['*jre_x64_linux_hotspot*']
     - get: stemcell
       trigger: true
   - task: build
@@ -68,6 +73,7 @@ jobs:
       BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
     input_mapping:
       jdk: jdk-8
+      jre: jre-8
   - put: java-release
     params:
       rebase: true
