@@ -19,17 +19,14 @@ EOF
 }
 
 function compare_blob_sha_with_new_file () {
-  local file_name="$1"
+  local blob_file_name="$1"
+  local input_file_name="$2"
+
   pushd "${ROOT}/java-release" &> /dev/null
-    sha="$(bosh blobs --json | jq -r ".Tables[].Rows[] | select(.path == \"${file_name}\") | .digest" | cut -d: -f2)"
+    local blob_sha="$(bosh blobs --json | jq -r ".Tables[].Rows[] | select(.path == \"${blob_file_name}\") | .digest" | cut -d: -f2)"
   popd &> /dev/null
 
-  if `shasum -c <(echo "${sha} ${file_name}")`; then
-    >&2 echo "The blob to be added is identical with the existing one: ${file_name}"
-    exit 0
-  fi
-
-  exit 1
+  shasum -c <(echo "${blob_sha}  ${input_file_name}")
 }
 
 function get_major_version() {
@@ -50,19 +47,20 @@ fi
 echo "version: $jdk_version"
 
 echo "Adding openjdk to bosh blobs"
-#jdk_file="jdk-${jdk_version}.tar.gz"
-jre_file="jre-${jdk_version}.tar.gz"
+#jdk_blob_filename="jdk-${jdk_version}.tar.gz"
+jre_blob_filename="jre-${jdk_version}.tar.gz"
 
 #
-#if `compare_blob_sha_with_new_file ${jdk_file}`; then
-#  bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_file"
+#if `compare_blob_sha_with_new_file ${jdk_blob_filename}`; then
+#  bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_blob_filename"
 #fi
 
-if `compare_blob_sha_with_new_file ${jre_file}`; then
+if `compare_blob_sha_with_new_file ${jre_blob_filename} jre/*.tar.gz`; then
+  echo "The blob to be added is identical with the existing one: ${jre_blob_filename}"
   exit 0
 fi
 
-bosh add-blob --sha2 --dir java-release jre/*.tar.gz "$jre_file"
+bosh add-blob --sha2 --dir java-release jre/*.tar.gz "$jre_blob_filename"
 
 echo "Create release folder structure"
 cd java-release
@@ -85,7 +83,7 @@ dependencies: []
 files:
 - openjdk-${major_version}/compile.env
 - openjdk-${major_version}/runtime.env
-- ${jre_file}
+- ${jre_blob_filename}
 EOF
 cat > "packages/openjdk-$major_version/packaging" <<EOF
 set -ex
