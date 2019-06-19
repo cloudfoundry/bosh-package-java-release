@@ -35,7 +35,10 @@ function get_major_version() {
 }
 
 echo "Checking JRE & JDK versions"
+jdk_file="$(ls jdk/*.tar.gz)"
 jdk_version="$(ls jdk/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
+
+jre_file="$(ls jre/*.tar.gz)"
 jre_version="$(ls jre/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
 major_version="$(get_major_version "$jdk_version")"
 
@@ -51,11 +54,11 @@ echo "Adding openjdk to bosh blobs"
 jre_blob_filename="jre-${jdk_version}.tar.gz"
 
 #
-#if `compare_blob_sha_with_new_file ${jdk_blob_filename}`; then
+#if `compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}`; then
 #  bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_blob_filename"
 #fi
 
-if `compare_blob_sha_with_new_file ${jre_blob_filename} jre/*.tar.gz`; then
+if `compare_blob_sha_with_new_file ${jre_blob_filename} ${ROOT}/${jre_file}`; then
   echo "The blob to be added is identical with the existing one: ${jre_blob_filename}"
   exit 0
 fi
