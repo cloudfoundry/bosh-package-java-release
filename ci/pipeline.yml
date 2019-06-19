@@ -1,22 +1,9 @@
-resource_types:
-- name: repository-resource
-  type: registry-image
-  source:
-    repository: cfje/repository-resource
-    tag: latest
-
-- name: glenn-github-release-resource
-  type: registry-image
-  source:
-    repository: pcfmetrics/glenn-github-release-resource
-    tag: latest
-
 resources:
 - name: java-release
   type: git
   source:
     uri: git@github.com:bosh-packages/java-release
-    branch: maintain
+    branch: main
     private_key: ((github_deployment_key))
 
 - name: stemcell
