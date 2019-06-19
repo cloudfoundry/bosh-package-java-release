@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu -o pipefail
+set -eux -o pipefail
 
 ROOT="$PWD"
 
@@ -25,6 +25,10 @@ function compare_blob_sha_with_new_file () {
   pushd "${ROOT}/java-release" &> /dev/null
     local blob_sha="$(bosh blobs --json | jq -r ".Tables[].Rows[] | select(.path == \"${blob_file_name}\") | .digest" | cut -d: -f2)"
   popd &> /dev/null
+
+  if [[ "${blob_sha}" == "" ]]; then
+    return 1
+  fi
 
   shasum -c <(echo "${blob_sha}  ${input_file_name}")
 }
@@ -54,11 +58,11 @@ echo "Adding openjdk to bosh blobs"
 jre_blob_filename="jre-${jdk_version}.tar.gz"
 
 #
-#if `compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}`; then
+#if compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}; then
 #  bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_blob_filename"
 #fi
 
-if `compare_blob_sha_with_new_file ${jre_blob_filename} ${ROOT}/${jre_file}`; then
+if compare_blob_sha_with_new_file ${jre_blob_filename} ${ROOT}/${jre_file}; then
   echo "The blob to be added is identical with the existing one: ${jre_blob_filename}"
   exit 0
 fi
