@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux -o pipefail
+set -eu -o pipefail
 
 ROOT="$PWD"
 
@@ -64,6 +64,7 @@ jre_blob_filename="jre-${jdk_version}.tar.gz"
 
 if compare_blob_sha_with_new_file ${jre_blob_filename} ${ROOT}/${jre_file}; then
   echo "The blob to be added is identical with the existing one: ${jre_blob_filename}"
+  git clone java-release java-release-out
   exit 0
 fi
 
@@ -154,5 +155,6 @@ echo "Issue new release"
 ./ci/finalize.sh
 
 echo "Concourse output"
-cd ..
+cd "$ROOT"
+
 git clone java-release java-release-out
