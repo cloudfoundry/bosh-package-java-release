@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -eu
+
+apt update &> /dev/null && apt install -y wget curl jq &> /dev/null
+
 ADOPTOPENJDK_API='https://api.adoptopenjdk.net'
 
 releases="$(curl -Ss "${ADOPTOPENJDK_API}/v2/info/releases/openjdk${JAVA_VERSION}")"
