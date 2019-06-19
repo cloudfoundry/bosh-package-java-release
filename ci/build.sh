@@ -2,6 +2,36 @@
 
 set -eu -o pipefail
 
+ROOT="$PWD"
+
+
+function populate_private_yml() {
+  pushd "${ROOT}/java-release" &> /dev/null
+  cat >> config/private.yml <<EOF
+---
+blobstore:
+  provider: s3
+  options:
+    access_key_id: "$BLOBSTORE_ACCESS_KEY_ID"
+    secret_access_key: "$BLOBSTORE_SECRET_ACCESS_KEY"
+EOF
+  popd &> /dev/null
+}
+
+function compare_blob_sha_with_new_file () {
+  local file_name="$1"
+  pushd "${ROOT}/java-release" &> /dev/null
+    sha="$(bosh blobs --json | jq -r ".Tables[].Rows[] | select(.path == \"${file_name}\") | .digest" | cut -d: -f2)"
+  popd &> /dev/null
+
+  if `shasum -c <(echo "${sha} ${file_name}")`; then
+    >&2 echo "The blob to be added is identical with the existing one: ${file_name}"
+    exit 0
+  fi
+
+  exit 1
+}
+
 function get_major_version() {
   local version="$1"
   echo "$version" | grep -Po '^\d+'
@@ -13,18 +43,25 @@ jre_version="$(ls jre/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
 major_version="$(get_major_version "$jdk_version")"
 
 if [[ "$jdk_version" != "$jre_version" ]]; then
-  echo "jdk version: $jdk_version does not match jre version: $jre_version, cowardly exit 😣"
+  echo "jdk version: $jdk_version does not match jre version: $jre_version -- exiting early."
   exit 1
 fi
 
 echo "version: $jdk_version"
 
 echo "Adding openjdk to bosh blobs"
-jdk_file="jdk-${jdk_version}.tar.gz"
+#jdk_file="jdk-${jdk_version}.tar.gz"
 jre_file="jre-${jdk_version}.tar.gz"
 
-# TODO: add jdk part
-# bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_file"
+#
+#if `compare_blob_sha_with_new_file ${jdk_file}`; then
+#  bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_file"
+#fi
+
+if `compare_blob_sha_with_new_file ${jre_file}`; then
+  exit 0
+fi
+
 bosh add-blob --sha2 --dir java-release jre/*.tar.gz "$jre_file"
 
 echo "Create release folder structure"
