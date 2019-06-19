@@ -10,7 +10,7 @@ $ bosh vendor-package openjdk-9 ~/workspace/java-release
 
 Included packages:
 
-- openjdk-9
+- openjdk-11
 - openjdk-8
 
 To use `openjdk-*` package for compilation in your packaging script:
@@ -29,7 +29,7 @@ source /var/vcap/packages/openjdk-9/bosh/runtime.env
 java ...
 ```
 
-See [packages/openjdk-9-test](packages/openjdk-9-test) and [jobs/openjdk-9-test](jobs/openjdk-9-test) for example.
+See [packages/openjdk-8-test](packages/openjdk-8-test) and [jobs/openjdk-8-test](jobs/openjdk-8-test) for example.
 
 ## Development
 
