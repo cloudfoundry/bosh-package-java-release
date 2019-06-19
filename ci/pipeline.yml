@@ -19,31 +19,6 @@ resources:
     branch: maintain
     private_key: ((github_deployment_key))
 
-# https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/index.yml
-# https://java-buildpack.cloudfoundry.org/openjdk-jdk/trusty/x86_64/index.yml
-
-- name: java-8
-  type: glenn-github-release-resource
-  check_every: 20m
-  source:
-    owner: AdoptOpenJDK
-    repository: openjdk8-binaries
-    tag_filter: 'jdk8u(\d+\-b\d+)$'
-
-- name: jdk-11
-  type: repository-resource
-  source:
-    bucket: download.pivotal.io
-    path: '/openjdk-jdk/trusty/x86_64'
-    version_pattern: 11\..*
-
-- name: jre-11
-  type: repository-resource
-  source:
-    bucket: download.pivotal.io
-    path: '/openjdk/trusty/x86_64'
-    version_pattern: 11\..*
-
 - name: stemcell
   type: bosh-io-stemcell
   source:
@@ -55,25 +30,18 @@ jobs:
   plan:
   - aggregate:
     - get: java-release
-    - get: jdk-8
-      resource: java-8
-      params:
-        globs: ['*jdk_x64_linux_hotspot*']
-    - get: jre-8
-      resource: java-8
-      params:
-        globs: ['*jre_x64_linux_hotspot*']
     - get: stemcell
       trigger: true
+  - task: get_release
+    file: java-release/ci/get_release.yml
+    params:
+      JAVA_VERSION: 8
   - task: build
     privileged: true
     file: java-release/ci/build.yml
     params:
       BLOBSTORE_ACCESS_KEY_ID: ((release_blobs_access_key_id))
       BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
-    input_mapping:
-      jdk: jdk-8
-      jre: jre-8
   - put: java-release
     params:
       rebase: true
@@ -84,21 +52,18 @@ jobs:
   plan:
   - aggregate:
     - get: java-release
-    - get: jdk-11
-      trigger: true
-    - get: jre-11
-      trigger: true
     - get: stemcell
       trigger: true
+  - task: get_release
+    file: java-release/ci/get_release.yml
+    params:
+      JAVA_VERSION: 11
   - task: build
     privileged: true
     file: java-release/ci/build.yml
     params:
       BLOBSTORE_ACCESS_KEY_ID: ((release_blobs_access_key_id))
       BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
-    input_mapping:
-      jdk: jdk-11
-      jre: jre-11
   - put: java-release
     params:
       rebase: true

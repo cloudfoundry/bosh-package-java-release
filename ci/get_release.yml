@@ -1,0 +1,20 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: bosh/main-bosh-docker
+
+inputs:
+  - name: java-release
+
+outputs:
+  - name: jre
+  - name: jdk
+
+params:
+  JAVA_VERSION:
+
+run:
+  path: java-release/ci/get_release.sh
