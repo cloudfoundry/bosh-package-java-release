@@ -29,7 +29,7 @@ source /var/vcap/packages/openjdk-9/bosh/runtime.env
 java ...
 ```
 
-See [packages/openjdk-8-test](packages/openjdk-8-test) and [jobs/openjdk-8-test](jobs/openjdk-8-test) for example.
+See [jobs/openjdk-8-test](jobs/openjdk-8-test) for example.
 
 ## Development
 
