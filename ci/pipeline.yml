@@ -3,7 +3,7 @@ resources:
   type: git
   source:
     uri: git@github.com:bosh-packages/java-release
-    branch: main
+    branch: master
     private_key: ((github_deployment_key))
 
 - name: stemcell
