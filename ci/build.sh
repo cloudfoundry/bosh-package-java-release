@@ -152,6 +152,7 @@ pushd tests &> /dev/null
 popd &> /dev/null
 
 echo "Issue new release"
+populate_private_yml
 ./ci/finalize.sh
 
 echo "Concourse output"
