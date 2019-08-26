@@ -4,4 +4,4 @@ dependencies: []
 files:
 - openjdk-11/compile.env
 - openjdk-11/runtime.env
-- jre-11.0.3_7.tar.gz
+- jre-11.0.4_11.tar.gz
