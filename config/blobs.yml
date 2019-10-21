@@ -42,6 +42,10 @@ jre-8u222b10.tar.gz:
   size: 40934975
   object_id: 35b9a19a-1b4c-479d-4648-af38f3992b85
   sha: sha256:a418ce895c8bf3ca2e7b2f423f038b8b093941684c9430f2e40da0982e12b52d
+jre-8u232b09.tar.gz:
+  size: 40963409
+  object_id: 63d412c6-0339-4b8b-76c6-67f3172b217b
+  sha: sha256:bd06b84a1fc10e0a555431bc49a84e86df45de0be93c8ee4d09d13513219843b
 jre-11.0.3_7.tar.gz:
   size: 41732132
   object_id: 4dd5ffbb-e844-4b51-45de-e644e7187629
