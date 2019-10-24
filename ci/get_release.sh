@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -eux
 
 apt update &> /dev/null && apt install -y wget curl jq &> /dev/null
 
