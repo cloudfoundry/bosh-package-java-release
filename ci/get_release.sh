@@ -1,23 +1,28 @@
 #!/usr/bin/env bash
 
-set -eux
+set -eu
 
-apt update &> /dev/null && apt install -y wget curl jq &> /dev/null
+apt update &> /dev/null && apt install -y curl &> /dev/null
 
 ADOPTOPENJDK_API='https://api.adoptopenjdk.net'
 
-releases="$(curl -Ss "${ADOPTOPENJDK_API}/v2/info/releases/openjdk${JAVA_VERSION}")"
+echo "Fetching latest Java ${JAVA_VERSION} JRE & JDK for Linux"
+printf "\n\n"
 
-# TODO: improve using https://api.adoptopenjdk.net/#query-parameters directly instead of jq
-latest_linux_x64_releases="$(echo ${releases} | jq -r '.[] | select(.binaries[].os == "linux" and .binaries[].architecture == "x64") | .release_name' | grep -v 'openj9' | sort -rV | head -n1)"
+jre_download_url="$ADOPTOPENJDK_API/v2/binary/releases/openjdk$JAVA_VERSION?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&type=jre"
+jdk_download_url="$ADOPTOPENJDK_API/v2/binary/releases/openjdk$JAVA_VERSION?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&type=jdk"
 
-echo "Latest release of Java ${JAVA_VERSION} for linux is ${latest_linux_x64_releases}"
+echo "Fetching ${jre_download_url}"
+(
+  mkdir -p jre/ && cd jre/
+  curl -JLO "${jre_download_url}"
+)
 
-jre_download_url="$(echo ${releases} | jq -r ".[] | select(.release_name == \"${latest_linux_x64_releases}\") | .binaries[]| select(.os == \"linux\" and .architecture == \"x64\" and .binary_type == \"jre\") | .binary_link")"
-jdk_download_url="$(echo ${releases} | jq -r ".[] | select(.release_name == \"${latest_linux_x64_releases}\") | .binaries[]| select(.os == \"linux\" and .architecture == \"x64\" and .binary_type == \"jdk\") | .binary_link")"
+printf "\n\n"
 
-echo "Fetching $(basename ${jre_download_url})"
-wget --quiet "${jre_download_url}" -P jre/
+echo "Fetching ${jdk_download_url}"
+(
+  mkdir -p jdk/ && cd jdk/
+  curl -JLO "${jdk_download_url}"
+)
 
-echo "Fetching $(basename ${jdk_download_url})"
-wget --quiet "${jdk_download_url}" -P jdk/
