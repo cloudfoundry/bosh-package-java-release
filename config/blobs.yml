@@ -58,3 +58,7 @@ jre-11.0.4_11.tar.gz:
   size: 42055392
   object_id: b99cb0d9-ff6b-4d2b-630f-fc591da4d200
   sha: sha256:70d2cc675155476f1d8516a7ae6729d44681e4fad5a6fc8dfa65cab36a67b7e0
+jre-11.0.5_10.tar.gz:
+  size: 42132415
+  object_id: 41054caa-1359-46c7-743d-ee10f4b2530d
+  sha: sha256:2f08c469c9a8adea1b6ee3444ba2a8242a7e99d87976a077faf037a9eb7f884b
