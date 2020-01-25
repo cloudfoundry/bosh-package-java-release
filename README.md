@@ -5,7 +5,7 @@ To vendor java package into your release, run:
 ```
 $ git clone https://github.com/bosh-packages/java-release
 $ cd ~/workspace/your-release
-$ bosh vendor-package openjdk-9 ~/workspace/java-release
+$ bosh vendor-package openjdk-8 ~/workspace/java-release
 ```
 
 Included packages:
@@ -17,7 +17,7 @@ To use `openjdk-*` package for compilation in your packaging script:
 
 ```bash
 #!/bin/bash -eu
-source /var/vcap/packages/openjdk-9/bosh/compile.env
+source /var/vcap/packages/openjdk-8/bosh/compile.env
 java ...
 ```
 
@@ -25,7 +25,7 @@ To use `openjdk-*` package at runtime in your job scripts:
 
 ```bash
 #!/bin/bash -eu
-source /var/vcap/packages/openjdk-9/bosh/runtime.env
+source /var/vcap/packages/openjdk-8/bosh/runtime.env
 java ...
 ```
 
