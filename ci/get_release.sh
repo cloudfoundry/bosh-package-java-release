@@ -9,8 +9,8 @@ ADOPTOPENJDK_API='https://api.adoptopenjdk.net'
 echo "Fetching latest Java ${JAVA_VERSION} JRE & JDK for Linux"
 printf "\n\n"
 
-jre_download_url="$ADOPTOPENJDK_API/v2/binary/releases/openjdk$JAVA_VERSION?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&type=jre"
-jdk_download_url="$ADOPTOPENJDK_API/v2/binary/releases/openjdk$JAVA_VERSION?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&type=jdk"
+jre_download_url="$ADOPTOPENJDK_API/v3/binary/latest/$JAVA_VERSION/ga/linux/x64/jre/hotspot/normal/adoptopenjdk?project=jdk"
+jdk_download_url="$ADOPTOPENJDK_API/v3/binary/latest/$JAVA_VERSION/ga/linux/x64/jdk/hotspot/normal/adoptopenjdk?project=jdk"
 
 echo "Fetching ${jre_download_url}"
 (
