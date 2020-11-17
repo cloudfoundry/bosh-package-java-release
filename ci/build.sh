@@ -143,7 +143,7 @@ cat > manifests/test.yml <<EOF
 EOF
 
 echo "Starting Director"
-start-bosh
+source start-bosh
 source /tmp/local-bosh/director/env
 
 echo "Run tests"
