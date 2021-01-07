@@ -35,15 +35,15 @@ function compare_blob_sha_with_new_file () {
 
 function get_major_version() {
   local version="$1"
-  echo "$version" | grep -Po '^\d+'
+  echo "$version" | sed -n 's/\([0-9]*\).*/\1/p'
 }
 
 echo "Checking JRE & JDK versions"
 jdk_file="$(ls jdk/*.tar.gz)"
-jdk_version="$(ls jdk/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
+jdk_version="$(ls jdk/*.tar.gz | sed -n 's/.*hotspot_\(.*\).tar.gz$/\1/p')"
 
 jre_file="$(ls jre/*.tar.gz)"
-jre_version="$(ls jre/*.tar.gz | grep -Po 'hotspot_\K\d.*\d')"
+jre_version="$(ls jre/*.tar.gz | sed -n 's/.*hotspot_\(.*\).tar.gz$/\1/p')"
 major_version="$(get_major_version "$jdk_version")"
 
 if [[ "$jdk_version" != "$jre_version" ]]; then
