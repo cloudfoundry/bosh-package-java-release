@@ -41,10 +41,10 @@ function get_major_version() {
 echo "Checking JRE & JDK versions"
 jdk_file="$(ls jdk/*.tar.gz)"
 jdk_version="$(ls jdk/*.tar.gz | sed -n 's/.*hotspot_\(.*\).tar.gz$/\1/p')"
+major_version="$(get_major_version "$jdk_version")"
 
 jre_file="$(ls jre/*.tar.gz)"
 jre_version="$(ls jre/*.tar.gz | sed -n 's/.*hotspot_\(.*\).tar.gz$/\1/p')"
-major_version="$(get_major_version "$jdk_version")"
 
 if [[ "$jdk_version" != "$jre_version" ]]; then
   echo "jdk version: $jdk_version does not match jre version: $jre_version -- exiting early."
@@ -54,13 +54,17 @@ fi
 echo "version: $jdk_version"
 
 echo "Adding openjdk to bosh blobs"
-#jdk_blob_filename="jdk-${jdk_version}.tar.gz"
-jre_blob_filename="jre-${jdk_version}.tar.gz"
+jdk_blob_filename="jdk-${jdk_version}.tar.gz"
+jre_blob_filename="jre-${jre_version}.tar.gz"
 
-#
-#if compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}; then
-#  bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_blob_filename"
-#fi
+
+if compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}; then
+  echo "The blob to be added is identical with the existing one: ${jdk_blob_filename}"
+  git clone java-release java-release-out
+  exit 0
+fi
+
+bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_blob_filename"
 
 if compare_blob_sha_with_new_file ${jre_blob_filename} ${ROOT}/${jre_file}; then
   echo "The blob to be added is identical with the existing one: ${jre_blob_filename}"
@@ -74,16 +78,19 @@ echo "Create release folder structure"
 cd java-release
 
 mkdir -p "src/openjdk-$major_version"
+
 cat > "src/openjdk-$major_version/compile.env" <<EOF
-export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}/jre
+export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}
 export PATH=\$JAVA_HOME/bin:\$PATH
 EOF
+
 cat > "src/openjdk-$major_version/runtime.env" <<EOF
 export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}/jre
 export PATH=\$JAVA_HOME/bin:\$PATH
 EOF
 
 mkdir -p "packages/openjdk-$major_version"
+
 cat > "packages/openjdk-$major_version/spec" <<EOF
 ---
 name: openjdk-${major_version}
@@ -91,8 +98,9 @@ dependencies: []
 files:
 - openjdk-${major_version}/compile.env
 - openjdk-${major_version}/runtime.env
-- ${jre_blob_filename}
+- ${jdk_blob_filename}
 EOF
+
 cat > "packages/openjdk-$major_version/packaging" <<EOF
 set -ex
 mkdir \${BOSH_INSTALL_TARGET}/bosh
@@ -100,11 +108,10 @@ cp openjdk-${major_version}/runtime.env \${BOSH_INSTALL_TARGET}/bosh/runtime.env
 cp openjdk-${major_version}/compile.env \${BOSH_INSTALL_TARGET}/bosh/compile.env
 
 cd \${BOSH_INSTALL_TARGET}
-mkdir jre
-tar zxvf \${BOSH_COMPILE_TARGET}/*.tar.gz --strip 1 -C jre
+tar zxvf \${BOSH_COMPILE_TARGET}/*.tar.gz --strip 1
 
 # latest JRE release didn't have correct permissions
-chmod -R a+r jre
+chmod -R a+r .
 EOF
 
 mkdir -p "jobs/openjdk-$major_version-test/templates"
@@ -118,11 +125,19 @@ packages:
 - openjdk-${major_version}
 properties: {}
 EOF
+
 cat > "jobs/openjdk-$major_version-test/templates/run" <<EOF
 #!/bin/bash
 set -ex
-source /var/vcap/packages/openjdk-${major_version}/bosh/runtime.env
-java -version
+(
+  source /var/vcap/packages/openjdk-${major_version}/bosh/compile.env
+  javac -version
+)
+
+(
+  source /var/vcap/packages/openjdk-${major_version}/bosh/runtime.env
+  java -version
+)
 EOF
 
 mkdir -p manifests
@@ -148,6 +163,7 @@ source /tmp/local-bosh/director/env
 
 echo "Run tests"
 pushd tests &> /dev/null
+	./compile.sh
 	./run.sh
 popd &> /dev/null
 
