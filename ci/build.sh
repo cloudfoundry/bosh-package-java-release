@@ -163,7 +163,6 @@ source /tmp/local-bosh/director/env
 
 echo "Run tests"
 pushd tests &> /dev/null
-	./compile.sh
 	./run.sh
 popd &> /dev/null
 
