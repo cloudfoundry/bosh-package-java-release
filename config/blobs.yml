@@ -10,6 +10,10 @@ jdk-9.0.4+12.tar.gz:
   size: 41201555
   object_id: 67b1fe5c-daa0-4be1-5184-165b81b446e4
   sha: sha256:ba739b9abd8045e52e251e87dbeedba35601064bcb2a9e1aab702eae8b610f1f
+jdk-11.0.10_9.tar.gz:
+  size: 194069769
+  object_id: fc9387a8-561e-4247-4f37-68d0fd0e62bb
+  sha: sha256:ae78aa45f84642545c01e8ef786dfd700d2226f8b12881c844d6a1f71789cb99
 jdk8u172-b03-jdk.tar.gz:
   size: 77983471
   object_id: 43ba23a7-0fcc-48e3-7ccd-54e195247b96
