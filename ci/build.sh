@@ -38,25 +38,14 @@ function get_major_version() {
   echo "$version" | sed -n 's/\([0-9]*\).*/\1/p'
 }
 
-echo "Checking JRE & JDK versions"
 jdk_file="$(ls jdk/*.tar.gz)"
 jdk_version="$(ls jdk/*.tar.gz | sed -n 's/.*hotspot_\(.*\).tar.gz$/\1/p')"
 major_version="$(get_major_version "$jdk_version")"
-
-jre_file="$(ls jre/*.tar.gz)"
-jre_version="$(ls jre/*.tar.gz | sed -n 's/.*hotspot_\(.*\).tar.gz$/\1/p')"
-
-if [[ "$jdk_version" != "$jre_version" ]]; then
-  echo "jdk version: $jdk_version does not match jre version: $jre_version -- exiting early."
-  exit 1
-fi
 
 echo "version: $jdk_version"
 
 echo "Adding openjdk to bosh blobs"
 jdk_blob_filename="jdk-${jdk_version}.tar.gz"
-jre_blob_filename="jre-${jre_version}.tar.gz"
-
 
 if compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}; then
   echo "The blob to be added is identical with the existing one: ${jdk_blob_filename}"
@@ -65,14 +54,6 @@ if compare_blob_sha_with_new_file ${jdk_blob_filename} ${ROOT}/${jdk_file}; then
 fi
 
 bosh add-blob --sha2 --dir java-release jdk/*.tar.gz "$jdk_blob_filename"
-
-if compare_blob_sha_with_new_file ${jre_blob_filename} ${ROOT}/${jre_file}; then
-  echo "The blob to be added is identical with the existing one: ${jre_blob_filename}"
-  git clone java-release java-release-out
-  exit 0
-fi
-
-bosh add-blob --sha2 --dir java-release jre/*.tar.gz "$jre_blob_filename"
 
 echo "Create release folder structure"
 cd java-release
@@ -109,9 +90,6 @@ cp openjdk-${major_version}/compile.env \${BOSH_INSTALL_TARGET}/bosh/compile.env
 
 cd \${BOSH_INSTALL_TARGET}
 tar zxvf \${BOSH_COMPILE_TARGET}/*.tar.gz --strip 1
-
-# latest JRE release didn't have correct permissions
-chmod -R a+r .
 EOF
 
 mkdir -p "jobs/openjdk-$major_version-test/templates"

@@ -10,7 +10,6 @@ inputs:
   - name: java-release
 
 outputs:
-  - name: jre
   - name: jdk
 
 params:
