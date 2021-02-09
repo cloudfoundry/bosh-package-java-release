@@ -54,6 +54,10 @@ jre-8u275b01.tar.gz:
   size: 42561162
   object_id: 82160309-41d0-4c0b-68ac-56b659660af2
   sha: sha256:a044da8bf198ad756b2bbb83f3d48ddeeffb934b9a9974d9b9bb6d0034413a83
+jre-8u282b08.tar.gz:
+  size: 41371208
+  object_id: 8cc513b9-119c-4158-4202-2c741db2ae1b
+  sha: sha256:3b2e2c6ad3ee04a58ffb8d629e3e242b0ae87b38cfd06425e4446b1f9490f521
 jre-11.0.3_7.tar.gz:
   size: 41732132
   object_id: 4dd5ffbb-e844-4b51-45de-e644e7187629
@@ -82,3 +86,7 @@ jre-11.0.9_11.tar.gz:
   size: 43459551
   object_id: f6067840-cc88-4c47-7300-c55179c000c7
   sha: sha256:2ed263b662afb8b5d2964d1c9941d20031d07e5af68679ebefdca35d40bb91b1
+jre-11.0.10_9.tar.gz:
+  size: 43146855
+  object_id: df768985-2fd4-406d-4d8e-e1d2a83bcfe5
+  sha: sha256:25fdcf9427095ac27c8bdfc82096ad2e615693a3f6ea06c700fca7ffb271131a
