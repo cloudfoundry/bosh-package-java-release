@@ -18,7 +18,7 @@ To use `openjdk-*` package for compilation in your packaging script:
 ```bash
 #!/bin/bash -eu
 source /var/vcap/packages/openjdk-8/bosh/compile.env
-java ...
+javac ...
 ```
 
 To use `openjdk-*` package at runtime in your job scripts:
