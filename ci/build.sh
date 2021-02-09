@@ -65,10 +65,19 @@ export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}
 export PATH=\$JAVA_HOME/bin:\$PATH
 EOF
 
-cat > "src/openjdk-$major_version/runtime.env" <<EOF
+if [ -d /var/vcap/packages/openjdk-${major_version}/jre ]; then
+  cat > "src/openjdk-$major_version/runtime.env" <<EOF
 export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}/jre
 export PATH=\$JAVA_HOME/bin:\$PATH
 EOF
+
+else
+  cat > "src/openjdk-$major_version/runtime.env" <<EOF
+export JAVA_HOME=/var/vcap/packages/openjdk-${major_version}
+export PATH=\$JAVA_HOME/bin:\$PATH
+EOF
+
+fi
 
 mkdir -p "packages/openjdk-$major_version"
 
