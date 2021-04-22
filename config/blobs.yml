@@ -2,6 +2,10 @@ jdk-8u282b08.tar.gz:
   size: 102873064
   object_id: b874dab8-8a6d-4e48-66cf-788c35ccba39
   sha: sha256:e6e6e0356649b9696fa5082cfcb0663d4bef159fc22d406e3a012e71fce83a5c
+jdk-8u292b10.tar.gz:
+  size: 103026380
+  object_id: 9fbd5ad0-30e5-4496-668a-afa03ea2f247
+  sha: sha256:0949505fcf42a1765558048451bb2a22e84b3635b1a31dd6191780eeccaa4ada
 jdk-9.0.4+12-jdk.tar.gz:
   size: 206148263
   object_id: 40c7f438-f183-49e2-6de7-8c95878f6080
