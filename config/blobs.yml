@@ -26,6 +26,10 @@ jdk-11.0.11_9.tar.gz:
   size: 192792051
   object_id: beea2bfe-187e-48c0-6e15-5da6f062ba41
   sha: sha256:e99b98f851541202ab64401594901e583b764e368814320eba442095251e78cb
+jdk-11.0.12_7.tar.gz:
+  size: 192983830
+  object_id: ec63d86a-d97d-4c34-512f-7fdfe210b847
+  sha: sha256:8770f600fc3b89bf331213c7aa21f8eedd9ca5d96036d1cd48cb2748a3dbefd2
 jdk8u172-b03-jdk.tar.gz:
   size: 77983471
   object_id: 43ba23a7-0fcc-48e3-7ccd-54e195247b96
