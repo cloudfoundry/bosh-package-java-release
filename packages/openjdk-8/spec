@@ -4,4 +4,4 @@ dependencies: []
 files:
 - openjdk-8/compile.env
 - openjdk-8/runtime.env
-- jdk-8u312b07.tar.gz
+- jdk-8u322b06.tar.gz

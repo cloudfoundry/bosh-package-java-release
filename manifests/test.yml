@@ -7,7 +7,7 @@
 "azs":["z1"],
 "instances":1,
 "lifecycle":"errand",
-"jobs":[{"name":"openjdk-11-test","release":"java","properties":{}}],
+"jobs":[{"name":"openjdk-8-test","release":"java","properties":{}}],
 "vm_type":"default",
 "stemcell":"default",
 "networks":[{"name":"default"}]}]}
