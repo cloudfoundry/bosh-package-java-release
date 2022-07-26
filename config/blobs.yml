@@ -22,6 +22,10 @@ jdk-8u332b09.tar.gz:
   size: 102918585
   object_id: 00f5cd27-a596-45e8-70c2-bb80ca99237c
   sha: sha256:adc13a0a0540d77f0a3481b48f10d61eb203e5ad4914507d489c2de3bd3d83da
+jdk-8u342b07.tar.gz:
+  size: 102925251
+  object_id: 454514be-79b0-40d4-69f5-1a9c73073290
+  sha: sha256:8252c0e11d542ea0f9ce6b8f147d1a2bea4a17e9fc299da270288f5a4f35b1f3
 jdk-9.0.4+12-jdk.tar.gz:
   size: 206148263
   object_id: 40c7f438-f183-49e2-6de7-8c95878f6080
