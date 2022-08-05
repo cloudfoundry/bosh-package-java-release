@@ -47,6 +47,8 @@ builds:
     version: "26"
   bb2dbb55-a70d-4ca5-7aee-53e0e2b5b490:
     version: "35"
+  bcc35f33-31fa-4a72-6bb2-7bcb6f39d174:
+    version: "36"
   c266d53f-8d72-4c3f-58b2-64ed0a2623e4:
     version: "12"
   c3f080d0-0ee5-4f09-7761-11dbe8d2e3f9:
