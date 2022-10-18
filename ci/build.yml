@@ -5,6 +5,7 @@ image_resource:
   type: registry-image
   source:
     repository: bosh/docker-cpi
+    tag: main
 
 inputs:
 - name: java-release
