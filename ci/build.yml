@@ -17,3 +17,7 @@ outputs:
 
 run:
   path: java-release/ci/build.sh
+
+params:
+  BLOBSTORE_ACCESS_KEY_ID:
+  BLOBSTORE_SECRET_ACCESS_KEY:
