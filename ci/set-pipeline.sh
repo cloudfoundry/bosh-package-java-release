@@ -4,9 +4,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 set -eu
 
-CONCOURSE_URL='https://concourse.cf-denver.com/'
+CONCOURSE_URL='https://bosh.ci.cloudfoundry.org/'
 TARGET_NAME='production'
-TEAM_NAME='healthwatch'
+TEAM_NAME='main'
 
 function authorized() {
   fly --target "$TARGET_NAME" status &> /dev/null
@@ -24,5 +24,4 @@ authorized || login
 
 fly --target production set-pipeline \
     --pipeline java-release \
-    --config "$DIR"/pipeline.yml \
-	  --load-vars-from <(lpass show --note "bosh-packages-concourse-vars-java-release")
+    --config "$DIR"/pipeline.yml
