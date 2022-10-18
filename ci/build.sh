@@ -131,7 +131,7 @@ mkdir -p manifests
 cat > manifests/test.yml <<EOF
 {"name":"test",
 "releases":[{"name":"java","version":"create","url":"file://."}],
-"stemcells":[{"alias":"default","os":"ubuntu-jammy","version":"latest"}],
+"stemcells":[{"alias":"default","os":"ubuntu-bionic","version":"latest"}],
 "update":{"canaries":2,"max_in_flight":1,"canary_watch_time":"5000-60000","update_watch_time":"5000-60000"},
 "instance_groups":[
 {"name":"openjdk-test",
