@@ -4,7 +4,7 @@ resources:
   source:
     uri: git@github.com:bosh-packages/java-release
     branch: master
-    private_key: ((github_deployment_key))
+    private_key: ((github_deployment_key.private_key))
 
 - name: stemcell
   type: bosh-io-stemcell
