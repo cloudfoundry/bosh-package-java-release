@@ -10,6 +10,7 @@ $ bosh vendor-package openjdk-8 ~/workspace/java-release
 
 Included packages:
 
+- openjdk-17
 - openjdk-11
 - openjdk-8
 

@@ -66,3 +66,27 @@ jobs:
     params:
       rebase: true
       repository: java-release-out
+
+- name: build-17
+  serial: true
+  plan:
+  - in_parallel:
+    - get: daily
+      trigger: true
+    - get: java-release
+    - get: stemcell
+      trigger: true
+  - task: get_release
+    file: java-release/ci/get_release.yml
+    params:
+      JAVA_VERSION: 17
+  - task: build
+    privileged: true
+    file: java-release/ci/build.yml
+    params:
+      BLOBSTORE_ACCESS_KEY_ID: ((release_blobs_access_key_id))
+      BLOBSTORE_SECRET_ACCESS_KEY: ((release_blobs_secret_access_key))
+  - put: java-release
+    params:
+      rebase: true
+      repository: java-release-out
