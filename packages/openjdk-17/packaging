@@ -1,0 +1,7 @@
+set -ex
+mkdir ${BOSH_INSTALL_TARGET}/bosh
+cp openjdk-17/runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
+cp openjdk-17/compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+
+cd ${BOSH_INSTALL_TARGET}
+tar zxvf ${BOSH_COMPILE_TARGET}/*.tar.gz --strip 1

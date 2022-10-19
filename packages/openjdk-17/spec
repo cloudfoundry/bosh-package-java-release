@@ -1,0 +1,7 @@
+---
+name: openjdk-17
+dependencies: []
+files:
+- openjdk-17/compile.env
+- openjdk-17/runtime.env
+- jdk-17.0.4.1_1.tar.gz

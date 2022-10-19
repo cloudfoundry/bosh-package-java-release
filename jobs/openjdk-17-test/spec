@@ -1,0 +1,7 @@
+---
+name: openjdk-17-test
+templates:
+  run: bin/run
+packages:
+- openjdk-17
+properties: {}

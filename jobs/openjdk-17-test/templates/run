@@ -1,0 +1,11 @@
+#!/bin/bash
+set -ex
+(
+  source /var/vcap/packages/openjdk-17/bosh/compile.env
+  javac -version
+)
+
+(
+  source /var/vcap/packages/openjdk-17/bosh/runtime.env
+  java -version
+)
