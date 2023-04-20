@@ -4,4 +4,4 @@ dependencies: []
 files:
 - openjdk-17/compile.env
 - openjdk-17/runtime.env
-- jdk-17.0.6_10.tar.gz
+- jdk-17.0.7_7.tar.gz
