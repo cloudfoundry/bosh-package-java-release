@@ -90,6 +90,10 @@ jdk-11.0.18_10.tar.gz:
   size: 194100197
   object_id: 552d9a6e-7114-463d-42c7-3e192f12992a
   sha: sha256:4a29efda1d702b8ff38e554cf932051f40ec70006caed5c4857a8cbc7a0b7db7
+jdk-11.0.19_7.tar.gz:
+  size: 194163202
+  object_id: 827e46be-c659-4ab6-5f25-b2e84c55d37e
+  sha: sha256:5f19fb28aea3e28fcc402b73ce72f62b602992d48769502effe81c52ca39a581
 jdk-17.0.4.1_1.tar.gz:
   size: 191174859
   object_id: 664f2015-bdfd-47d0-5653-65debbb21f6e
