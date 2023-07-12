@@ -2,8 +2,8 @@ resources:
 - name: java-release
   type: git
   source:
-    uri: git@github.com:bosh-packages/java-release
-    branch: master
+    uri: git@github.com:cloudfoundry/bosh-package-java-release.git
+    branch: main
     private_key: ((github_deployment_key.private_key))
 
 - name: stemcell
