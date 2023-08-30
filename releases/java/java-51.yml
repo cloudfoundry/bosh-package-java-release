@@ -1,0 +1,43 @@
+name: java
+version: "51"
+commit_hash: fb2e8fa
+uncommitted_changes: false
+jobs:
+- name: openjdk-11-test
+  version: cf9761975e895eed8cc4526a0dde2164b4905905ccf62e3186ba40961667793e
+  fingerprint: cf9761975e895eed8cc4526a0dde2164b4905905ccf62e3186ba40961667793e
+  sha1: sha256:1bfa11d53d9e6af9d0b72e41a79611ef792e4b06fb95030faa000f3e7e077864
+  packages:
+  - openjdk-11
+- name: openjdk-17-test
+  version: 21dc09a2d48f6657632b48ae9ddb28a67f5b0d385da003d654d5348993e83c00
+  fingerprint: 21dc09a2d48f6657632b48ae9ddb28a67f5b0d385da003d654d5348993e83c00
+  sha1: sha256:4c8fa502211d5841d8d0de5b307faea8f49ea08b23bfd77e50e3ca598892fb50
+  packages:
+  - openjdk-17
+- name: openjdk-8-test
+  version: 6e4f5eb16c1e22629ba1aa2258b078ba14ddec68edd8f519fe80906185fd714d
+  fingerprint: 6e4f5eb16c1e22629ba1aa2258b078ba14ddec68edd8f519fe80906185fd714d
+  sha1: sha256:3315f303389c921e95dd5adaabee617e081e032bdf3226d0f821b1a7d58b0e57
+  packages:
+  - openjdk-8
+packages:
+- name: openjdk-11
+  version: 235f94974088eb00875413415849aded4d72d633b91b98213531beeb6185ff06
+  fingerprint: 235f94974088eb00875413415849aded4d72d633b91b98213531beeb6185ff06
+  sha1: sha256:ce1760b1151cbfea5a3ddc1cd893a1d3dfcb379742510c81e1ebe7e2e9973755
+  dependencies: []
+- name: openjdk-17
+  version: be13f95495365f8879a75d9237320cd587774f6cbc087020bd6508fb8a82184a
+  fingerprint: be13f95495365f8879a75d9237320cd587774f6cbc087020bd6508fb8a82184a
+  sha1: sha256:99e2ef396973d7bbbfddffad6968b419627c20bb426117f8c3115cad5b206227
+  dependencies: []
+- name: openjdk-8
+  version: 865c18280877ff2360b3774dd1c2c3f52e40bd9ef8accf6dec6e8ea422c6dab1
+  fingerprint: 865c18280877ff2360b3774dd1c2c3f52e40bd9ef8accf6dec6e8ea422c6dab1
+  sha1: sha256:c44ee5c8724c43d8e8bdf386742452f1ffec7d475373377d63793a8b5ffa3b43
+  dependencies: []
+license:
+  version: 2f960572106acc0a3aa7d49b2edfc405d46a0394794769da19041c8d4f5f0451
+  fingerprint: 2f960572106acc0a3aa7d49b2edfc405d46a0394794769da19041c8d4f5f0451
+  sha1: sha256:0c74374c8eae39db40b4e9bffe1bf9154fd66100ce226f390ea3b10627649bde
