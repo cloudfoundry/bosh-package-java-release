@@ -122,6 +122,10 @@ jdk-17.0.7_7.tar.gz:
   size: 191620211
   object_id: c9f8e5a1-8857-4761-553e-5a5858a5484d
   sha: sha256:e9458b38e97358850902c2936a1bb5f35f6cffc59da9fcd28c63eab8dbbfbc3b
+jdk-17.0.8.1_1.tar.gz:
+  size: 192053612
+  object_id: 71eae260-e78e-45d7-7c43-8cb9083321b9
+  sha: sha256:c25dfbc334068a48c19c44ce39ad4b8427e309ae1cfa83f23c102e78b8a6dcc0
 jdk-17.0.8_7.tar.gz:
   size: 192048931
   object_id: 7799a82b-a194-4525-6740-777f42aa7f10
