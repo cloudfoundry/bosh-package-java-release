@@ -20,7 +20,7 @@ resources:
 
 jobs:
 - name: build-8
-  serial: true
+  serial_groups: [build]
   plan:
   - in_parallel:
     - get: daily
@@ -44,7 +44,7 @@ jobs:
       repository: java-release-out
 
 - name: build-11
-  serial: true
+  serial_groups: [build]
   plan:
   - in_parallel:
     - get: daily
@@ -68,7 +68,7 @@ jobs:
       repository: java-release-out
 
 - name: build-17
-  serial: true
+  serial_groups: [build]
   plan:
   - in_parallel:
     - get: daily
